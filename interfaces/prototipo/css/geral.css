@@ -1,0 +1,222 @@
+body:not(#home){
+background-color: white;
+font: 14px normal arial, sans-serif;
+padding: 80px 0 0;
+margin: 0;
+text-align: center;
+}
+
+body#home{
+background-color: white;
+font: 14px normal arial, sans-serif;
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+br.tudo {
+clear: both;
+line-height: 1px;
+}
+
+section {
+width: 940px;
+margin: 0 auto;	
+position: relative;
+}
+
+body:not(#home) header {
+background-color: #D1DFF1;
+margin: 0;
+padding: 0;
+box-shadow: 0 4px 3px #888;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 400;
+height: 70px;
+}
+
+body header form{
+margin: 0 auto;
+padding: 0;
+width: 940px;
+text-align: left;
+position: relative;
+}
+
+fieldset{
+border: 0;
+}
+
+body:not(#home) header form fieldset input[type="text"]{
+border: 1px solid black;
+}
+
+body:not(#home) header form fieldset input[type="image"]{
+margin-left: -10px;
+}
+
+body:not(#home) header form h1{
+padding: 3px 10px 3px 0;
+margin: 5px 10px 0 5px;
+font-size: 30px;
+float: left;
+border-right: 1px solid #999999;
+}
+
+fieldset#login{
+border: 1px solid black;
+border-top: 0;
+border-radius: 20px;
+border-top-right-radius: 0;
+border-top-left-radius: 0;
+width: 200px;
+background-color: white;
+position: absolute;
+right: 0;
+top: 0;
+padding-top: 10px;
+}
+
+#home #login {
+top: -30px;
+}
+
+fieldset#login label{
+width: 60px;
+text-align: right;
+float: left;
+margin-right: 7px;
+}
+
+fieldset#login button{
+float: right;
+margin: 10px 10px 0;
+}
+
+form.deslogado fieldset#login p{
+margin-left: 30px;
+}
+
+form.deslogado fieldset#login a{
+color: black;
+}
+
+fieldset#login input[type="text"], fieldset#login input[type="password"] {
+border: 1px solid black;
+}
+
+#home h1 {
+margin: 30px auto;
+font-size: 150px;
+}
+
+#home ul {
+margin: 0;
+padding: 0;
+}
+
+#home ul li{
+float: left;
+width: 300px;
+list-style-type: none;
+margin-right: 10px;
+}
+
+#home ul li figure{
+cursor: pointer;
+}
+
+#home a#desafio {
+position: absolute;	
+background-color: yellow;
+font-size: 20px;
+padding: 20px;
+left: 0;
+}
+
+#home header nav  {
+text-align: right;
+width: 940px;
+margin: 0 auto;
+padding-top: 15px;
+}
+
+#home header nav a{
+color: black;
+font-weight: bold;
+}
+
+#home header nav #faca_parte {
+margin-left: 400px;
+margin-right: 250px;
+}
+
+body:not(#home) h1{
+margin: 0;
+}
+
+#desafio section {
+text-align: left;	
+}
+
+#desafio article form {
+width: 330px;
+float: left;
+margin-right: 20px;
+}
+
+#desafio #envia_arquivo {
+padding: 10px 0;
+border-top: 1px solid black;
+}
+
+#desafio #video {
+float: left;
+margin-right: 15px;
+}
+
+#cadastro section {
+text-align: left;
+}
+
+#cadastro section form{
+float: left;
+margin-right: 30px;
+margin-left: 100px;
+}
+
+#cadastro section form label{
+width: 100px;
+text-align: right;
+float: left;
+margin-right: 10px;
+}
+
+#cadastro section form input[type="submit"]{
+float: right;
+}
+
+#minha_pagina section{
+text-align: left;
+}
+
+#minha_pagina article{
+border: 1px solid black;
+width: 300px;
+text-align: center;
+}
+
+#minha_pagina article figure{
+background-color: #FAFAFA;
+margin: 0 auto;
+}
+
+#minha_pagina article figure img{
+margin: 20px;
+}
+
+#minha_pagina article figure figcaption{
+padding: 15px;
+}
