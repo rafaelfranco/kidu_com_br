@@ -1,0 +1,2625 @@
+body {
+	font-family:'Oswald' ,"Arial Narrow";
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	background-image: url('/images/bgs/bg.jpg');
+	background-repeat:repeat-x;
+	background-color: #e6e1da;
+}
+h1 {
+	display: none;
+}
+h2,h3 {
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+h3 {
+	font-size: 28px;
+	color: white;
+	width: 500px;
+	font-family:'Oswald' ,"Arial Narrow";
+	font-weight:normal;
+	display: block;
+	padding-left: 10px;
+	margin: 0px;
+	display: inline-block;
+}
+h4 {
+	text-transform: uppercase;
+	font-size: 14px;
+}
+a {
+	color: #736E5B;
+	text-decoration: none;
+}
+hr {
+	border: 0px;
+	border-top: dashed 1px #aca394;
+}
+form {
+	text-align: left;
+}
+#content {
+	width: 960px;
+	margin: auto;
+	padding: 15px;
+}
+#top {
+	width: 950px;
+	margin: auto;
+	padding: 15px;
+	height: 60px;
+}
+#logo {
+	display: inline-block;
+	margin-left: -10px;
+}
+.arial {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.topBox {
+	background-image: url('/images/bgs/mural.png');
+	margin-top: 12px;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: solid 1px #c5bdb1;
+}
+.hide {
+	display: none;
+}
+.boxThird {
+	width: 30%;
+	background-image: url('/images/bgs/mural.png');
+	border-radius: 10;
+	padding: 10px;
+	display: inline-block;
+	margin-right: 2px;
+	vertical-align: top;
+}
+.boxHalf {
+	width: 46%;
+	background-image: url('/images/bgs/mural.png');
+	border-radius: 10;
+	padding: 10px;
+	display: inline-block;
+	margin-right: 2px;
+	vertical-align: top;
+}
+
+.box2Third {
+	width: 60%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+}
+.topMargin {
+	margin-top: 30px;
+}
+.box {
+	background-image: url('/images/bgs/gols.png');
+	padding: 10px;
+}
+.subtitle{
+	display: block;
+	color: red;
+	margin-bottom: 5px;
+}
+
+.intratitle{
+	display: block;
+	color: red;
+	margin-bottom: 5px;
+	color: #736E5B;
+	font-size: 18px;
+}
+.input {
+	height: 26px;
+	border: solid 1px #666;
+} 
+.button {
+	background-image: url('/images/icones/Slice-6.png');
+	background-position: -25px -20px;
+	background-size:300px 70px; 
+	border: 1px solid #9C4800;
+	color: white;
+	padding: 7px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+.button2 {
+	background-image: url('/images/bgs/Slice-6.jpg');
+	background-position: -5px -3px;
+	border: 1px solid #9C4800;
+	color: white;
+	padding: 12px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+.button3 {
+	background-color: #2a928e;
+	border: 1px solid #2a928e;
+	color: white;
+	padding: 7px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+.button4 {
+	background-color: #736d61;
+	border: 1px solid #736d61;
+	color: white;
+	padding: 5px;
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: 100;
+}
+
+.button5 {
+	background-color: #125b54;
+	border: 1px solid #125b54;
+	color: white;
+	padding: 7px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: 100;
+}
+.miniButton {
+	background-color: #125b54;
+	border: 1px solid #125b54;
+	color: white;
+	padding: 2px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: 100;
+}
+.miniButton2 {
+	background-color: #736d61;
+	border: 1px solid #736d61;
+	color: white;
+	padding: 2px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.miniButton3 {
+	background-color: #736d61;
+	border: 1px solid #736d61;
+	color: white;
+	padding: 2px;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 8px;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: 100;
+}
+
+.greenButton {
+	background-color: #2ea0a0;
+	border-radius: 10;
+	padding: 5px;
+	text-align: center;
+}
+.greenButton a {
+	color: #FFFFFF;
+}
+.editEventButton {
+	margin-left: 150px;
+}
+#left {
+	width: 240px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+#right {
+	width: 705px;
+	vertical-align: top;
+	display: inline-block;
+}
+#signup {
+	padding: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url('/images/bgs/signup.png');
+	width: 500px;
+	height: 375px;
+	line-height: 28px;
+}
+#signup .input {
+	width: 330px;
+	height: 30px;
+	border: solid 1px #b5aca0;
+	margin-bottom: 10px;
+}
+#loginArea {
+	padding: 10px;
+	width: 325px;
+	margin-right: 65px;  
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 10px;
+	text-align: center;
+	background-image: url('/images/bgs/login.png');
+}
+#loginArea .input {
+	width: 225px;
+	margin-bottom: 10px;
+}
+#signin {
+	text-align: center;
+}
+#signin h2 {
+	color: #ff8400;
+	text-transform: uppercase;
+}
+#signin .erro {	
+	color: red;
+	font-size: 8px;
+	display: none;
+	text-align: right;
+	margin-top: -13px;
+	position: absolute;
+	width:auto;
+	width: 290px;
+}
+
+#signup .erro {	
+	color: red;
+	font-size: 8px;
+	display: none;
+	text-align: right;
+	margin-top: -21px;
+	position: absolute;
+	width:auto;
+	width: 470px;
+}
+#footer {
+	width: 960px;
+	margin: auto;
+	background-color: #000;
+	padding: 10px;
+}
+#footer a{ 
+	color: #FFF;
+	text-decoration: none;
+	border-right: solid 1px #fff;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+#footer ul {
+	padding: 0px;
+	margin: 0px;
+}
+#footer li {
+	list-style: none;
+	display: inline-block;	
+}
+
+#notifications {
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+}
+#search {
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+	padding-top: 5px;
+}
+
+#topMenu {
+	display: inline-block;
+	vertical-align: top;
+}
+#topMenu a {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	text-decoration: none;
+	font-size: 13px;
+	text-transform: uppercase;
+	display: inline-block;
+	width: 75px;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 10px;
+}
+#searchBox {
+	background-color: #ffffff;
+	border:solid 1px #b3aa93;
+	width:170px;
+	height: 28px;
+	background-repeat: no-repeat;
+	background-position: right;
+	vertical-align: top;
+}
+#usernameBox {
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: top;
+}
+.usernameBox {
+	font-size: 12px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	color: #736E5B;
+	display: inline-block;
+	font-weight: bold;
+	width: 194px;
+	padding-left: 6px;
+	background-repeat: no-repeat;
+	padding-right: 2px;
+	cursor: pointer;
+	vertical-align: top;
+	padding-top: 4px;
+	text-align: right;
+	display: inline-block;
+}
+#userMenu {
+	margin: 0px;
+	padding: 0px;
+	line-height: 40px;
+}
+#userMenu li {
+	list-style: none;
+}
+#timePic {
+	background-image: url('/images/bgs/avatar.png');
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 235px;
+}
+#userPic {
+	background-image: url('/images/bgs/avatar.png');
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 235px;
+}
+#userPic:hover {
+	background-image: url('/images/bgs/avatar_hover.png');
+	background-repeat: no-repeat;
+	cursor: pointer;
+	height: 300px;
+	width: 235px;
+}
+.icoMenu {
+	width: 44px;
+	display: inline-block;
+	text-align: center;
+	margin-left: 8px;
+}
+.menuTotal {
+	color: #736d5d;
+	font-size: 20px;
+}
+#btCriarJogo {
+	background-image: url('/images/icones/Slice-6.png');
+	height: 19px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 20px;
+	vertical-align: top;
+	margin-top: -10px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	padding-top: 13px;
+	width: 143px;
+}
+
+#btAddAmigo {
+	background-image: url('/images/icones/Slice-6.png');
+	height: 19px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 20px;
+	vertical-align: top;
+	margin-top: -10px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	padding-top: 13px;
+	width: 143px;
+	cursor: pointer;
+}
+#btAddAmigoEnviado {
+	background-color: #2a928e;
+	height: 19px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 20px;
+	vertical-align: top;
+	margin-top: -10px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	padding-top: 13px;
+	width: 143px;
+}
+
+#btCriarQuadra {
+	background-image: url('/images/icones/Slice-6.png');
+	width: 182px;
+	height: 39px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding-top: 13px;
+	vertical-align: top;
+	margin-top: -10px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	margin-left: 670px;
+}
+#userDetails {
+	margin-top: 30px;
+	color: #736E5D;
+	line-height: 20px;
+	padding-left: 10px;
+}
+#userPosition {
+	width: 460px;
+	height: 125px;
+	background-color:#e8e3df;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+.boxtitle1 {
+	text-transform: uppercase;
+	display: block;
+	background-color: #D9D7CE;
+	height: 35px;
+	color: #348582;
+	font-size: 20px;
+	font-family:'Oswald' ,"Arial Narrow";
+	padding-top: 15px;
+	padding-left: 15px;
+}
+#basicDetails {
+	width: 200px;
+	display: inline-block;
+}
+.position {
+	display: inline-block;
+	color: #FF8400;
+	width: 140px;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+.position img {
+	float: left;
+}
+.positionKind {
+	color: #348582;
+	text-transform: uppercase;
+	vertical-align: top;
+}
+
+
+.review {
+	display: inline-block;
+	color: #FF8400;
+	margin-top: 15px;
+	font-weight: bold;
+	vertical-align: top;
+}
+.review img {
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+}
+.reviewKind {
+	color: #348582;
+	text-transform: uppercase;
+	vertical-align: top;
+	font-family:'Oswald' ,"Arial Narrow";
+	display: inline-block;
+	width: 65px;
+}
+
+.g14 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	font-size: 14px;
+}
+.g16 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	font-size: 16px;
+}
+.p14 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #000;
+	font-size: 14px;
+}
+
+.p16 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #000;
+	font-size: 16px;
+}
+
+.g13 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	font-size: 13px;
+}
+.g12 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	font-size: 12px;
+}
+.g10 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	font-size: 10px;
+}
+.g18 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #348582;
+	font-size: 18px;
+}
+
+.p18 {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #373327;
+	font-size: 18px;
+}
+
+
+.o20 {
+	color:#ff8d00;
+	font-size: 20px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+
+.o16{
+	color:#ff8d00;
+	font-size: 20px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.o10 {
+	color:#ff8d00;
+	font-size: 10px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.o12 {
+	color:#ff8d00;
+	font-size: 12px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.o14 {
+	color:#ff8d00;
+	font-size: 14px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.o16 {
+	color:#ff8d00;
+	font-size: 16px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.r16 {
+	color:red;
+	font-size: 16px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.r14 {
+	color:red;
+	font-size: 14px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.r12 {
+	color:red;
+	font-size: 12px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.titles {
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+#myTeamDetail {
+	display: inline-block;
+	vertical-align: top;
+}
+#myTeam {
+	display: none;
+}
+#tabs {
+	padding:0px;
+	margin: 0px;
+	list-style: none;
+	margin-top: 20px;
+}
+#tabs li{
+	cursor: pointer;
+}
+.tab {
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	background-image: url('/images/icones/Slice-15.png');
+	height: 30px;
+	width: 198px;
+	vertical-align: top;
+	text-align: center;
+	padding-top: 15px;
+
+}
+
+.tabActive {
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	background-image: url('/images/bgs/aba.png');
+	height: 30px;
+	width: 198px;
+	vertical-align: top;
+	text-align: center;
+	padding-top: 15px;
+	border-left: solid 1px #145963;
+	border-right: solid 1px #145963;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-left: 3px;
+}
+
+
+.tabInactive {
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	background-color: #cfc6bd;
+	height: 30px;
+	width: 198px;
+	vertical-align: top;
+	text-align: center;
+	padding-top: 15px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	margin-left: 3px;
+}
+
+.tabLink {
+	font-family:'Oswald' ,"Arial Narrow";
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+#scores {
+	border: solid 1px #c5bdb1;
+	background-image: url('/images/bgs/mural.png');
+	margin-left: 3px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#agendaUsuario {
+	border: solid 1px #c5bdb1;
+	background-image: url('/images/bgs/mural.png');
+	margin-left: 3px;
+	padding-top: 20px;
+	padding-left: 20px;
+
+}
+#agendaUsuario td {
+	font-size: 12px;
+}
+#days {
+	padding-top: 20px;
+}
+
+#schedule {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	width: 650;
+
+}
+#games {
+	width: 317px;
+	margin-right: 10px;
+	border: solid 1px #c5bdb1;
+	display: inline-block;
+	padding: 10px;
+	margin-bottom: 20px;
+	height: 277px;
+
+}
+#gols {
+	width: 317px;
+	height: 315px;
+	display: inline-block;	
+	vertical-align: top;
+
+}
+#playedGols {
+	padding: 5px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+}
+.bgBox {
+	background-image: url('/images/bgs/gols.png');
+}
+.scoreBox {
+	display: inline-block;
+	width: 95px;
+	text-align: left;
+}
+.scoreBoxTotal {
+	display: inline-block;
+	width: 115px;
+}
+.score {
+	background-image: url('/images/bgs/score.png');
+	text-align: center;
+	width: 78px;
+	height: 30px;
+	font-family:'Oswald' ,"Arial Narrow";
+	font-size: 18px;
+	color: #373327;
+	padding-top: 8px;
+
+}
+
+.scoreTotal {
+	background-image: url('/images/bgs/score.png');
+	text-align: center;
+	width: 108px;
+	height: 40px;
+	font-family:'Oswald' ,"Arial Narrow";
+	font-size: 22px;
+	color: #373327;
+	padding-top: 8px;
+}
+
+.f20 {
+	font-size: 20px;
+}
+.sameLine {
+	display: inline-block;
+}
+.center {
+	text-align: center;
+}
+.line2Score {
+	padding-left: 35px;
+}
+#fullhistory {
+	margin-left: 58px;
+}
+#playedGames {
+	padding-top:10px;
+	padding-left: 20px;
+	padding-right: 5px;
+	height: 204px;
+
+}
+#playedChampionships {
+	padding-top:10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 10px;
+	padding-bottom: 20px;
+	display: none;
+}
+#points {
+	margin-top: 20px;
+}
+#pointsDetail {
+	margin-bottom: 20px;
+	width: 660px;
+}
+#pointsList {
+	list-style: none;
+	color: #29928e;
+	margin: 0px;
+	padding: 10px;
+	line-height: 26px;
+	display: inline-block;
+}
+.pointsBar {
+	background-image: url('/images/bgs/score.png');
+	width:350px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.pointTitle {
+	display: inline-block;
+	width: 70px;
+}
+#passe {
+	background-color: #ff6600;
+	width: 20%;
+	display: inline-block;
+	height: 18px;
+}
+
+#chute {
+	background-color: #ff8e01;
+	width: 29%;
+	display: inline-block;
+	height: 18px;
+}
+#drible {
+	background-color: #ff6600;
+	width: 39%;
+	display: inline-block;
+	height: 18px;
+}
+
+#cabeceio {
+	background-color: #ff8e01;
+	width: 79%;
+	display: inline-block;
+	height: 18px;
+}
+#velocidade {
+	background-color: #ff6600;
+	width: 3%;
+	display: inline-block;
+	height: 18px;
+}
+#marcacao {
+	background-color: #ff8e01;
+	width: 43%;
+	display: inline-block;
+	height: 18px;
+}
+
+#totalPoints{
+	color: #29928E;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 100px;
+	margin-left: 37px;
+}
+#boxTotalPoints {
+	background-image: url('/images/bgs/score.png');
+	color: #333;
+	width: 110px;
+	height: 40px;
+	text-align: center;
+	font-size: 24px;
+}
+
+#schedule {
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+#preferenceDays {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#preferenceDays li {
+	display: inline-block;
+	padding: 5px;
+	margin-right: 4px;
+	font-size: 14px;
+	color: #29928E;
+}
+.day {
+	background-image: url('/images/bgs/score.png');
+	padding: 5px;
+	text-align: center;
+	width: 40px;
+	cursor: pointer;
+}
+.dayActive {
+	background-color: #ff6600;
+	color: #FFFFFF;
+	padding: 5px;
+	text-align: center;
+	width: 40px;
+	cursor: pointer;
+}
+.hour {
+	background-image: url('/images/bgs/mural.png');
+	padding: 5px;
+	text-align: center;
+	color: #333;
+	width: 71px;
+}
+#eventosSeletor {
+	display: inline-block;
+	margin-left: 250px;
+}
+#eventosSeletor img{
+	margin-left: 20px;
+}
+#eventosMes {
+	vertical-align:top;
+	margin-top: 15px;
+}
+.red {
+	color: red;
+}
+.green {
+	color: #348582;
+}
+.event {
+	font-family: 'Verdana' ,"Arial Narrow";
+	font-size: 12px;
+	font-weight: normal;
+	color: #736E5A;
+	width: 152px;
+	display: inline-block;
+	padding-right: 10px;
+	margin-top: 20px;
+	line-height: 16px;
+}
+.event a{
+	color: #ff8d00;
+}
+.eventHorizontal {
+	font-family: "Arial";
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	color: #736E5A;
+	display: inline-block;
+	margin-right: 27px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #736E5B;
+	width:225px;
+}
+.eventDate{
+	color: #2b8a84;
+}
+.eventName{
+	color: #ff8c00;
+}
+#mural {
+	display: none;
+	border: solid 1px #c5bdb1;
+	background-image: url('/images/bgs/mural.png');
+	margin-left: 3px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+#jogadores {
+	display: none;
+	border: solid 1px #c5bdb1;
+	background-image: url('/images/bgs/mural.png');
+	margin-left: 3px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+#muralJogo {
+	margin-left: 3px;
+	padding-left: 20px;
+}
+#message {
+	background-color: #ffffff;
+	background-position: -20px;
+	border: solid 1px #b4ab9f;
+	width: 550px;
+	height: 75;
+	margin-right: 20px;
+}
+#messageList {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#titlePage {
+	font-size: 28px;
+	color: white;
+	font-family:'Oswald' ,"Arial Narrow";
+	font-weight:normal;
+	margin: 0px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.lastList {
+	margin-top: 20px;
+}
+#talk {
+	padding-left: 5px;
+	border-left: solid 3px #C5C4BE;
+	height: 390px;
+	overflow: auto;
+}
+
+
+.userTalked {
+	padding: 8px;
+	border-bottom: solid 1px #C5C4BE;
+	cursor: pointer;
+}
+.userTalked img {
+	display: inline-block;
+	margin-right: 5px;
+}
+.userTalked span {
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: top;
+}
+.userTalked label {
+	font-family: Arial;
+	font-size: 10px;
+	font-weight: normal;
+}
+.activeTalk {
+	background-image: url('/images/bgs/mural.png');
+}
+
+.talkedMessage img {
+	display: inline-block;
+	border:solid 2px #C5C4BE;
+	margin-right: 5px;
+	width: 62px;
+}
+.talkedMessage span {
+	font-weight: bold;
+	vertical-align: top;
+	margin-left: 5px;
+	width: 130px;
+	display: inline-block;
+	color: #373327;
+	font-size: 12px;
+}
+.talkedMessage label {
+	display: inline-block;
+	vertical-align: top;
+	font-family: "Arial";
+	margin-left: 15px;
+	width: 430px;
+	font-size: 12px;
+}
+.comentedMessage label {
+	width: 320px;	
+}
+.date {
+	font-size: 10px;
+	font-family: "Arial";
+	background-color: #d7d0c6;
+	font-weight: bold;
+	width: 95%;
+	padding-left: 5px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+.fixedBox {
+	position: absolute;
+	bottom: 0px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+#floatProfileBox {
+	position: absolute;
+	width: 100px;
+	background-color: red;
+	margin-left: 821px;
+	padding: 10px;
+	background-image: url('/images/bgs/Slice-3.jpg');
+	border: solid 1px #C5C4BE;
+	display: none;
+	width: 80px;
+	margin-top: -35px;
+}
+
+.notification {
+	color: #FFF;
+	background-color: red;
+	padding: 5px;
+	display: inline-block;
+	border-radius: 10px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#midleright {
+	width:48%;
+	vertical-align: top;
+	display:inline-block;
+	margin-top: 30px;
+}
+#midleleft {
+	width:48%;
+	vertical-align: top;
+	display:inline-block;
+	margin-top: 30px;
+}
+.form {
+	line-height: 40px;
+}
+.form input {
+	width: 350px;
+	height: 26px;
+	border: solid 1px #666;
+}
+.form label {
+	width: 85px;
+	display: inline-block; 
+}
+.obrigatory {
+	color: red;
+}
+#cep {
+	width: 150px;
+}
+#numero {
+	width: 50px;
+}
+#complemento {
+	width: 50px;
+}
+#bairro {
+	width: 140px;
+}
+#cidade {
+	width: 150px;
+}
+#ddd {
+	width: 50px;
+}
+#telefone {
+	width: 150px;
+}
+.rightButton {
+	margin-left: 800px;
+}
+#boxPass {
+	background-image: url('/images/bgs/mural.png');
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.f12 {
+	font-size: 12px;
+}
+#forget {
+	display: none;
+}
+
+.hourSelector {
+	display: none;
+}
+.hourActive {
+	cursor: pointer;
+}
+.event {
+	vertical-align: top;
+}
+#homeTop {
+	text-align: center;
+	margin-bottom: 30px;
+}
+#homeTop h2 {
+	color: #ff8400;
+	font-size: 20px;
+}
+#homeTop h4 {
+	color:#2ea0a0;
+	font-size: 16px;
+	margin: 0px;
+	text-transform: none;
+}
+#signupTitle {
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+	width:500px;
+	font-size: 22px;
+	color: #2ea0a0;
+	margin-top: 10px;
+}
+#signup label {
+	width: 145px;
+	display: inline-block;
+	text-align: right;
+	text-transform: uppercase;
+	color: #4c4333;
+	font-size: 14px;
+	vertical-align: middle;
+
+}
+#signin label {
+	display: inline-block;
+	text-align: right;
+	text-transform: uppercase;
+	color: #4c4333;
+	font-size: 14px;
+	vertical-align: middle;
+}
+#signin input {
+	border: solid 1px #b5aca0;
+	width: 225px;
+	height: 30px;
+}
+
+.inline {
+	display:inline-block;
+	vertical-align: top;
+}
+.inlinelabel{
+	display: inline-block;
+	text-align: right;
+	text-transform: uppercase;
+	color: #4c4333;
+}
+.half {
+	width: 49%;
+}
+.right {
+	text-align: right;
+}
+#sendSignUp {
+	margin-left: 57px;
+	line-height: 23px;
+	margin-top: 15px;
+}
+#termo {
+	padding-left: 20px;
+	display: inline-block;
+	width: 275px;
+}
+
+#termo a{
+	color: #2ea0a0;
+	font-size: 16px;
+	text-decoration: underline;
+	margin-left: 20px;
+}
+.lostpass {
+	font-family: Arial;
+	font-size: 10px;
+	text-align: left;
+	margin-left: 225px;
+}
+#esqueci {
+	color: #2ea0a0;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: underline;
+}
+#bola {
+	margin-top: -170px;
+}
+#facebookLogin {
+	display: inline-block;
+	margin-left: 170px;
+	position: absolute;
+}
+#facebookLogin img {
+	vertical-align: middle;
+}
+#facebookLogin a {
+	color:#0c4c97;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+.erro {	
+	color: red;
+	font-size: 10px;
+	display: none;
+	text-align: right;
+	position: absolute;
+	width:auto;
+}
+
+.erroModal {	
+	color: red;
+	font-size: 10px;
+	display: none;
+}
+.linkComentar {
+	display: inline-block;
+	margin-left: 50px;
+	cursor: pointer;
+	width: 100px;
+}
+.linkComentar:hover {
+	text-decoration: underline;
+}
+.comentedMessage {
+	padding-left: 100px;
+	border-bottom: solid 1px #b4aba0;
+	background-color: #d7d0c6;
+	width: 555px;
+	padding-top: 10px;
+}
+
+.linkRemover {
+	display: inline-block;;
+	color: red;
+	font-weight: bold;
+	margin-left:312px;
+	margin-top: -1px;
+	cursor: pointer;
+	background-image: url('/images/bgs/mural.png');
+	padding-left: 9px;
+	padding-right: 9px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+.linkRemover img {
+	width: 16px;
+	vertical-align: middle;
+	border: 0px;
+	padding-left: 5px;
+}
+.removeComment {
+	background-image: none;
+	margin-left:350px;
+}
+.removeMessage {
+	margin-left:470px;
+}
+.addcomment {
+	background-color: #d7d0c6;
+	padding-top: 10px;
+	padding-left: 100px;
+	width: 555px;
+}
+.notification {
+	display: none;
+}
+#uploadAvatar {
+	background-color: white;
+	position: absolute;
+	padding: 10px;
+	border: solid 2px #368d8f;
+	border-radius: 4px;
+	display: none;
+	margin-top: 200px;
+}
+#closeUploadAvatar {
+	text-align: right;
+	position: absolute;
+	width: 92%;
+	cursor: pointer;
+}
+#alignRight {
+	text-align: right;
+	width: 100%;
+}
+#avatarBox {
+	overflow: hidden;
+	height: 245px;
+	width: 190px;
+	margin-top: -278px;
+	margin-left: 19px;
+	position: absolute;
+	z-index: -10;
+	background-image: url('/images/bgs/gols.png');
+}
+.avatarThumb {
+	width: 75px;
+	height: 75px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: top;
+}
+.avatarThumb img {
+	width: 70px;
+}
+#notTalks {
+	text-align: center;
+	padding: 50px;
+	color: #736E5B;
+}
+
+#messageNotification {
+	background-color: red;
+	color: #FFF;
+	border-radius: 10px;
+	text-align: center;
+	width: 20px;
+	position: absolute;
+	margin-top: -10px;
+	margin-left: 20px;
+	font-size: 12px;
+
+}
+#newMessage {
+	margin-left: 560px;
+	margin-top: 30px;
+}
+
+#places {
+	width: 80px;
+	font-size: 11px;
+	line-height: 11px;
+	display: inline-block;
+	background-image: url('/images/bgs/score.png');
+	padding: 5px;
+	vertical-align: top;
+}
+#friendsList {	
+	overflow: scroll;
+	width: 590px;
+	max-height: 380px;
+	padding-top: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#createEvent {
+	line-height: 24px;
+}
+#addOutNetwork {
+	cursor: pointer;
+}
+#fullBlack {
+	background-color:#000;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	opacity:0.7;
+	filter:alpha(opacity=70); /* For IE8 and earlier */
+	display: none;
+}
+#modalBox {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	padding-top: 200px;
+	display: none;
+	z-index: 1;
+}
+#modal {
+	background-color: #FFFFFF;
+	margin: auto;
+	width: 400px;
+	padding:20px;
+	background-image: url('/images/bgs/mural.png');
+	border: solid 2px #368d8f;
+	border-radius: 10px;
+	z-index: 100;
+}
+.modalForm input {
+	width: 260px;
+	height: 30px;
+}
+.modalForm {
+	text-align: center;
+}
+#closeModal {
+	text-align: right;
+	margin-top: -10px;
+	cursor: pointer;
+}
+.invitedOut {
+	font-size: 14px;
+	line-height: 21px;
+	width: 270px;
+	display: inline-block;
+}
+#outbox {
+	display: none;
+}
+#bigLeft {
+	width: 695px;
+	display: inline-block;
+}
+#smallRight {
+	width: 235px;
+	display: inline-block;
+	height: 10px;
+	vertical-align: top;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+#campo {
+	height: 475px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-image: url('/images/icones/campo.png');
+	padding-top: 68px;
+}
+#Society{
+	height: 475px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-image: url('/images/icones/society.png');
+	padding-top: 68px;
+}
+#Salao{
+	height: 475px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-image: url('/images/icones/quadra.png');
+	padding-top: 68px;
+}
+#listaEmCapo {
+	width: 600px;
+	padding-left: 58px;
+}
+#confirmados {
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+}
+#confirmados-list {
+	background-image: url('/images/bgs/mural.png');
+	max-height: 500px;
+	margin-top: 10px;
+	border-right: solid 1px #C5BDB1;
+	border-bottom: solid 1px #C5BDB1;
+	border-left: solid 1px #C5BDB1;
+	overflow: scroll;
+}
+#pendentes {
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	margin-bottom: 40px;
+}
+#pendentes-list {
+	background-image: url('/images/bgs/mural.png');
+	max-height: 500px;
+	margin-top: 10px;
+	border-right: solid 1px #C5BDB1;
+	border-bottom: solid 1px #C5BDB1;
+	border-left: solid 1px #C5BDB1;
+	overflow: scroll;
+}
+#menuGame {
+	display: inline-block;
+	padding-left: 200px;
+}
+#subMenuGame{
+	display: inline-block;
+	vertical-align: top;
+}
+#buscaQuadra {
+	background-image: url('/images/icones/busca.png');
+	width: 607px;
+	height: 38px;
+	border: solid 1px #C5BDB1;
+	background-repeat: no-repeat;
+	background-position-x: 576;
+	margin-right: 176px;
+	background-position-y: 5;
+	padding-left: 10px;
+	color: #ccc;
+	font-size: 18px;
+}
+#localidade {
+	margin-right: 36px;
+}
+.itemListaQuadras {
+	background-image: url('/images/bgs/mural.png');
+	display: inline-block;
+	width: 205px;
+	border: solid 1px #C5BDB1;
+	margin-top: 20px;
+	margin-right: 8px;
+	margin-left: 5px;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	vertical-align: top;
+}
+.itemListaQuadras span {
+	display: block;
+	margin-bottom: 15px;
+}
+.itemListaQuadras a {
+	display: block;
+	margin-bottom: 15px;
+}
+.itemListaQuadrasEmail {
+	color: #2ea0a0;
+}
+.btquadra {
+	width: 80px;
+	margin-left: 80px;
+}
+.nomeQuadraLista {
+	color: #2ea0a0;
+	font-size: 22px;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+#buscaAmigos {
+	background-image: url('/images/icones/busca.png');
+	width: 670px;
+	height: 35px;
+	border: solid 1px #C5BDB1;
+	background-repeat: no-repeat;
+	background-position: 635px;
+	margin-right: 36px;
+}
+.amigosListAmigo {
+	background-image: url('/images/bgs/mural.png');
+	width: 272px;
+	padding: 10px;
+	display: inline-block;
+	margin-bottom: 20px;
+	vertical-align: top;
+	margin-right: 3px;
+}
+
+.amigosListAmigo span{
+	display:block;
+}
+.amigoDados {
+	display: inline-block;
+	vertical-align: top;
+}
+.removerAmigo {
+	font-size: 12px;
+	padding: 2px;
+	width: 58px;
+}
+.rigtBox .amigoSugerido{
+	width: 222px;
+
+}
+.amigoSugerido {
+	background-image: url('/images/bgs/mural.png');
+	width: 210px;
+	padding: 10px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+.amigoSugerido span{
+	display:block;
+}
+.removerSugerido {
+	font-size: 12px;
+	padding: 2px;
+	width: 58px;
+	margin-left: 90px;
+}
+.rigtBox {
+	background-image: url('/images/bgs/gols.png');
+	padding: 5px;
+	width: 242px;
+	height: auto;
+	display: inline-block;
+	margin-left: 13px;
+}
+#buscaEquipes {
+	background-image: url('/images/icones/busca.png');
+	width: 207px;
+	height: 28px;
+	border: solid 1px #C5BDB1;
+	background-repeat: no-repeat;
+	background-position-x: 175;
+	margin-right: 36px;
+}
+
+#buscaJogadores {
+	background-image: url('/images/icones/busca.png');
+	width: 376px;
+	height: 28px;
+	border: solid 1px #C5BDB1;
+	background-repeat: no-repeat;
+	background-position: 340px;
+	margin-right: 36px;
+}
+#createQuadra {
+	width: 680px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 30px;
+	line-height: 35px;
+}
+
+#modalidadeSelector {
+	display: inline-block;
+	width: 265px;
+	vertical-align: top;
+}
+#dadosQuadra {
+	display: inline-block;
+	margin-right: 20px;
+}
+#dadosQuadra input {
+	height: 25px;
+	width: 300px;
+}
+.avatarEquipe {
+	width: 200px;
+	
+}
+
+#equipeAlertas {
+	background-color:#e8e3df;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	width: 212px;
+}
+#quadraAlertas {
+	width: 350px;
+	background-color:#e8e3df;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+}
+#equipeDetails {
+	width: 450px;
+	display: inline-block;
+}
+
+#quadraDetails {
+	width: 255px;
+	display: inline-block;
+}
+
+#jogadoresEmDestaque {
+	margin-left: 118px;
+	padding: 10px;
+	margin-top: -63px;
+}
+.jogadorDestaque {
+	display: inline-block;
+	width: 250px;
+	height: 93px;
+	vertical-align: top;
+
+}
+.icoJogador {
+	color: white;
+	background-color: #FF8D00;
+	padding: 5px;
+	position: absolute;
+	margin-left: 150px;
+	margin-top: -30;
+}
+
+.participanteEquipe a {
+	display: inline-block;
+	vertical-align: top;
+}
+.participanteEquipe {
+	display: inline-block;
+	width: 141px;
+	padding: 10px;
+	text-align: center;
+	margin-right: 4px;
+	background-image: url('/images/bgs/mural.png');
+}
+.participanteEquipe:hover {
+	background-image: url('/images/bgs/gols.png');
+}
+.participanteEquipe div {
+	display:inline-block;
+	width: 130px;
+}
+.f12 {
+	font-size: 12px;
+}
+#equipe {
+	width: 555px;
+	margin-right: 20px;
+	height: 34px;
+	border: solid 1px #c5bdb1;
+	margin-top: 5px;
+	font-size: 18px;
+	padding-left: 7px;
+	color: rgb(134, 91, 26);
+}
+#listaEquipe {
+	padding: 10px;
+	text-align: center;
+}
+
+#listaEquipe table {
+	display: inline-block;
+}
+
+.filtros {
+	width: 120px;
+	height: 32px;
+	border: solid 1px #b5aca0;
+}
+.recreativoMarcado {
+	display: inline-block;
+	margin-right: 100px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: 210px;
+	margin-left: 0px;
+	line-height: 25px;
+}
+#equipesAdministro {
+	border: solid 1px #c5bdb1;
+	background-image: url('/images/bgs/mural.png');
+	margin-left: 3px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.equipeAdministrada {
+	font-family: Arial, Helvetica, sans-serif;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+.equipeAdministrada b{
+	font-family:'Oswald' ,"Arial Narrow";
+	color:#ff8d00;
+	font-size: 16px;
+	display: block;
+}
+.equipeAdministrada span{
+	display: block;
+}
+.teamDetail {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 10px;
+	width: 130px;
+}
+.equipeAdministrada:hover {
+	background-color: rgba(180, 180, 180, 0.25);
+}
+.equipeAdministrada {
+	display: inline-block;
+	width: 212px;
+	font-size: 11px;
+	cursor: pointer;
+}
+.equipeAdministro {
+	display: inline-block;
+	margin-right: 20px;
+	width: 208px;
+	margin-bottom: 20px;
+}
+.equipeAdministro:hover {
+	background-color: rgba(180, 180, 180, 0.25);
+}
+#dadosQuadra b {
+	width:65px;
+	display: inline-block;
+}
+.searchResult {
+	border-left: solid 1px #348582;
+	padding-left: 20px;
+	display: inline-block;
+	width: 655px;
+	min-height: 600px;
+}
+.searchResult h2{
+	color: #348582;
+}
+.searchedItem {
+	display: block;
+	margin-top: 5px;
+	border-bottom: solid 1px #348582;
+	vertical-align: middle;
+	padding-bottom: 5px;
+}
+.searchedItem img {
+	display: inline-block;
+}
+.searchedItem span {
+	display: inline-block;
+	vertical-align: top;
+	color: #666;
+}
+.searchedItem a {
+	color: #348582;
+	font-size: 14px;
+	vertical-align: top;
+}
+#chatTable {
+	height: 500px;
+}
+.inputCampeonato {
+	width: 330px;
+	height: 30px;
+	border: solid 1px #b5aca0;
+	margin-bottom: 10px;
+}
+#form td {
+	font-size: 12px;
+}
+.sponsor {
+	display: inline-block;
+	width: 169px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.sponsorLogo {
+	background-image: url('/images/bgs/mural.png');
+	height: 20px;
+	width: 169px;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color:#ff8d00;
+	font-family:'Oswald' ,"Arial Narrow";
+}
+
+#abaConvidadas {
+	display: none;
+}
+#confirmedTeams {
+	display: inline-block;
+	margin-left: 2px;
+	width: 450px;
+	min-height: 400px;
+	vertical-align: top;
+}
+#pendentTeams {
+	display: inline-block;
+	width: 213px;
+	margin-left: -2px;
+	min-height: 400px;
+	vertical-align: top;
+}
+.disabled .hour {
+	color: #ccc;
+}
+.disabled .dayactive {
+	background-color: #ccc;	
+}
+.disabled .day{
+	background-color: #ccc;	
+	color: #FFF;
+	background-image: none;
+}
+.findedTeams {
+	display: inline-block;
+	margin: 10px;
+}
+#findResult {
+	padding-top: 15px;
+}
+#buscaAmigos {
+	color: #ccc;
+	font-size: 18px;
+}
+
+.amigoDados b {
+	display: inline-block;
+	width: 135px;
+}
+#iconPlayers .friendships {
+	display: none;
+	position: absolute;
+}
+
+#iconGames .gamesInvites {
+	display: none;
+	position: absolute;
+}
+
+#frindshipsInvites {
+	background-image: url('/images/bgs/mural.png');
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: -10px;
+	display: block; 
+}
+
+#gamesInvites {
+	background-image: url('/images/bgs/mural.png');
+	font-size: 12px;
+	margin-top: 5px;
+	margin-left: -10px;
+	display: block; 
+}
+#boxNotification {
+	padding: 10px;
+	border: solid 1px #b5aca0;
+	margin-top: 10px;
+}
+#messageBoxNotification {
+	background-image: url('/images/bgs/mural.png');
+	position: absolute;	
+	border: solid 1px #b5aca0;
+	margin-top: 10px;
+	font-size: 12px;
+	display: none;
+}
+#messageBoxNotification span{
+	padding: 10px;
+	display: block;
+}
+
+.showAllmessages {
+	display: block;
+	font-weight: bold;
+	padding: 10px;
+	background-image: url('/images/bgs/score.png');
+}
+
+.convidarAmigo {
+	font-size: 10px;
+	font-weight: normal;
+	width: 70px;
+	display: inline-block;
+}
+.participanteJogo img {
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 5px;
+}
+.participanteJogo div {
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 5px;
+	line-height: 26px;
+}
+.participanteJogo {
+	width: 290px;
+	display: inline-block;
+	padding: 5px;
+	vertical-align: top;
+	text-align: left;
+}
+
+.participanteJogo span{ 
+ 	display: inline-block;
+	padding-top: 15px;
+ }
+.participanteJogo:hover {
+	background-image: url('/images/bgs/mural.png');
+}
+#tableSelector img {
+	vertical-align: middle;
+}
+#data_inicial {
+	font-size: 16px;
+	color: #736E5B;
+}
+#data_final {
+	font-size: 16px;
+	color: #736E5B;
+}
+.quadraAvatar {
+	width:205px;
+}
+#instalacoes li {
+	list-style-image: url('/images/li.png');
+}
+#confirmados-list  .avatarThumb  {
+	width: 45px;
+	height: 45px;
+}
+#confirmados-list  .avatarThumb img {
+	width: 45px;
+	height: 45px;
+}
+#confirmados-list .participanteJogo {
+	width: 205px;
+	display: inline-block;
+}
+
+#pendentes-list  .avatarThumb  {
+	width: 45px;
+	height: 45px;
+}
+#pendentes-list  .avatarThumb img {
+	width: 45px;
+	height: 45px;
+}
+#pendentes-list .participanteJogo {
+	width: 205px;
+	display: inline-block;
+}
+.participanteConfirmacao {
+	width:275px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+}
+.participanteConfirmacao table {
+	width: 100%;
+}
+.participanteConfirmacao:hover {
+	background-image: url('/images/bgs/mural.png');
+}
+.participanteConfirmacao img {
+	width: 50px;
+	height: 50px;
+}
+.participanteConfirmacao td {
+	font-family: arial;
+	font-size: 12px;
+}
+.botaoOk {
+	border-radius: 5px;
+	background-color: green;
+	color: #FFF;
+	font-weight: bold;
+	border:none;
+	cursor: pointer;
+}
+.botaoWo {
+	border-radius: 5px;
+	background-color: red;
+	color: #FFF;
+	font-weight: bold;
+	border:none;
+	cursor: pointer;
+}
+.btDisabled {
+	background-color: #928d7d;
+	border-radius: 5px;
+	color: #FFF;
+	font-weight: bold;
+	border:none;
+	cursor: pointer;
+}
+.btCraque{
+	cursor: pointer;
+}
+.btCraqueAtivo {
+	border:solid 2px green;
+	border-radius: 10px;
+}
+.btFairplay {
+	cursor: pointer;
+}
+.fundamentosConfirmacao td {
+	font-size: 14px;
+	font-weight: normal;
+}
+#criarQuadra {
+	color: #FFF;
+	text-align: center;
+	display: block;
+	margin-left: 441px;
+	margin-top: -53px;
+	text-transform: uppercase;
+}
+
+.convite {
+	width: 218px;
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 15px;
+	border-right: solid 1px #b5aca0;
+	padding-right: 5px;
+	color: #736E5A;
+	display: inline-block;
+	padding-left: 10px;
+}
+.acoes  {
+	margin-top: 20px;
+	display: inline-block;
+
+}
+.acoes a {
+	width: 58px;
+	text-align: center;
+	padding: 5px;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 12px;
+}
+.participanteEmCampo {
+	border: solid 2px green;
+	display: inline-block;
+	margin-right: 65px;
+	margin-top: 10px;
+	height: 75px;
+	width: 75px;
+	vertical-align: top;
+	background-image: url('/images/bgs/mural.png');
+}
+.selo {
+	padding: 5px;
+	display: block;
+	border-radius: 10px;
+	background-color: #125b54;
+	width: 18px;
+	color: #FFF;
+	margin-left: 25px;
+	margin-top: 25px;
+}
+.checkConvidar {
+	text-align: left;
+	padding: 0px;
+	font-size: 11px;
+	vertical-align: middle;
+	padding-right: 5px;
+	padding-left: 5px;
+	cursor: default;
+}
+#outList {
+	overflow: scroll;
+	width: 570px;
+	max-height: 120px;
+	border:solid 1px #d7d0c6;
+	padding: 10px;
+	margin-top: 10px;
+}
+#subMenuGame a {
+	color:#FFFFFF;
+}
+.half {
+	width: 470px;
+	display: inline-block;
+	vertical-align: top;
+}
+#confirmados {
+	width: 220px;
+	display: inline-block;
+	margin-right: 15px;
+	vertical-align: top;
+}
+#pendentes {
+	width: 220px;
+	display: inline-block;
+	vertical-align: top;
+}
+.escudo {
+	width: 33px;
+	height: 33px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+#avatarBox .avatar {
+	height: 245px;
+}
+#listaJogadores {
+	margin-left: 40px;
+}
+.alerta {
+	display: block;
+	padding: 5px;
+	text-align: center;
+	margin-top: 32px;
+	font-size: 14px;
+	top: 0px;
+	width: 100%;
+	background-color:#ff8d00;
+	text-align: center;
+	width: 950px;
+	color: #FFFFFF;
+	line-height: 14px;
+	
+}
+#fullhistory {
+	cursor: pointer;
+}
+#menuHistorico {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#menuHistorico li {
+	text-align: center;
+	width: 112px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	border-radius: 5px;
+	vertical-align: top;
+	font-size: 14px;
+	height: 45px;
+	display: inline-block;
+	text-transform: uppercase;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+#menuHistorico .ativo{
+	background-color: #2a938f;
+	color: #FFF;
+}
+
+#menuHistorico .inativo{
+	background-color: #c7beb7;
+	color: #6f6956;
+	display: none;
+}
+.resumoJogo {
+	width: 677px;
+	padding: 10px;
+}
+.resumoJogo td {
+	font-family: arial;
+	font-size: 12px;
+	line-height: 18px;
+	color: #514d38;
+}
+.zebra {
+	background-image: url('/images/bgs/gols.png');
+	padding: 10px;
+	text-align: center;
+}
+#filtroHistorico {
+	background-image: url('/images/bgs/gols.png');
+	margin-top: 10px;
+	padding: 10px;
+	width: 655px;
+}
+#filtroHistorico input {
+	border: solid 1px #b5aca0;
+	width: 125px;
+	height: 30px;
+}
+.contentTable  {
+	width: 100%;
+	text-align: center;
+}
+.contentTable  td{
+	text-align: center;
+}
+.gols1 {
+	background-color: #1d8f8f;
+	width: 32px;
+	height: 29px;
+	text-align: center;
+	font-family: 'Oswald' ,"Arial Narrow";
+	text-align: center;
+	margin: auto;
+	color: #FFF;
+	border-radius: 8px;
+	padding-top: 2px;
+	margin-bottom: 10px;
+}
+.gols2 {
+	background-color: #726c5c;
+	width: 32px;
+	height: 25px;
+	text-align: center;
+	font-family: 'Oswald' ,"Arial Narrow";
+	text-align: center;
+	margin: auto;
+	color: #FFF;
+	border-radius: 8px;
+	padding-top: 5px;
+	margin-bottom: 10px;
+	margin-top: 2px;
+}
+.versus {
+	font-size: 22px;
+	font-family: 'Oswald' ,"Arial Narrow";
+	text-align: center;
+}
+.gols1 span {
+	background-color: #fd8c00;
+	display: block;
+	border-radius: 7px;
+	width: 29px;
+	margin: auto;
+	height: 24px;
+	padding-top: 3px;
+}
+.ui-datepicker-trigger {
+	margin-right: 20px;
+	vertical-align: top;
+	margin-left: 5px;
+}
+#dadosGaleria {
+	line-height: 25px;
+}
+#dadosGaleria input {
+	border: solid 1px #b5aca0;
+	width: 325px;
+	height: 30px;
+}
+#dadosGaleria textarea {
+	border: solid 1px #b5aca0;
+	width: 325px;
+	height: 60px;
+}
+#menuGaleria {
+	position: absolute;
+	padding-left: 668px;
+	margin-top: -40px;
+}
+.itemGaleria img{
+	width:180px;
+}
+.boxItemGaleria {
+	height: 140px;
+	overflow: hidden;
+}
+.itemGaleria {
+	display: inline-block;
+	margin-right: 20px;
+}
+.galeriaItem {
+	width: 180px;
+	display: inline-block;
+	margin-right: 20px;
+}
+.galeriaItem img {
+	width: 180px;
+}
+#singlemidia img {
+	max-width: 900px;
+}
+#privacy-erro {
+	display: block;
+	margin-left: 0px;
+	width: 155px;
+	margin-top: -33px;
+}
+.active a {
+	color: red;
+	font-weight: bold;
+}
+.p18 {
+	color: #000;
+	font-size: 18px;
+}
+#buscaJogadoresConvidar {
+	background-image: url('/images/icones/busca.png');
+	width: 369px;
+	height: 28px;
+	border: solid 1px #C5BDB1;
+	background-repeat: no-repeat;
+	background-position: 340px;
+}
+.conviteRecebido {
+	width: 260px;
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 15px;
+	border-right: solid 1px #b5aca0;
+	padding-right: 5px;
+	color: #736E5A;
+	display: inline-block;
+	padding-left: 10px;
+}
+#buscaJogadoresRecreativo {
+	background-image: url('/images/icones/busca.png');
+	width: 569px;
+	height: 28px;
+	border: solid 1px #C5BDB1;
+	background-repeat: no-repeat;
+	background-position: 533px;
+	margin-right: 36px;
+	padding-left: 10px;
+}
+#inbox {
+	display: none;
+}
+#listaAmigos table {
+	width: 185px;
+	background-image: url('/images/bgs/mural.png');
+	display: inline-block;
+	margin-right: 5px;
+	margin-top: 5px;	
+	vertical-align: top;
+}
+
+#alerta {
+	background-color:#ff8d00;
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	width: 100%;
+	border-bottom: solid 3px #f37d37;
+	color: #FFFFFF;
+	display: none;
+	position: fixed;
+}
+#alerta:hover {
+	background-color:red;
+}
+.badges {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+	color: #f37d37;
+	margin-right: 20px;
+}
+.gols {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 11px;
+	color: #125b54;
+}
+#tempoRestando {
+	text-align: center;
+	background-color: #f37d37;
+	padding: 7px;
+	color: #FFF;
+	border:solid 3px #ff8d00;
+	margin-top: 10px;
+}
+#local {
+	width: 285px;
+}
+#endereco {
+	width: 285px;
+}
+#userWidget  {
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 540px;
+	width: 300px;
+	text-align: right;
+}
+#userWidget img {
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+}
+#userWidget .avatarThumb {
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+}
+#userWidget a {
+	color: #FFF;
+}
+.teamNotification {
+	margin-top: 15px;
+}
+#like {
+	margin-left: 25px;
+}
+#contactQuadra {
+	cursor: pointer;
+}

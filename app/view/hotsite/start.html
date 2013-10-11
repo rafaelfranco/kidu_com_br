@@ -1,0 +1,249 @@
+<html>
+	<head>
+		[#header#]
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#esqueci').click(function(){
+					$('#signin').hide();
+					$('#forget').show();
+				});
+
+				$('#sendForget').click(function(){
+					errors = 0;
+					errors += validateEmpty('emailforget');
+					
+					if(errors == 0) {
+						$('#forget').submit();
+					}
+				});
+
+				$(document).keypress(function(event) {
+      				if(event.charCode == 13) {
+      					//testa erros
+						errors = 0;
+						errors += validateEmpty('login');
+						errors += validateEmpty('pass');
+						
+						if(errors == 0) {
+							$.ajax({
+								url: '/action/login/',
+								type: 'POST',
+								async:false,
+								data: { 
+				      					login: $('#login').attr('value'),  
+				      					senha: $('#pass').attr('value')
+				     				},
+							        success: function(json) {
+							        	dados = json.split(";");
+							        	//cadastre realizado com sucesso
+							        	if(dados[0] == 'sucesso') {
+							        		window.location = '/perfil';
+							        	} else {
+											setInvalid('login',dados[1]);
+							        	}
+							        }
+							});
+						}
+
+      				}
+				});
+
+			});
+		</script>
+		<style type="text/css">
+			body {
+				background-image: url('/images/bgs/home.jpg');
+				background-color: #e6e1da;
+				background-position: -100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="fb-root"></div>
+		<script>
+		  // Additional JS functions here
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '269116149888237', // App ID
+		      channelUrl : '//WWW.FUTBOOKING.COM/channel.html', // Channel File
+		      status     : true, // check login status
+		      cookie     : true, // enable cookies to allow the server to access the session
+		      xfbml      : true  // parse XFBML
+		    });
+
+		    // Additional init code here
+		    FB.getLoginStatus(function(response) {
+				  if (response.status === 'connected') {
+				  	$('#AccessToken').val(response.authResponse.accessToken);
+				    // connected
+				  } else if (response.status === 'not_authorized') {
+				    // not_authorized
+				  } else {
+				    // not_logged_in
+				  }
+			});
+
+		  };
+
+		  // Load the SDK Asynchronously
+		  (function(d){
+		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement('script'); js.id = id; js.async = true;
+		     js.src = "//connect.facebook.net/en_US/all.js";
+		     ref.parentNode.insertBefore(js, ref);
+		   }(document));
+
+
+		  function buscaDadosFb() {
+			    FB.api('/me?fields=picture,name,email,id,birthday,gender', function(response) {
+			    //caso já esteja cadstrado logo o usuario
+		    	$.ajax({
+					url: '/action/loginfb/',
+					type: 'POST',
+					async:false,
+					data: { 
+	      					facebook_id: response.id    
+	     				},
+				        success: function(json) {
+				        	dados = json.split(";");
+				        	//caso tenha logado
+				        	if(dados[0] == 'sucesso') {
+				        		window.location = '/perfil';
+				        	} else {
+
+								//caso contrario preenche os valores
+								$('#nome').attr('value',response.name);
+						        $('#email').attr('value',response.email);
+						        $('#reemail').attr('value',response.email);
+						        $('#facebook_id').attr('value',response.id);
+
+						        if(response.gender == 'male') {
+						        	$('#sexo').attr('value','m');
+						        } else {
+						        	$('#sexo').attr('value','f');
+						        }
+
+								date = response.birthday.split('/');
+						        $('#dia_nascimento').attr('value',date[1]);
+						        $('#mes_nascimento').attr('value',date[0]);
+						        $('#ano_nascimento').attr('value',date[2]);
+
+
+						        //marco os campos que devem ser preenchidos
+						        $('#senha').css('backgroundColor','rgb(255, 245, 175);');
+						        $('#resenha').css('backgroundColor','rgb(255, 245, 175);');
+
+						        //busco a foto do perfil
+			        			FB.api({
+						                method: 'fql.query',
+						                query: 'SELECT pid, src_big, src_big_height, src_big_width FROM photo WHERE aid IN ( SELECT aid FROM album WHERE owner="' + response.id + '" AND name = "Profile Pictures")'
+						            },
+						            function(data1) {
+						            	$('#foto').attr('value',data1[1].src_big);	
+						            });
+				        	}
+				        }
+					});
+				});
+			}
+
+			function login() {
+			    FB.login(function(response) {
+			        if (response.authResponse) {
+			            // connected
+						buscaDadosFb();
+			        } else {
+			            // cancelled
+			        }
+			    }, {scope: 'email,user_birthday,user_photos,publish_actions,publish_stream,publish_checkins'});
+			}
+
+
+		</script>
+
+		<div id="content">
+				<div id="homeTop">
+					<img src="/images/logoHome.png" alt="Futbooking"><br>
+					<h2>A comunidade de quem gosta de jogar bola</h2>
+					<h4>Organize jogos, campeonatos, junte seus amigos e conhe&ccedil;a pessoas</h4>
+					<h4>que gostam de jogar futebol. No Futbooking a bola n&atilde;o para de rolar.</h4>
+				</div>
+				<div id="loginArea">
+					<form id="signin">
+						<h2>Entrar no Futbooking</h2><br><br>
+						<label>E-mail &nbsp;</label> <input class="input" type="text" name="email" id="login"> 
+						<span class="erro" id="login-erro">Preencha o e-mail completo</span><br>
+						<label>Senha &nbsp;</label> <input class="input" type="password" name="pass" id="pass">
+						<span class="erro" id="pass-erro">Preencha a senha completa</span><br>
+						<span id="sendSignIn" class="button">Entrar</span>
+						<br><br>
+						<div class="right lostpass">
+							Esqueceu a senha? <br>
+							<a href="#" id="esqueci">Clique aqui</a>
+						</div>
+					</form>
+					<form action="/action/reenvia-senha" id="forget" method="post">
+						<h2>Esqueci a senha</h2><br><br>
+						Insira o email cadastrado &nbsp; <input class="input" type="text" name="emailforget" id="emailforget"> <br>
+						<span class="erro" id="emailforget-erro">Insira o email cadastrado</span>
+						<br>
+						<span id="sendForget" class="button">Enviar</span>
+					</form>
+				</div>
+			
+			
+				<form id="signup">
+					<input type="hidden" id="facebook_id">
+					<input type="hidden" id="foto">
+					<span id="signupTitle">N&atilde;o possui uma conta? CADASTRE-SE! </span><br>
+					<label>Nome &nbsp; </label>
+					<input class="input" type="text" value="[#nome#]" id="nome">
+					<span class="erro" id="nome-erro">Preencha o nome completo</span>
+					<label>Email &nbsp; </label>
+					<input class="input" type="text" value="[#email#]" name="email" id="email">
+					<span class="erro" id="email-erro">Preencha o email completo</span>
+					<label>Confirmar E-mail &nbsp; </label>
+					<input class="input" type="text" value="[#email#]" name="reemail" id="reemail">
+					<span class="erro" id="reemail-erro">Repita o email igual ao preenchido acima</span>
+					<label>Senha &nbsp; </label>
+					<input class="input" type="password" name="senha" id="senha">
+					<span class="erro" id="senha-erro">Preencha a senha completo</span> 
+					<label>Confirmar a senha &nbsp; </label>
+					<input class="input" type="password" name="resenha" id="resenha">
+					<span class="erro" id="resenha-erro">Repita a senha corretamente</span> 
+					<div class="inline">
+						<label>Nascimento &nbsp; </label>
+						[#dia_nascimento#]/[#mes_nascimento#]/[#ano_nascimento#]
+					</div>
+					<div class="inline">
+						<span class="inlineLabel">Sexo &nbsp; </span>
+						<select name="sexo" id="sexo">
+							<option value="m">Masculino</option>
+							<option value="f">Feminino</option>
+						</select>
+					</div>
+					<br><br> 
+					<div class="inline half" id="termo">
+						<input type="checkbox" name="privacy" id="privacy">Li, e concordo com a <a target="_blank" href="/hotsite/privacidade">Pol&iacute;tica de Privacidade</a>	<br><br>
+						<span class="erro" style="width: 155px;margin-top:-35px;" id="privacy-erro">Voc&ecirc; precisa aceitar a pol&iacute;tica de privacidade</span> 
+
+					</div>
+					<input type="hidden" id="AccessToken">
+					<div class="inline  right">
+						<span id="sendSignUp" href="" class="button">Cadastre-se</span>
+					</div>
+				</form>
+				<img src="/images/bola.png" alt="" id="bola">	
+				<div id="facebookLogin">
+					<a href="javascript:login();">
+						<img src="/images/facebook.png" alt=""> Entrar com a conta do Facebook
+					</a>
+				</div>
+				<a id="criarQuadra" href="/quadras/criar">Criar p&aacute;gina de quadra</a>
+
+		</div>
+
+		[#footer#]
+	</body>
+</html>
