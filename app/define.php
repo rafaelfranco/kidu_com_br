@@ -14,7 +14,7 @@
 	}
 	if($_SERVER['HTTP_HOST'] == PRODUCTION_URL) {
 		error_reporting(0);
-		define('SIMPLEPHP_PATH', '/var/www/code/SimplePHP/');
+		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP');
 	}
 
 	define('LANGUAGE', 'pt-br');
