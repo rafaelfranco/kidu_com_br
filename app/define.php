@@ -17,11 +17,12 @@
 		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP');
 		define('APP_PATH', '/var/www/kidu_com_br//app/');
 	}
-
+	echo APP_PATH;
+	
 	define('LANGUAGE', 'pt-br');
 
 	#import libraries
-	include SIMPLEPHP_PATH.'app/code/libs/MDB2.php';
+	#include SIMPLEPHP_PATH.'app/code/libs/MDB2.php';
 
 	#init db connections
 	#include 'config/db.php';
