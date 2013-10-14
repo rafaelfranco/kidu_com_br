@@ -11,11 +11,13 @@
 	if($_SERVER['HTTP_HOST'] == DEVEVOPMENT_URL) {
 		define('SIMPLEPHP_PATH', '/Library/Server/Web/Data/Sites/kidu_com_br/SimplePHP/');
 		define('APP_PATH', '/Library/Server/Web/Data/Sites/kidu_com_br/app/');
+		define('ELGG_WS','http://elgg.local/services/api/rest/json/');
 	}
 	if($_SERVER['HTTP_HOST'] == PRODUCTION_URL) {
 		#error_reporting(0);
 		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP/');
 		define('APP_PATH', '/var/www/kidu_com_br/app/');
+		define('ELGG_WS','http://elgg.rfti.com.br/services/api/rest/json/');
 	}
 	
 

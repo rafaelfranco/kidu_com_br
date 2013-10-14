@@ -1,38 +1,39 @@
 <html>
 	<head>
 		[#head#]
+		<script type="text/javascript" src="/js/hotsite/signup.js"></script> 
 	</head>
 	<body>
 		[#header#]
 		<form id="signup">
-			<input type="hidden" id="facebook_id">
-			
-			<label>[!displayName!]</label>
-			<input class="input" type="text" value="[#nome#]" id="nome">
-			<span class="erro" id="nome-erro">Preencha o nome completo</span>
-			
-			<label>[!email!]</label>
-			<input class="input" type="text" value="[#email#]" name="email" id="email">
-			<span class="erro" id="email-erro">Preencha o email completo</span>
-			
-			<label>[!username!] &nbsp; </label>
-			<input class="input" type="text" value="" name="username" id="username">
-			<span class="erro" id="username-erro">Repita o email igual ao preenchido acima</span>
-			
-			<label>[!password!] &nbsp; </label>
-			<input class="input" type="password" name="senha" id="senha">
-			<span class="erro" id="senha-erro">Preencha a senha completo</span> 
-			
-			<label>[!repassword!] &nbsp; </label>
-			<input class="input" type="password" name="resenha" id="resenha">
-			<span class="erro" id="resenha-erro">Repita a senha corretamente</span> 
-			
-			<input type="hidden" id="AccessToken">
-			<div class="inline  right">
-				<span id="sendSignUp" href="" class="button">Cadastre-se</span>
-			</div>
-		</form>
 
+			<label>[!username!]</label>
+			<input class="input" type="text"  id="username">
+			<span class="erro" id="username-erro">[!username-empty!]</span>
+			
+			<label>[!your-email!]</label>
+			<input class="input" type="text"  id="email">
+			<span class="erro" id="email-erro">[!your-email-empty!]</span>
+			
+			<label>[!name!]</label>
+			<input class="input" type="text"  id="name">
+			<span class="erro" id="name-erro">[!name-empty!]</span>
+			
+			<label>[!father-email!]</label>
+			<input class="input" type="text"  id="father-email">
+			<span class="erro" id="father-email-erro">[!father-email!]</span>
+
+			<label>[!password!]</label>
+			<input class="input" type="password" id="password">
+			<span class="erro" id="password-erro">[!password-empty!]</span> 
+			
+			<label>[!repassword!]</label>
+			<input class="input" type="password"  id="repassword">
+			<span class="erro" id="repassword-erro">[!repassword-empty!]</span> 
+			
+			<input id="sendSignup" type="button" value="[!signup!]" />
+
+		</form>
 		[#footer#]
 	</body>
 </html>

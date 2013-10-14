@@ -27,6 +27,7 @@ class action extends simplePHP {
         }
 
         public function _actionStart() {  
+        
         }
 
 
@@ -35,41 +36,10 @@ class action extends simplePHP {
          * @return array
          * */
         public function _actionSignup() {
-            $data['nome'] = utf8_decode($_POST['nome']);
-            $data['email'] = $_POST['email'];
-            $data['senha'] = md5($_POST['senha']);    
-            $data['nascimento'] = $_POST['ano_nascimento'].'-'.$_POST['mes_nascimento'].'-'.$_POST['dia_nascimento'];
-            $data['sexo'] = $_POST['sexo'];
-            if($_POST['facebook_id'] != '') {
-              $data['facebook_id'] =   $_POST['facebook_id'];
-              $data['AccessToken'] = $_POST['AccessToken'];
-            }
-
-            if($_POST['foto'] != '') {
-                $file = $this->loadModule('file');
-                $data['avatar'] = $file->copyFile($_POST['foto'],'repository/upload/');   
-            }
-            
-            #verifico se o usuario já estava pré-cadastrado
-            $preCadastro = $this->model->getData('usuario','a.*', array('email'=>$data['email'],'precadastro'=>1));
-            if($preCadastro[0]['result'] != 'empty') {
-              $user_id = $preCadastro[0]['id'];
-              $this->model->alterData('usuario', $data, array('id'=>$user_id));
-            } else {
-              $user_id = $this->model->addData('usuario',$data,true);  
-            }
-
-            if($user_id != 0) {
-                echo 'sucesso;Usuario cadastrado com sucesso;';
-
-                //start session
-                $this->logUser($user_id,utf8_encode($_POST['nome']),'jogador');
-
-                //cria o diretorio do usuario
-                mkdir('/repository/'.$_SESSION['usuario_id']);
-            } else {
-                echo 'erro;Ocorreu um erro;';
-            }
+            //do signup
+            #echo ELGG_WS;
+          pr($_POST);
+            exit;
         }   
 
         /**
