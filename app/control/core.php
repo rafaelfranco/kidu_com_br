@@ -16,6 +16,8 @@ class core extends simplePHP {
         	$this->model = $this->loadModule('model');
             $this->html = $this->loadModule('html');
         }
+
+        public function post
         
         /**
          *  isLogged

@@ -5,7 +5,7 @@ function setValid(element) {
 function setInvalid(element,msg) {
 	$('#'+element).css('border','solid 1px red');
 	$('#'+element+'-erro').html(msg);
-	$('#'+element+'-erro').css('display','block');
+	$('#'+element+'-erro').fadeIn();
 }
 //Funcoes executadas no load da aplicação
 $(document).ready(function() {
