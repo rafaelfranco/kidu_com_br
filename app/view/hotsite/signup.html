@@ -1,0 +1,38 @@
+<html>
+	<head>
+		[#head#]
+	</head>
+	<body>
+		[#header#]
+		<form id="signup">
+			<input type="hidden" id="facebook_id">
+			
+			<label>[!displayName!]</label>
+			<input class="input" type="text" value="[#nome#]" id="nome">
+			<span class="erro" id="nome-erro">Preencha o nome completo</span>
+			
+			<label>[!email!]</label>
+			<input class="input" type="text" value="[#email#]" name="email" id="email">
+			<span class="erro" id="email-erro">Preencha o email completo</span>
+			
+			<label>[!username!] &nbsp; </label>
+			<input class="input" type="text" value="" name="username" id="username">
+			<span class="erro" id="username-erro">Repita o email igual ao preenchido acima</span>
+			
+			<label>[!password!] &nbsp; </label>
+			<input class="input" type="password" name="senha" id="senha">
+			<span class="erro" id="senha-erro">Preencha a senha completo</span> 
+			
+			<label>[!repassword!] &nbsp; </label>
+			<input class="input" type="password" name="resenha" id="resenha">
+			<span class="erro" id="resenha-erro">Repita a senha corretamente</span> 
+			
+			<input type="hidden" id="AccessToken">
+			<div class="inline  right">
+				<span id="sendSignUp" href="" class="button">Cadastre-se</span>
+			</div>
+		</form>
+
+		[#footer#]
+	</body>
+</html>

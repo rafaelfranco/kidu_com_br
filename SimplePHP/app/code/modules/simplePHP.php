@@ -15,7 +15,7 @@
  * */
 class simplePHP extends util {
    
-    public $version = '0.0';
+    public $version = '0.1';
     private static $controler;
     private static $action;
 
@@ -95,9 +95,9 @@ class simplePHP extends util {
 			}   
         }       
 
-        
-        
-        
+        #apply language
+        include (APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/'.$action.'.php');
+
         #call the controller                        
         $control = new $controler();
         $action = "_action".  ucfirst($action); 
@@ -107,10 +107,14 @@ class simplePHP extends util {
 		} else {
 			$keys = $control->_actionStart();
 		}
+
 	   
         #app keys
-
         $html = ($page != '') ? $this->applyKeys($page,$keys) : 'Template not found or empty';
+
+        $html = ($page != '') ? $this->applyLanguageKeys($html,$LANGUAGE) : 'Template not found or empty';
+
+       
 
         #print the page
         echo $html;
@@ -130,6 +134,22 @@ class simplePHP extends util {
         for ($x = 1; $x < 6; $x++) {
             foreach ($keys as $key => $value) {
                 $html = str_replace("[#$key#]", $value, $html);
+            }
+        }
+        return $html;
+    }
+
+    /**
+     * applyKeys function
+     * Apply keys to template
+     * @param <string> $html
+     * @param  <array> $keys
+     * @return <string> $html
+     */
+    public function applyLanguageKeys($html, $keys) {
+        for ($x = 1; $x < 6; $x++) {
+            foreach ($keys as $key => $value) {
+                $html = str_replace("[!$key!]", $value, $html);
             }
         }
         return $html;

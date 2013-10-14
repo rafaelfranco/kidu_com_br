@@ -29,18 +29,18 @@ class hotsite extends simplePHP {
             $this->html = $this->loadModule('html');
 			
 
-             #load tdd module
-            $this->keys['tests'] = '';
-            $tests = $this->loadModule('tests');
-            $this->keys['tests'] = $tests->loadTests();
+            #load tdd module
+            #$this->keys['tests'] = '';
+            #$tests = $this->loadModule('tests');
+            #$this->keys['tests'] = $tests->loadTests();
             
             $this->keys['search'] = $_GET['search']; 
-            
-            #inclui os arquivos que sao globais a todas as sessoes
             #set global keys
-            $this->keys['pageTitle'] = 'Footbooking - &Eacute; s&oacute; marcar!';
 
             #include system globals
+            $this->keys['head'] = $this->includeHTML('../view/hotsite/global/head.html');
+
+            #header
             $this->keys['header'] = $this->includeHTML('../view/hotsite/global/header.html');
 
             #footer
@@ -48,7 +48,6 @@ class hotsite extends simplePHP {
 
             #topo
             $this->keys['top'] = $this->includeHTML('../view/hotsite/global/top.html');
-
 
 
         }
@@ -76,7 +75,7 @@ class hotsite extends simplePHP {
         * */
        public function _actionLocais() {
            if($_GET['term'] != '') {
-            $filtros['like name'] = $_GET['term'];
+              $filtros['like name'] = $_GET['term'];
            }
 
            $res = $this->model->getData('locais','a.*', $filtros);
