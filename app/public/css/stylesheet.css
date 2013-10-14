@@ -3,7 +3,6 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-size: 14px;
-	background-image: url('/images/bgs/bg.jpg');
 	background-repeat:repeat-x;
 	background-color: #FFFFFF;
 	text-transform: capitalize;
@@ -11,6 +10,25 @@ body {
 }
 form {
 	line-height: 50px;
+}
+
+h1 {
+    text-indent: -9999px;                 
+    background-image: url('../images/logo.jpg');  
+    height: 40px;
+	width: 88px;
+	white-space: nowrap; 
+	cursor: pointer;
+	border: 0px;       
+}
+
+header {
+	background-color: #c2d4ec;
+}
+
+header > section {
+	width: 960px;
+	margin: auto;
 }
 
 input[type=text],
