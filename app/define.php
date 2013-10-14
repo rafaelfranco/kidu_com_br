@@ -14,10 +14,10 @@
 	}
 	if($_SERVER['HTTP_HOST'] == PRODUCTION_URL) {
 		#error_reporting(0);
-		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP');
+		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP/');
 		define('APP_PATH', '/var/www/kidu_com_br/app/');
 	}
-	echo APP_PATH;
+	
 
 	define('LANGUAGE', 'pt-br');
 
