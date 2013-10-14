@@ -13,8 +13,9 @@
 		define('APP_PATH', '/Library/Server/Web/Data/Sites/kidu_com_br/app/');
 	}
 	if($_SERVER['HTTP_HOST'] == PRODUCTION_URL) {
-		error_reporting(0);
+		#error_reporting(0);
 		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP');
+		define('APP_PATH', '/var/www/kidu_com_br//app/');
 	}
 
 	define('LANGUAGE', 'pt-br');
