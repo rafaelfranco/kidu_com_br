@@ -19,6 +19,10 @@ input[type=password] {
 	height: 35px;
 	border: solid 1px #ccc;
 	border-radius: 7px;
+	background-color: #F8F8F8;
+	padding-left: 10px;
+	font-size: 14px;
+	color: #666;
 }
 input[type=button] {
 	background-color: rgb(18, 62, 138);
@@ -38,14 +42,18 @@ label {
 .erro {
 	display: none;
 	position: absolute;
-	background-color: rgb(255, 240, 240);
+	background-color: rgb(255, 250, 250);
 	padding: 0px;
 	margin-top: 7px;
-	padding-left: 10px;
+	padding-left: 27px;
 	padding-right: 10px;
 	border-radius: 7px;
 	color: rgb(216, 75, 75);
 	border: solid 1px rgb(229, 170, 170);
 	line-height: 35px;
+	background-image: url('../images/icon-error.gif');
+	background-repeat: no-repeat;
+	background-position-x: 5px;
+	background-position-y: 10px;
 }
 
