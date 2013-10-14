@@ -35,20 +35,21 @@ input[type=text],
 input[type=password] {
 	width: 200px;
 	height: 35px;
-	border: solid 1px #ccc;
+	border: solid 1px #aab7da;
 	border-radius: 7px;
-	background-color: #F8F8F8;
+	background-color: #FFFFFF;
 	padding-left: 10px;
 	font-size: 14px;
-	color: #666;
+	color: #999999;
 }
 input[type=button] {
-	background-color: rgb(18, 62, 138);
-	color: #FFF;
-	text-transform: uppercase;
+	background-color:#ffffff;
+	color: #333333;
 	padding: 10px;
-	border: solid 2px rgb(8, 8, 88);
+	border: solid 1px #acb5dc;
 	font-size: 13px;
+	border-radius: 7px;
+	font-weight: 700;
 }
 
 label {
