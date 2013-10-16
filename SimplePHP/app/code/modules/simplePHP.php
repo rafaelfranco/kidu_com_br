@@ -95,8 +95,24 @@ class simplePHP extends util {
 			}   
         }       
 
-        #apply language
-        include (APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/'.$action.'.php');
+        #apply language to controller
+        if(is_file(APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/default.php')) {
+            include (APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/default.php');
+        } else {
+            #TODO show language fbsql_warnings()
+            $_WARNINGS[] = 'Language file not found in:'.APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/default.php';
+        }
+
+        #apply language to action
+        if(is_file(APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/'.$action.'.php')) {
+            include (APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/'.$action.'.php');
+        } else {
+            #TODO show language fbsql_warnings()
+            $_WARNINGS[] = 'Language file not found in:'.APP_PATH.'/language/'.LANGUAGE.'/'.$controler.'/'.$action.'.php';
+        }
+
+        //create global
+        define('CURRENT_ACTION',$action);
 
         #call the controller                        
         $control = new $controler();

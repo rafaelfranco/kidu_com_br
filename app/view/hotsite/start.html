@@ -1,10 +1,21 @@
 <html>
 	<head>
 		[#head#]
+		<script type="text/javascript" src="/js/hotsite/signin.js"></script> 
 	</head>
 	<body>
 		[#header#]
-		
+		<form id="signin">
+			<label>[!username!]</label>
+			<input class="input" type="text"  id="username">
+			<span class="erro" id="username-erro">[!username-empty!]</span><br>
+			
+			<label>[!password!]</label>
+			<input class="input" type="password" id="password">
+			<span class="erro" id="password-erro">[!password-empty!]</span> <br>
+
+			<input id="sendSignin" type="button" value="[!signin!]" />
+		</form>
 		[#footer#]
 	</body>
 </html>

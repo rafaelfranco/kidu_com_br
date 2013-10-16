@@ -67,24 +67,13 @@ class hotsite extends simplePHP {
             return $this->keys;
         }
         
-       
-       
        /**
         * _actionLocais function
         * @return array
         * */
-       public function _actionLocais() {
-           if($_GET['term'] != '') {
-              $filtros['like name'] = $_GET['term'];
-           }
-
-           $res = $this->model->getData('locais','a.*', $filtros);
-           foreach ($res as $local) {
-               $locais[] = utf8_encode($local['name']);
-           }
-          # $locais = array('1000000', '20000000');
-           echo json_encode($locais);
-           exit;
+       public function _actionLogoff() {
+          unset($_SESSION['user_token']);
+          $this->redirect('/');
        }     
             
           
