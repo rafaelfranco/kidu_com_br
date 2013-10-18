@@ -1,9 +1,13 @@
 <html>
 	<head>
 		[#head#]
+		<script type="text/javascript">
+			$(document).ready(function() {
+				login();
+			});
+		</script>
 	</head>
 	<body>
-		[#header#]
 		<div id="fb-root"></div>
 		<script>
 		  // Additional JS functions here
@@ -27,8 +31,9 @@
 				    // not_logged_in
 				  }
 			});
+
 		  };
-		  
+
 		  // Load the SDK Asynchronously
 		  (function(d){
 		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
@@ -102,18 +107,12 @@
 			        }
 			    }, {scope: 'email,user_birthday,user_photos,publish_actions,publish_stream,publish_checkins'});
 			}
-		</script>
-			<section id="container">
-			<h2>[!profileUnauthorized!]</h2>
-			<p>[!message!]</p>
 
-			<div id="teamKidu">
-				<b>Equipe KIDU</b>
-				Esse box tem objetivo de facilitar os testes e tem o link que o responsável deverá clicar para autorizar o acesso <br>
-				O link será enviado no e-mail <br><br>
-				<a href="javascript:login();">CLIQUE AQUI PARA AUTORIZAR</a>
-			</div>
-			</section>
-		[#footer#]
+
+		</script>
+
+		<div id="content">
+			<a href="javascript:login();">Entrar com a conta do Facebook</a>
+		</div>	
 	</body>
 </html>

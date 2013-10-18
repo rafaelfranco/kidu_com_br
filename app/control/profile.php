@@ -20,7 +20,7 @@ class profile extends simplePHP {
         
         
         public function __construct() {    
-			  global $keys;
+			global $keys;
 
             #load model module
             $this->model = $this->loadModule('model');
@@ -37,7 +37,7 @@ class profile extends simplePHP {
             }
 
             #if father's user not authorized that use, redirect
-            if((CURRENT_ACTION != 'unauthorized' ) && ($_SESSION['authorized'] != 'true')) {
+            if((CURRENT_ACTION != 'unauthorized' ) && (CURRENT_ACTION != 'authorize' ) && ($_SESSION['authorized'] != 'true')) {
               $this->redirect('/profile/unauthorized');
             }
 
