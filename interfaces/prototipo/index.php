@@ -1,4 +1,12 @@
-<?php include "host.inc" ?>
+<?php 
+include "host.inc";
+
+// if(isset($_POST['username']) && isset($_POST['password'])){
+// http_post_data("http://elasticainterativa.com.br/kidu/services/api/rest/xml/?method=auth.gettoken",array('password' => $_POST['password'], 'username' => $_POST['username']));
+// }
+?>
+
+
 <!doctype html>
 <html>
 
@@ -22,6 +30,32 @@ function muda_opacidade(){
 // document.getElementById('marca').style.opacity = 1;
 // document.getElementById('texto').style.opacity = 1;
 }
+
+function loadXMLDoc(metodo,onde,volta,parametros){
+  if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  } else {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+
+xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+    eval(volta + '(xmlhttp.responseText)'); //aqui eu chamo a função com o texto de resposta
+    }
+  }
+xmlhttp.open(metodo,onde,true);
+    if(metodo == "POST"){xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded")};
+xmlhttp.send(parametros);
+}
+
+function logar(de_onde){
+//alert(de_onde.form.password.value);
+loadXMLDoc("POST","http://elasticainterativa.com.br/kidu/services/api/rest/xml/?method=auth.gettoken","alerta_me","username=" + de_onde.form.username.value + "&password=" + de_onde.form.password.value);
+}
+
+function alerta_me(resp){
+alert(resp);
+}
 </script>
 </head>
 
@@ -30,11 +64,14 @@ function muda_opacidade(){
 <nav>
 <a href="">Para pais</a> | <a href="">Para educadores</a> <a href="cadastro_aluno.php" id="faca_parte">Faça parte</a>
 </nav>
-<form>
+<!-- http://elasticainterativa.com.br/kidu/services/api/rest/xml/?method=system.api.list -->
+<form action="http://elasticainterativa.com.br/kidu/services/api/rest/xml/?method=auth.gettoken" method="post">
+<!-- <form action="" method="post"> -->
 <fieldset id="login">
-<label>login</label> <input type="text" size="15" name="login"><br>
-<label>senha</label> <input type="password" size="15" name="senha"><br>
-<button>OK</button>
+<label>login</label> <input type="text" size="15" name="username"><br>
+<label>senha</label> <input type="password" size="15" name="password"><br>
+<!-- <button onclick="logar(this); return false;">OK</button> -->
+<input type="submit" name="legal" value="vai">
 </fieldset>
 </form>
 </header>
