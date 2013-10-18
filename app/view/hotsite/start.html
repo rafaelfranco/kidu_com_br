@@ -3,9 +3,15 @@
 		[#head#]
 		<script type="text/javascript" src="/js/hotsite/signin.js"></script> 
 	</head>
-	<body>
-		[#header#]
-		<form id="signin">
+	<body id="bodyHome" >
+		<nav>
+			<ul>
+				<li><a href="/fathers">[!forFathers!]</a></li>
+				<li><a href="/teachers">[!forTeachers!]</a></li>
+			</ul>
+		</nav>
+		<div id="homeLogo">KIDU</div>
+		<form>
 			<label>[!username!]</label>
 			<input class="input" type="text"  id="username">
 			<span class="erro" id="username-erro">[!username-empty!]</span><br>
@@ -16,6 +22,10 @@
 
 			<input id="sendSignin" type="button" value="[!signin!]" />
 		</form>
+		<section>
+			<a href="/lost">[!lostPassword!]</a><br>
+			<a href="/signup">[!signup!]</a>
+		</section>
 		[#footer#]
 	</body>
 </html>

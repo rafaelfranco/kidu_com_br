@@ -5,35 +5,37 @@
 	</head>
 	<body>
 		[#header#]
-		<form id="signup">
+		<section id="container">
+			<h2>Cadastro</h2>
+			<form id="signup">
+				<label>[!name!]</label>
+				<input class="input" type="text"  id="name">
+				<span class="erro" id="name-erro">[!name-empty!]</span><br>
+				
+				<label>[!username!]</label>
+				<input class="input" type="text"  id="username">
+				<span class="erro" id="username-erro">[!username-empty!]</span><br>
+				
+				<label>[!email!]</label>
+				<input class="input" type="text"  id="email">
+				<span class="erro" id="email-erro">[!email-empty!]</span><br>
+				
+				<label>[!father-email!]</label>
+				<input class="input" type="text"  id="father-email">
+				<span class="erro" id="father-email-erro">[!father-email-empty!]</span><br>
 
-			<label>[!username!]</label>
-			<input class="input" type="text"  id="username">
-			<span class="erro" id="username-erro">[!username-empty!]</span><br>
-			
-			<label>[!email!]</label>
-			<input class="input" type="text"  id="email">
-			<span class="erro" id="email-erro">[!email-empty!]</span><br>
-			
-			<label>[!name!]</label>
-			<input class="input" type="text"  id="name">
-			<span class="erro" id="name-erro">[!name-empty!]</span><br>
-			
-			<label>[!father-email!]</label>
-			<input class="input" type="text"  id="father-email">
-			<span class="erro" id="father-email-erro">[!father-email!]</span><br>
+				<label>[!password!]</label>
+				<input class="input" type="password" id="password">
+				<span class="erro" id="password-erro">[!password-empty!]</span> <br>
+				
+				<label>[!repassword!]</label>
+				<input class="input" type="password"  id="repassword">
+				<span class="erro" id="repassword-erro">[!repassword-empty!]</span> <br>
+				
+				<input id="sendSignup" type="button" value="[!signup!]" />
 
-			<label>[!password!]</label>
-			<input class="input" type="password" id="password">
-			<span class="erro" id="password-erro">[!password-empty!]</span> <br>
-			
-			<label>[!repassword!]</label>
-			<input class="input" type="password"  id="repassword">
-			<span class="erro" id="repassword-erro">[!repassword-empty!]</span> <br>
-			
-			<input id="sendSignup" type="button" value="[!signup!]" />
-
-		</form>
+			</form>
+		</section>
 		[#footer#]
 	</body>
 </html>

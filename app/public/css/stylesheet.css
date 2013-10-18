@@ -1,11 +1,15 @@
+a {
+	color: #FFF;
+	text-decoration: none;
+}
 body {
-	font-family: "Arial";
+	font-family: 'normal arial', sans-serif;
 	margin: 0px;
 	padding: 0px;
 	font-size: 14px;
 	background-repeat:repeat-x;
 	background-color: #FFFFFF;
-	color: #666;
+	color: #504194;
 }
 form {
 	line-height: 50px;
@@ -13,16 +17,33 @@ form {
 
 h1 {
     text-indent: -9999px;                 
-    background-image: url('../images/logo.jpg');  
-    height: 40px;
+    background-image: url('../images/marca_kidu.gif');  
+    height: 30px;
 	width: 88px;
 	white-space: nowrap; 
 	cursor: pointer;
-	border: 0px;       
+	border: 0px;     
+	background-repeat: no-repeat; 
+	display: inline-block; 
+}
+h2 {
+	display: block;
+	font-family: 'normal arial', sans-serif;
+	font-size: 38px;
+	margin: 0px 0px 20px 0px;
+	padding: 0px 0px 0px 0px;
+}
+h3 {
+	display: block;
+	font-family: 'normal arial', sans-serif;
+	font-size: 35px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 header {
-	background-color: #c2d4ec;
+	background-color: #504194;
+	color: #FFF;
 }
 
 header > section {
@@ -41,6 +62,13 @@ input[type=password] {
 	font-size: 14px;
 	color: #999999;
 }
+
+
+input[type=text]:focus,
+input[type=password]:focus {
+	border: inset 2px #a7b5dd;
+	color: #000;
+}
 input[type=button] {
 	background-color:#ffffff;
 	color: #333333;
@@ -52,11 +80,134 @@ input[type=button] {
 }
 
 label {
-	width: 120px;
+	
 	display: inline-block;
+	text-align: right;
+	font-weight: bold;
 }
 
+nav > ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
 
+nav > ul li{
+	display: inline-block;
+	padding: 10px;
+}
+#areaMenu {
+	width:668px;
+	display: inline-block;
+	text-align: right;
+}
+#areaMenu li{
+	text-align: center;
+}
+#areaMenu a{
+	text-decoration: underline;
+}
+#bodyHome {
+	font-family: 'normal arial', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	background-repeat:repeat-x;
+	background-color: #504194;
+	color: #FFFFFF;
+}
+#bodyHome form {
+	margin: auto;
+	width: 270px;
+	text-align:center;
+}
+#bodyHome section {
+	text-align: center;
+	line-height: 40px;
+	font-size: 18px;
+	margin-top: 10px;
+}
+#container {
+	width: 960px;
+	margin: auto;
+	text-align: left;
+	padding: 15px;
+}
+#homeLogo {
+	text-align: center;
+	color: #FFF;
+	font-size: 250px;
+	font-weight: bold;
+}
+#mainMenu {
+	display: inline-block;
+	text-align: right;
+	width: 868px;
+}
+#sendSignin {
+	margin-left: 203px;
+}
+#sendSignup {
+	margin-left: 422px;
+	cursor: pointer;
+}
+#signup {
+	border: solid 1px;
+	border-radius: 15px;
+	padding: 20px;
+	background-color: #c2d4ed;
+	background-color: rgba(209, 224, 245, 0.22);
+}
+#signup label{ 
+	width: 160px;
+}
+#signup input[type=text],
+#signup input[type=password] {
+	width: 300px;
+}
+#teamKidu {
+	text-align: center;
+	border: #f37d37 4px solid;
+	padding: 10px;
+	background-color: yellow;
+	border-radius: 10px;
+}
+#teamKidu a{
+	color: red;
+	font-weight: bold;
+}
+#userMenu {
+	display: inline-block;
+	padding-left: 10px;
+	vertical-align: top;
+}
+#userData {
+	display: inline-block;
+	padding-top: 10px;
+	vertical-align: middle;
+}
+#userMenu li {
+	display: block;
+	line-height: 18px;
+	padding: 0px;
+	font-size: 14;
+}
+.avatar_small {
+	width: 38px;
+	height: 38px;
+	display: inline-block;
+}
+.bluebox {
+	border: solid 1px;
+	border-radius: 15px;
+	padding: 20px;
+	background-color: #c2d4ed;
+	background-color: rgba(209, 224, 245, 0.22);
+	line-height: 20px;
+}
+.center {
+	text-align: center;
+}
 .erro {
 	display: none;
 	position: absolute;
