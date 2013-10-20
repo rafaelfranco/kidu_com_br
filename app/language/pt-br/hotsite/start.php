@@ -1,4 +1,4 @@
 <?php 
 	
-	$LANGUAGE['signup'] = 'Faça parte!';
+	$LANGUAGE['signup'] = 'Cadastrar ▸';
 ?>

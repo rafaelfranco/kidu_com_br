@@ -10,7 +10,9 @@
 				<li><a href="/teachers">[!forTeachers!]</a></li>
 			</ul>
 		</nav>
-		<div id="homeLogo">KIDU</div>
+		<div id="homeLogo">
+			<img src="images/marca_kidu_home.gif" alt="Kidu" width="463" height="168">
+		</div>
 		<form>
 			<label>[!username!]</label>
 			<input class="input" type="text"  id="username">
@@ -20,10 +22,10 @@
 			<input class="input" type="password" id="password">
 			<span class="erro" id="password-erro">[!password-empty!]</span> <br>
 
-			<input id="sendSignin" type="button" value="[!signin!]" />
+			<input id="sendSignin" class="button" type="button" value="[!signin!]" /><br>
+			<a href="/lost">[!lostPassword!]</a><br>
 		</form>
 		<section>
-			<a href="/lost">[!lostPassword!]</a><br>
 			<a href="/signup">[!signup!]</a>
 		</section>
 		[#footer#]

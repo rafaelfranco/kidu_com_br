@@ -53,37 +53,33 @@ header > section {
 
 input[type=text],
 input[type=password] {
-	width: 200px;
-	height: 35px;
-	border: solid 1px #aab7da;
-	border-radius: 7px;
-	background-color: #FFFFFF;
-	padding-left: 10px;
-	font-size: 14px;
-	color: #999999;
+width: 200px;
+height: 35px;
+border: 0;
+border-radius: 7px;
+background-color: #FFFFFF;
+padding-left: 10px;
+font-size: 14px;
+color: #999999;
+border: inset 2px #a7b5dd;
 }
 
 
 input[type=text]:focus,
 input[type=password]:focus {
-	border: inset 2px #a7b5dd;
-	color: #000;
+color: #000;
 }
 input[type=button] {
-	background-color:#ffffff;
-	color: #333333;
-	padding: 10px;
+	padding: 11px;
 	border: solid 1px #acb5dc;
-	font-size: 13px;
+	font-size: 14px;
 	border-radius: 7px;
 	font-weight: 700;
 }
 
 label {
-	
 	display: inline-block;
 	text-align: right;
-	font-weight: bold;
 }
 
 nav > ul {
@@ -117,16 +113,67 @@ nav > ul li{
 	color: #FFFFFF;
 }
 #bodyHome form {
-	margin: auto;
-	width: 270px;
-	text-align:center;
+	background-color: #F5F5F5;
+	margin: 50px auto 0;
+	width: 375px;
+	border-radius: 5px;
+	box-shadow: 2px 5px 4px #444444;
+	padding: 20px 0;
 }
 #bodyHome section {
-	text-align: center;
-	line-height: 40px;
-	font-size: 18px;
-	margin-top: 10px;
+	width: 380px;
+	text-align: right;
+	line-height: 20px;
+	font-size: 90%;
+	margin: 10px auto;
+	text-decoration: underline;
 }
+
+#bodyHome nav {
+	width: 940px;
+	margin: 0 auto 60px;
+	font-size: 90%;
+	padding-top: 15px;
+}
+
+#bodyHome nav a{
+	margin-right: 30px;
+	text-decoration: underline;
+}
+
+#bodyHome form label{
+	color: #504194;
+	font-size: 100%;
+	padding: 0;
+	margin: 0 30px;
+	display: inline;
+	text-align: left;
+	line-height: 1.9em;
+}
+
+#bodyHome form input[type="text"], 
+#bodyHome form input[type="password"]{
+	width: 330px;
+	margin: 0 20px 20px;
+}
+
+#bodyHome form a{
+	float: right;
+	color: #797a7d;
+	padding: 0 30px;
+	line-height: 2em;
+}
+
+.button {
+	padding: 12px 30px;
+	border-radius: 5px;
+	background: transparent url('../images/fundo_botoes.jpg') repeat-x 0 0; 
+	font-size: 100%;
+	font-weight: bold;
+	cursor: pointer;
+	color: #FFFFFF;
+}
+
 #container {
 	width: 960px;
 	margin: auto;
@@ -145,7 +192,9 @@ nav > ul li{
 	width: 868px;
 }
 #sendSignin {
-	margin-left: 203px;
+	margin-left: 265px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 #sendSignup {
 	margin-left: 422px;
