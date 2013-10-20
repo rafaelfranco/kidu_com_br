@@ -100,6 +100,7 @@ class core extends simplePHP {
                 $return['username'] = $username;
                 $return['avatar_url'] = $response->result->avatar_url;
                 $return['authorized'] = $response->result->authorized;
+                $return['guid'] = $response->result->guid;
                 
                 return $return;
             } else {

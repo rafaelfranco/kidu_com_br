@@ -65,6 +65,19 @@ class action extends simplePHP {
             }
             exit;
          }
+
+        /**
+        * _actionAuthorize function
+        * #father authorize user to enter the site
+        */
+        public function _actionAuthorize() {
+          $res = $this->core->getWs('user.authorize',array('guid'=>$_SESSION['guid'],'facebook_id'=>$_POST['facebook_id'],'fb_access_token'=>$_POST['fb_access_token']));
+          if($res->result == 1) {
+            $_SESSION['authorized'] = 'true';
+            echo 'success';
+            exit;
+          }
+        }
 }
 
 ?>

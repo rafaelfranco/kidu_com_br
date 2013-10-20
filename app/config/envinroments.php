@@ -5,7 +5,7 @@
 
 
     #define constants for envinronments
-    define('DEVEVOPMENT_URL','kidu.local');
+    define('DEVEVOPMENT_URL','local.kidu.com.br');
     define('TEST_URL','kidu.rfti.com.br');
     define('PRODUCTION_URL','kidu.rfti.com.br');
 

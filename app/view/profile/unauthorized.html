@@ -9,8 +9,8 @@
 		  // Additional JS functions here
 		  window.fbAsyncInit = function() {
 		    FB.init({
-		      appId      : '269116149888237', // App ID
-		      channelUrl : '//WWW.FUTBOOKING.COM/channel.html', // Channel File
+		      appId      : '224408377690232', // App ID
+		      channelUrl : '//www.kidu.com.br/channel.html', // Channel File
 		      status     : true, // check login status
 		      cookie     : true, // enable cookies to allow the server to access the session
 		      xfbml      : true  // parse XFBML
@@ -39,74 +39,41 @@
 		   }(document));
 
 
-		  function buscaDadosFb() {
-			    FB.api('/me?fields=picture,name,email,id,birthday,gender', function(response) {
+		function authorize() {
+			    FB.api('/me?fields=name,email,id', function(response) {
 			    //caso já esteja cadstrado logo o usuario
 		    	$.ajax({
-					url: '/action/loginfb/',
+					url: '/action/authorize/',
 					type: 'POST',
 					async:false,
 					data: { 
-	      					facebook_id: response.id    
+	      					facebook_id: response.id,
+	      					fb_access_token: $('#AccessToken').val()
 	     				},
 				        success: function(json) {
-				        	dados = json.split(";");
-				        	//caso tenha logado
-				        	if(dados[0] == 'sucesso') {
-				        		window.location = '/perfil';
-				        	} else {
-
-								//caso contrario preenche os valores
-								$('#nome').attr('value',response.name);
-						        $('#email').attr('value',response.email);
-						        $('#reemail').attr('value',response.email);
-						        $('#facebook_id').attr('value',response.id);
-
-						        if(response.gender == 'male') {
-						        	$('#sexo').attr('value','m');
-						        } else {
-						        	$('#sexo').attr('value','f');
-						        }
-
-								date = response.birthday.split('/');
-						        $('#dia_nascimento').attr('value',date[1]);
-						        $('#mes_nascimento').attr('value',date[0]);
-						        $('#ano_nascimento').attr('value',date[2]);
-
-
-						        //marco os campos que devem ser preenchidos
-						        $('#senha').css('backgroundColor','rgb(255, 245, 175);');
-						        $('#resenha').css('backgroundColor','rgb(255, 245, 175);');
-
-						        //busco a foto do perfil
-			        			FB.api({
-						                method: 'fql.query',
-						                query: 'SELECT pid, src_big, src_big_height, src_big_width FROM photo WHERE aid IN ( SELECT aid FROM album WHERE owner="' + response.id + '" AND name = "Profile Pictures")'
-						            },
-						            function(data1) {
-						            	$('#foto').attr('value',data1[1].src_big);	
-						            });
+				        	if(json == 'success') {
+				        		window.location = '/profile';
 				        	}
 				        }
-					});
 				});
-			}
+			});
+		}
 
 			function login() {
 			    FB.login(function(response) {
 			        if (response.authResponse) {
 			            // connected
-						buscaDadosFb();
+						authorize();
 			        } else {
 			            // cancelled
 			        }
-			    }, {scope: 'email,user_birthday,user_photos,publish_actions,publish_stream,publish_checkins'});
+			    }, {scope: 'email'});
 			}
 		</script>
 			<section id="container">
 			<h2>[!profileUnauthorized!]</h2>
 			<p>[!message!]</p>
-
+			<input type="hidden" id="AccessToken" />
 			<div id="teamKidu">
 				<b>Equipe KIDU</b>
 				Esse box tem objetivo de facilitar os testes e tem o link que o responsável deverá clicar para autorizar o acesso <br>
