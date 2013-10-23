@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Project: Inter.net
+ * Project: KIDU
  * 
- * @copyright Inter.net  www.br.inter.net
+ * @copyright RFTI www.rfti.com.br
  * @author Rafael Franco <rfranco@team.br.inter.net>
  */
 /**
@@ -27,7 +27,17 @@ class hotsite extends simplePHP {
 
             #load html module
             $this->html = $this->loadModule('html');
+
+             #load core module
+            $this->core = $this->loadModule('core','',true);
 			
+
+             #if not logged in redirect to hotsite
+            if($this->core->isLogged()) {
+                //user data
+                $this->keys['name_user'] = $_SESSION['name'];
+                $this->keys['avatar'] = $_SESSION['avatar_url'];
+            }
 
             #load tdd module
             #$this->keys['tests'] = '';
@@ -53,26 +63,28 @@ class hotsite extends simplePHP {
         }
 
         public function _actionStart() {
-            //caso ja esteja logado manda pro perfil
-            if(!empty($_SESSION['usuario_id'])){
-              $this->redirect('/perfil');
+            //caso ja esteja logado manda pra home logada
+            if(!empty($_SESSION['username'])){
+              $this->redirect('/home');
             }
-            $this->keys['dia_nascimento'] = $this->html->select('true',$this->days(),'dia_nascimento',1,0);
-            $this->keys['mes_nascimento'] = $this->html->select('true',$this->mounths(),'mes_nascimento',1,0);
-            $this->keys['ano_nascimento'] = $this->html->select('true',$this->years(1920,date('Y')),'ano_nascimento',1980,0);
-            
-            $this->keys['nome'] = (isset($_GET['nome'])) ? $_GET['nome'] : '' ; 
-            $this->keys['email'] = (isset($_GET['email'])) ? $_GET['email'] : '' ; 
 
             return $this->keys;
         }
+
+        public function _actionHome() {
+            //busca  a lista de comunidades
+            
+
+            return $this->keys;
+        }
+        
         
        /**
         * _actionLocais function
         * @return array
         * */
        public function _actionLogoff() {
-          unset($_SESSION['user_token']);
+          unset($_SESSION['username']);
           $this->redirect('/');
        }     
             

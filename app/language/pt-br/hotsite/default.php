@@ -8,4 +8,7 @@
 	$LANGUAGE['forFathers'] = 'Para Pais';
     $LANGUAGE['forTeachers'] = 'Para Educadores';
     $LANGUAGE['lostPassword'] = 'Esqueci minha senha';
+
+    $LANGUAGE['settings'] = 'Configurações';
+	$LANGUAGE['exit'] = 'Sair';
 ?>

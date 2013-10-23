@@ -1,10 +1,10 @@
 <?php
 /**
- * Project: Fashionera
+ * Project: KIDU
  * 
- * @copyright Fashionera - www.fashionera.com.br
- * @author Rafael Franco <rfranco@steam.br.inter.net>
- * @package painel
+ * @copyright KIDU - www.kidu.com.br
+ * @author Rafael Franco <rfranco@rfti.com.br>
+ * @package core
  * */
 class core extends simplePHP {
         
@@ -113,7 +113,7 @@ class core extends simplePHP {
          * @return boolean
          * */
         public function isLogged() {
-            if(empty($_SESSION['user_token'])) {
+            if(empty($_SESSION['username'])) {
                 return false;
             } else {
                 return true;

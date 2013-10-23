@@ -19,7 +19,7 @@ $(document).ready(function() {
 			        	dados = json.split(";");
 			        	//cadastre realizado com sucesso
 			        	if(dados[0] == 'success') {
-			        		window.location = '/profile';
+			        		window.location = '/home';
 			        	} else {
 							alert(dados[1]);
 			        	}

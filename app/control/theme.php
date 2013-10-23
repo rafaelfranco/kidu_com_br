@@ -2,13 +2,13 @@
 
 /**
  * Project: KIDU
- * profile class
+ * theme class
  * 
  * @copyright RFTI www.rfti.com.br
  * @author Rafael Franco <rafael@rfti.com.br>
- * @package profile
+ * @package theme
  */
-class profile extends simplePHP {
+class theme extends simplePHP {
         
         #initialize vars
         private $model;
@@ -38,11 +38,11 @@ class profile extends simplePHP {
 
             #if father's user not authorized that use, redirect
             if((CURRENT_ACTION != 'unauthorized' ) && (CURRENT_ACTION != 'authorize' ) && ($_SESSION['authorized'] != 'true')) {
-              $this->redirect('/profile/unauthorized');
+              $this->redirect('/theme/unauthorized');
             }
 
             #set global keys
-            $this->keys['head'] = $this->includeHTML('../view/profile/global/head.html');
+            $this->keys['head'] = $this->includeHTML('../view/theme/global/head.html');
 
             #header
             $this->keys['header'] = $this->includeHTML('../view/profile/global/header.html');

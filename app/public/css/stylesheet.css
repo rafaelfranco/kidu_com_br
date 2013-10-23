@@ -15,6 +15,7 @@ form {
 	line-height: 50px;
 }
 
+
 h1 {
     text-indent: -9999px;                 
     background-image: url('../images/marca_kidu.gif');  
@@ -44,6 +45,8 @@ h3 {
 header {
 	background-color: #504194;
 	color: #FFF;
+	position: fixed;
+	width: 100%;
 }
 
 header > section {
@@ -92,8 +95,14 @@ nav > ul li{
 	display: inline-block;
 	padding: 10px;
 }
+#allthemes {
+	color: #666;
+	text-align: right;
+	display: inline-block;
+	width: 100%;
+}
 #areaMenu {
-	width:668px;
+	width:666px;
 	display: inline-block;
 	text-align: right;
 }
@@ -173,6 +182,17 @@ nav > ul li{
 	cursor: pointer;
 	color: #FFFFFF;
 }
+.buttonGrey {
+	padding: 10px 25px;
+	border-radius: 5px;
+	background: transparent url('../images/buttonGrey.png') repeat-x 0 0; 
+	font-size: 100%;
+	font-weight: bold;
+	cursor: pointer;
+	border: 0px;
+	color: #504194;
+
+}
 
 #container {
 	width: 960px;
@@ -185,6 +205,37 @@ nav > ul li{
 	color: #FFF;
 	font-size: 250px;
 	font-weight: bold;
+}
+#homeLogada {
+	background: #504194;
+}
+#homeLogada  .logo {
+	padding-top: 60px;
+	text-align: center;
+	display: block;
+}
+
+#homeLogada header {
+	background: #F5F5F5;
+	color: #504194;
+}
+#homeLogada header a {
+	color: #504194;
+}
+#homeLogada img {
+	vertical-align: middle;
+}
+#homeSearch {
+	text-align: center;
+	padding: 40px;
+}
+#homeSearch input[type=button] {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	background-position: -5px;
+}
+#inputSearch {
+	width: 505px;
 }
 #mainMenu {
 	display: inline-block;
@@ -224,6 +275,22 @@ nav > ul li{
 #teamKidu a{
 	color: red;
 	font-weight: bold;
+}
+#themeList {
+	text-align: center;
+}
+#themeList a{
+	display: inline-block;
+	width: 220px;
+	height: 130px;
+	margin-right: 20px;
+	background-color: #fcfcfc;
+	color: #666;
+	vertical-align: middle;
+	padding-top: 100px
+}
+#themeList a div{
+	font-size: 20px;
 }
 #userMenu {
 	display: inline-block;
