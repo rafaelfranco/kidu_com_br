@@ -82,7 +82,12 @@ class action extends simplePHP {
   public function _actionGetgroups() {
     $res = $this->core->getWs('group.get_groups');
     
-    pre($res);
+    foreach ($res->result as $group) {
+      
+      echo '<a href="/theme/1"><div>'.$group->name.'</div></a>';
+      
+    }
+    exit;
     
   }
 }
