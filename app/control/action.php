@@ -80,11 +80,11 @@ class action extends simplePHP {
   }
 
   public function _actionGetgroups() {
-    $res = $this->core->getWs('group.get_groups');
+    $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));
     
     foreach ($res->result as $group) {
       
-      echo '<a href="/theme/1"><div>'.$group->name.'</div></a>';
+      echo '<a href="/theme/view/'.$group->guid.'"><div>'.$group->name.'</div></a>';
       
     }
     exit;
