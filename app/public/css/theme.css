@@ -189,6 +189,7 @@ margin: 40px auto 300px;
 text-align: left;
 padding-bottom: 80px;
 clear: both;
+padding-top: 30px;
 }
 
 #tema #outros_temas h3 {
@@ -215,8 +216,9 @@ padding: 0;
 }
 
 #tema #outros_temas>form {
-margin: 0 0 0 20px;
+margin: 0 50px 0 20px;
 float: left;
+margin-bottom: 20px;
 }
 
 #tema #outros_temas>form input[type="text"]{
@@ -225,6 +227,7 @@ width: 175px;
 border-radius: 5px;
 margin: 2px 4px 0 0;
 border: 1px solid #797a7d;
+height: 40px;
 }
 
 #tema #outros_temas>form span{
@@ -265,3 +268,7 @@ vertical-align: middle;
 float: right;
 color: #e74c3c;
 }
+#tema #outros_temas img {
+	margin-top: 6px	
+}
+

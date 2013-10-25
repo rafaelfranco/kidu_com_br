@@ -1,6 +1,7 @@
 <html>
 	<head>
 		[#head#]
+		<script type="text/javascript" src="/js/hotsite/theme.js"></script> 
 	</head>
 	<body id="tema">
 		[#header#]
@@ -33,109 +34,33 @@
 					</div>
 				</section>
 				<dl id="respostas">
-					[#desafios#]
-					
-
-					
+					[#challenges#]
 				</dl>
 
 			<section id="tudo_sobre">
-			<article>
-			<h3>Veja tudo sobre o Mundo Fashion</h3>
-			<nav><a href="">Só vídeo</a> | <a href="">Só texto</a> | <a href="">Só images</a> | <a href="">Busca por data</a></nav>
-			<br class="tudo">
-			<div>
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			</div>
-
-			</article>
+				<article>
+				<h3>Veja tudo sobre o [#theme#]</h3>
+				<nav><a href="" id="onlyVideo">Só vídeo</a> | <a href="" id="onlyText">Só texto</a> | <a href="" id="onlyImage">Só images</a></nav>
+				<br class="tudo">
+				<div>
+					[#allFiles#]
+				</div>
+				</article>
 			</section>
-			<br class="tudo">
+			<br class="tudo"><br><br>
 			<section id="outros_temas">
-			<span onclick="coisa();"><img src="/images/bot_ver_temas.gif" width="140" height="36" alt="Ver mais temas"></span>
-			<h3>Outros temas</h3>
-			<p>Um pequeno texto que vai explicar o que é isso.</p>
-			<form>
-			<input type="text" placeholder="Busque outros temas"><span>Buscar</span>
-			</form>
-			<br class="tudo">
-			<article>
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			<figure>
-			<img src="/images/foto_desafio.jpg" height="204" width="204" alt="Kidu">
-			<figcaption>
-			<span>
-			<img src="/images/ico_curtir.gif" width="36" height="36">
-			13</span>
-			</figcaption>
-			</figure>
-
-			</article>
-			</section>
-			<br class="tudo">
-			<p>&nbsp;</p>
-
+				<h3>Outros temas</h3>
+				<p>Um pequeno texto que vai explicar o que é isso.</p>
+				<form>
+				<input type="text" id="inputSearch" placeholder="Busque outros temas"><span>Buscar</span>
+				</form>
+				<img src="/images/bot_ver_temas.gif" align="absmiddle" width="140" height="36" alt="Ver mais temas">
+				<br class="tudo">
+				<div class="otherThemes">
+					<span id="themeList"></span>
+				</div>
+				<br class="tudo">
+				<p>&nbsp;</p>
 			</section>
 
 		[#footer#]

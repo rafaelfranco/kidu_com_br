@@ -287,7 +287,10 @@ nav > ul li{
 	background-color: #fcfcfc;
 	color: #666;
 	vertical-align: middle;
-	padding-top: 100px
+	padding-top: 100px;
+	border: dashed 2px #c2d4ed;
+	border-radius: 1000px;
+
 }
 #themeList a div{
 	font-size: 20px;
@@ -340,5 +343,13 @@ nav > ul li{
 	background-repeat: no-repeat;
 	background-position-x: 5px;
 	background-position-y: 10px;
+}
+.noAswers {
+	text-align: center;
+	border: solid 1px #c2d4ed;
+	width: 900px;
+	padding: 20px;
+	height: 100px;
+	padding-top: 90px;
 }
 
