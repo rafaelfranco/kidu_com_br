@@ -63,6 +63,7 @@
 			    FB.login(function(response) {
 			        if (response.authResponse) {
 			            // connected
+			            
 						authorize();
 			        } else {
 			            // cancelled
@@ -79,7 +80,10 @@
 					<div class="aviso amarelo">
 						<p>
 							Ainda não recebemos a autorização do seu cadastro pelo seu responsável.<br>
-							Enquanto você não estiver autorizado, só você vê as respostas aos desafios que você postou!
+							Enquanto você não estiver autorizado, só você vê as respostas aos desafios que você postou! 
+
+							<br><br>
+							<a href="javascript:login()">AUTORIZAR</a>
 						</p>
 					</div>
 				</dt>
