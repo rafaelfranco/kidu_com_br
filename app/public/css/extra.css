@@ -23,4 +23,13 @@
 	color: red;
 	font-size: 11px;
 	margin-top: 10px;
+	display: inline-block;
+	margin-left: 58px;
+}
+
+#noAswers {
+	text-align: center;
+	padding: 50px;
+	display: inline-block;
+	width: 960px;
 }
