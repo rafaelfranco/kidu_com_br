@@ -99,11 +99,10 @@ class action extends simplePHP {
     $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid']));
     
     //redirect to profile
-    
-    if($res->result == 0) {
+    if($res->status == 0) {
       $this->redirect('/profile');
     } else {
-      $this->redirect('/error/not-logged');
+      $this->redirect('/logoff');
     }
   }
 }

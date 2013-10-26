@@ -151,7 +151,8 @@ class theme extends simplePHP {
             $this->keys['description'] = $challenge->result->fields->description->value;
 
             //get answers for this challenge
-            $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
+            $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
+
             foreach ($answers->result as $answer) {
                    $answers_html .= '<figure>
                                     <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
