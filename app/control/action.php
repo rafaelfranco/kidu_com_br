@@ -90,6 +90,13 @@ class action extends simplePHP {
     exit;
     
   }
+  public function _actionPostfile() {
+    #save file
+    #pre($_FILES);
+
+    //redirect to profile
+    $this->redirect('/profile');
+  }
 }
 
 ?>

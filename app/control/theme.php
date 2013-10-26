@@ -47,13 +47,9 @@ class theme extends simplePHP {
 
             #topo
             $this->keys['top'] = $this->includeHTML('../view/profile/global/top.html');
-
-            
-
         }
 
         public function _actionStart() {
-            
             return $this->keys;
         }
 
@@ -92,7 +88,7 @@ class theme extends simplePHP {
                                 <h3>'.$challenge->briefdescription.'</h3>
                                 <div>
                                     <span>
-                                    <a href="/theme/challenges/'.$this->getParameter(3).'" >
+                                    <a href="/theme/challenges/'.$this->getParameter(3).'/'.$challenge->guid.'" >
                                     <img src="/images/bot_faca_voce.gif" alt="Faça você!" width="110" height="40"></a>
                                     </span><br>
                                     <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a>
@@ -106,11 +102,65 @@ class theme extends simplePHP {
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $allFiles_html ;
             
-
             //get other themes
+            return $this->keys;
+        }
 
 
+        public function _actionChallenges() {
+            //get theme details
+            $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
 
+            //get challenge details
+            $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
+
+            
+            $this->keys['theme'] = $theme->result->name;
+            $this->keys['challenge'] = $challenge->result->name;
+            $this->keys['description'] = $challenge->result->fields->description->value; 
+            $this->keys['theme_id'] = $this->getParameter(3);
+            $this->keys['challenge_id'] = $this->getParameter(4);    
+            
+            //get other themes
+            return $this->keys;
+        }
+
+
+        public function _actionChallenge() {
+            //get theme details
+            $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
+
+            //get challenge details
+            $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
+
+            
+            $this->keys['theme'] = $theme->result->name;
+            $this->keys['challenge'] = $challenge->result->name;
+            $this->keys['description'] = $challenge->result->fields->description->value;
+
+            //get answers for this challenge
+            $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
+            foreach ($answers->result as $answer) {
+                   $answers_html .= '<figure>
+                                    <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
+                                    <figcaption>
+                                        <span><img src="/images/ico_curtir.gif" width="36" height="36">0</span>
+                                        <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
+                                        <strong>'.$answer->owner->name.'</strong>
+                                        </figcaption>
+                                    </figure>';
+
+                  
+            }
+            if($answers_html == '') {
+                $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
+            }
+
+                
+            $this->keys['challenges'] = $challenge_html;
+            $this->keys['answers'] = $answers_html ;
+            
+            //get other themes
             return $this->keys;
         }
         

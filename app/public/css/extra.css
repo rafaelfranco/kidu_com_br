@@ -1,0 +1,21 @@
+#container {
+	width: 960px;
+	margin: auto;
+	padding-top: 60px;
+}
+#themeList {
+	width: 960px;
+	margin: auto;
+}
+#themeList a {
+	display: inline-block;
+	width: 250px;
+	height: 140px;
+	border:solid 1px #FFF;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 60px;
+	border: dashed 2px #FFF;
+	border-radius: 2000px;
+	padding-top: 120px;
+}

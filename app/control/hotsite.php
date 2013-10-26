@@ -73,8 +73,17 @@ class hotsite extends simplePHP {
 
         public function _actionHome() {
             //busca  a lista de comunidades
-            
+            return $this->keys;
+        }
 
+
+        public function _actionFathers() {
+            //busca  a lista de comunidades
+            return $this->keys;
+        }
+
+        public function _actionTeachers() {
+            //busca  a lista de comunidades
             return $this->keys;
         }
         

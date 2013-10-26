@@ -272,3 +272,27 @@ color: #e74c3c;
 	margin-top: 6px	
 }
 
+.noAswers {
+	border: solid 1px #ccc;
+	padding: 50px;
+	width: 830px;
+	margin-bottom: 20px;
+}
+
+#themeList {
+	width: 960px;
+	margin: auto;
+}
+#themeList a {
+	display: inline-block;
+	width: 250px;
+	height: 140px;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 55px;
+	border: dashed 2px #504194;
+	border-radius: 2000px;
+	padding-top: 120px;
+	color: #504194;
+}
+
