@@ -27,8 +27,9 @@ class core extends simplePHP {
         public function callWs($action,$data){
             $nvp = array(
                 'api_key'           => ELGG_WS_API_KEY,
-                'auth_token'        => ELGG_WS_AUTH_TOKEN,
+                'auth_token'        => $_SESSION['user_token'],
              );
+            
             $nvp = array_merge($nvp,$data);
 
             //open connection
@@ -101,6 +102,7 @@ class core extends simplePHP {
                 $return['avatar_url'] = $response->result->avatar_url;
                 $return['authorized'] = $response->result->authorized;
                 $return['guid'] = $response->result->guid;
+                $return['nivel'] = ($response->result->nivel != '') ? $response->result->nivel : 1;
                 
                 return $return;
             } else {

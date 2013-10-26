@@ -111,16 +111,28 @@ class theme extends simplePHP {
             //get theme details
             $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
 
-            //get challenge details
-            $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
-
+           
+            for($i=1;$i <= 5;$i++) {
+                if($i <= $_SESSION['nivel']) {
+                    $this->keys['nivel-'.$i] = '';
+                } else {
+                    $this->keys['nivel-'.$i] = 'class="fechado"';
+                }
+            }
             
             $this->keys['theme'] = $theme->result->name;
-            $this->keys['challenge'] = $challenge->result->name;
-            $this->keys['description'] = $challenge->result->fields->description->value; 
             $this->keys['theme_id'] = $this->getParameter(3);
-            $this->keys['challenge_id'] = $this->getParameter(4);    
+            $this->keys['challenge_id'] = $this->getParameter(4);
+            $this->keys['nivel'] = $_SESSION['nivel'];
             
+            //get challeges for this theme and nivel
+            $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
+            foreach ($challenges->result as $challenge) {
+               // pre($challenge);
+            }
+
+
+
             //get other themes
             return $this->keys;
         }
@@ -133,7 +145,7 @@ class theme extends simplePHP {
             //get challenge details
             $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
 
-            
+            $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['theme'] = $theme->result->name;
             $this->keys['challenge'] = $challenge->result->name;
             $this->keys['description'] = $challenge->result->fields->description->value;

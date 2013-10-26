@@ -83,19 +83,28 @@ class action extends simplePHP {
     $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));
     
     foreach ($res->result as $group) {
-      
       echo '<a href="/theme/view/'.$group->guid.'"><div>'.$group->name.'</div></a>';
-      
     }
     exit;
     
   }
   public function _actionPostfile() {
-    #save file
-    #pre($_FILES);
+    
+    #save file local
+    $file = $this->loadModule('file');
+    $file_name = $file->uploadFile($_FILES['upload'],APP_PATH.'/public/tmp/');
 
+    $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
+
+    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid']));
+    
     //redirect to profile
-    $this->redirect('/profile');
+    die($res->result);
+    if($res->result == 0) {
+      $this->redirect('/profile');
+    } else {
+      $this->redirect('/error/not-logged');
+    }
   }
 }
 

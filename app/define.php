@@ -12,8 +12,7 @@
 		define('SIMPLEPHP_PATH', '/Library/Server/Web/Data/Sites/kidu_com_br/SimplePHP/');
 		define('APP_PATH', '/Library/Server/Web/Data/Sites/kidu_com_br/app/');
 		define('ELGG_WS','http://elgg.local/services/api/rest/json/');
-		define('ELGG_WS_API_KEY','cefe161d84efcf8ae5f171aed88f3d911e9aadd3');
-		define('ELGG_WS_AUTH_TOKEN','8b9b5e0b45d561864423f23249cfd87f');
+		define('ELGG_WS_API_KEY','e5692e5a207837560efcc24de3ec7b466bb56e7e');
 	}
 
 	if($_SERVER['HTTP_HOST'] == PRODUCTION_URL) {
@@ -22,7 +21,6 @@
 		define('APP_PATH', '/var/www/kidu_com_br/app/');
 		define('ELGG_WS','http://www.kidu.com.br/engine/services/api/rest/json/');
 		define('ELGG_WS_API_KEY','cefe161d84efcf8ae5f171aed88f3d911e9aadd3');
-		define('ELGG_WS_AUTH_TOKEN','8b9b5e0b45d561864423f23249cfd87f');
 	}
 	
 
