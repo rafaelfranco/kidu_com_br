@@ -27,7 +27,7 @@
 	margin-left: 58px;
 }
 
-#noAswers {
+.noneAnswers {
 	text-align: center;
 	padding: 50px;
 	display: inline-block;

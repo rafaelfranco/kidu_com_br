@@ -73,7 +73,7 @@ class profile extends simplePHP {
             }
 
             if($answers_html == '') {
-                $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers'));
+                $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers noneAnswers'));
             }
 
             $this->keys['answers'] = $answers_html;
