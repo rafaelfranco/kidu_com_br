@@ -2,7 +2,7 @@
 	<head>
 		[#head#]
 	</head>
-	<body>
+	<body id="conteudo">
 		[#header#]
 		<div id="fb-root"></div>
 		<script>
@@ -70,17 +70,21 @@
 			    }, {scope: 'email'});
 			}
 		</script>
-			<section id="container">
-			<h2>[!profileUnauthorized!]</h2>
-			<p>[!message!]</p>
-			<input type="hidden" id="AccessToken" />
-			<div id="teamKidu">
-				<b>Equipe KIDU</b>
-				Esse box tem objetivo de facilitar os testes e tem o link que o responsável deverá clicar para autorizar o acesso <br>
-				O link será enviado no e-mail <br><br>
-				<a href="javascript:login();">CLIQUE AQUI PARA AUTORIZAR</a>
-			</div>
-			</section>
+			<section>
+			<h3>[#name_user#]</h3>
+			<br class="tudo">
+
+			<dl id="respostas">
+				<dt>
+					<div class="aviso amarelo">
+						<p>
+							Ainda não recebemos a autorização do seu cadastro pelo seu responsável.<br>
+							Enquanto você não estiver autorizado, só você vê as respostas aos desafios que você postou!
+						</p>
+					</div>
+				</dt>
+				</dl>
+				</section>
 		[#footer#]
 	</body>
 </html>
