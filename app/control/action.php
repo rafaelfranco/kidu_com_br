@@ -91,13 +91,13 @@ class action extends simplePHP {
   public function _actionPostfile() {
     
     #save file local
-    $file = $this->loadModule('file');
-    $file_name = $file->uploadFile($_FILES['upload'],APP_PATH.'/public/tmp/');
+   # $file = $this->loadModule('file');
+  #  $file_name = $file->uploadFile($_FILES['upload'],APP_PATH.'/public/tmp/');
 
-    $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
+ #   $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
 
-    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid']));
-    
+    $res = $this->core->callWs('file.upload',array('filepath'=>$_FILES['upload'],'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid']));
+   
     //redirect to profile
     if($res->status == 0) {
       $this->redirect('/profile');
