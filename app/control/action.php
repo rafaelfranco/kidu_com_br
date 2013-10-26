@@ -99,7 +99,7 @@ class action extends simplePHP {
     $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid']));
     
     //redirect to profile
-    die($res->result);
+    
     if($res->result == 0) {
       $this->redirect('/profile');
     } else {
