@@ -20,7 +20,7 @@
 		define('SIMPLEPHP_PATH', '/var/www/kidu_com_br/SimplePHP/');
 		define('APP_PATH', '/var/www/kidu_com_br/app/');
 		define('ELGG_WS','http://www.kidu.com.br/engine/services/api/rest/json/');
-		define('ELGG_WS_API_KEY','cefe161d84efcf8ae5f171aed88f3d911e9aadd3');
+		define('ELGG_WS_API_KEY','e5692e5a207837560efcc24de3ec7b466bb56e7e');
 	}
 	
 
