@@ -173,6 +173,13 @@ class theme extends simplePHP {
             $this->keys['challenges'] = $challenge_html;
             $this->keys['answers'] = $answers_html ;
             
+            //ADD USER TO THOSE GROUPS
+            #username
+            
+            #groupid group.join
+            $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(3)));
+            $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(4)));
+
             //get other themes
             return $this->keys;
         }
