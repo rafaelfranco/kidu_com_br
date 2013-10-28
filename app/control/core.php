@@ -25,7 +25,6 @@ class core extends simplePHP {
          * @return array
          * */
         public function callWs($action,$data){
-
             $nvp = array(
                 'api_key'           => ELGG_WS_API_KEY,
                 'auth_token'        => $_SESSION['user_token'],
@@ -42,7 +41,7 @@ class core extends simplePHP {
             curl_setopt( $curl , CURLOPT_RETURNTRANSFER , 1 );
             curl_setopt( $curl , CURLOPT_POST , 1 );
             curl_setopt( $curl , CURLOPT_POSTFIELDS , http_build_query( $nvp ) );
-die('aquissss');
+
             //do action
             $res = urldecode(curl_exec($curl)); 
             $response = json_decode($res);        
