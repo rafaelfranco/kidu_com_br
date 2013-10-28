@@ -25,6 +25,7 @@ class core extends simplePHP {
          * @return array
          * */
         public function callWs($action,$data){
+          die('aqui');
             $nvp = array(
                 'api_key'           => ELGG_WS_API_KEY,
                 'auth_token'        => $_SESSION['user_token'],
