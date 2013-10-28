@@ -110,6 +110,8 @@ class action extends simplePHP {
         $file_id = $this->getParameter(3);
         $file = $this->core->getWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
 
+        $img = str_replace('small', 'full', $file->result[0]->file_icon);
+       
        # pre($file->result[0]);
        echo '<dl style="left: 213px;">
         <dt>
@@ -126,7 +128,7 @@ class action extends simplePHP {
         <br class="tudo">
         </dt>
         <dd>
-        <img src="'.$file->result[0]->file_icon.'" width="700" height="700" alt="Menininha meu amor"><br class="tudo">
+        <img src="'.$img.'" width="700" height="700" alt="Menininha meu amor"><br class="tudo">
         </dd>
         </dl>';
         exit;
