@@ -105,6 +105,32 @@ class action extends simplePHP {
       $this->redirect('/logoff');
     }
   }
+
+  public function _actionGetFile() {
+        $file_id = $this->getParameter(3);
+        $file = $this->core->getWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
+
+       # pre($file->result[0]);
+       echo '<dl style="left: 213px;">
+        <dt>
+        <span onclick="fecha_modal()">Fechar | X</span>
+        <h4>'.$file_id .'</h4>
+        <p>Nome do tema</p>
+
+        <h4>Desafio</h4>
+        <p>Nome do desafio pra onde esta resposta foi postada</p>
+        <p><br></p>
+        <p>Postado em<br><time>12.12.2013 - 17h45</time></p>
+
+        <div><img src="imagens/ico_curtir.gif" width="36" height="36"> 12</div>
+        <br class="tudo">
+        </dt>
+        <dd>
+        <img src="'.$file->result[0]->file_icon.'" width="700" height="700" alt="Menininha meu amor"><br class="tudo">
+        </dd>
+        </dl>';
+        exit;
+  }
 }
 
 ?>

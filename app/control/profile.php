@@ -62,7 +62,7 @@ class profile extends simplePHP {
             $answers = $this->core->getWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
             foreach ($answers->result as $answer) {
                 $answers_html .= '<figure>
-                                    <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
+                                    <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
                                         <span><img src="/images/ico_curtir.gif" width="36" height="36">0</span>
                                         <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   

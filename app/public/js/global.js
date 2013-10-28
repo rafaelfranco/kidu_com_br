@@ -340,3 +340,20 @@ function validateEmail(element) {
      }
      return errors;
 }
+
+function showModal(file) {
+	$('#modal').show();
+
+	 $.ajax({
+		url: '/action/getFile/'+file,
+		type: 'GET',
+		async: 'false',
+            success: function(json) {
+				$('#modal').html(json);
+             }
+        });
+}
+function fecha_modal() {
+	$('#modal').html('');
+	$('#modal').hide();
+}
