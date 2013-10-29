@@ -1,0 +1,35 @@
+<html>
+	<head>
+		[#head#]
+		<script type="text/javascript" src="/js/hotsite/signin.js"></script> 
+	</head>
+	<body id="bodyHome" >
+    <nav>
+      <ul>
+        <li><a href="/fathers">Para Pais</a></li>
+        <li><a href="/teachers">Para Educadores</a></li>
+      </ul>
+    </nav>
+	<div id="homeLogo">
+	<img src="images/marca_kidu_home.gif" alt="Kidu" width="463" height="168">
+	<img src="images/selo_beta.png" alt="Kidu" width="173" height="175" class="selo">
+	</div>
+		<form>
+			<label>[!username!]</label>
+			<input class="input" type="text"  id="username">
+			<span class="erro" id="username-erro">[!username-empty!]</span><br>
+			
+			<label>[!password!]</label>
+			<input class="input" type="password" id="password">
+			<span class="erro" id="password-erro">[!password-empty!]</span> <br>
+
+			
+			<span id="sendSignin" class="botao">[!signin!]</span><br>
+			<a href="/lost">[!lostPassword!]</a><br><br>
+		</form>
+		<section>
+			<a href="/signup">[!signup!]</a>
+		</section>
+		[#footer#]
+	</body>
+</html>

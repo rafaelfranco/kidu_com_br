@@ -1,0 +1,297 @@
+/**********   Tema    *************/
+#container {
+	padding-top: 75px;
+}
+#tema #explica {
+text-align: left;
+}
+
+#tema #explica h2{
+color: #504194;
+font-size: 350%;
+padding: 0;
+margin: 20px 0 0 0;
+}
+
+#tema #explica p{
+padding: 0;
+margin: 0;
+width: 450px;
+font-size: 110%;
+color: #797a7d;
+}
+
+#tema #explica div.explica {
+float: left;
+border: 1px solid #DDDDDD;
+width: 280px;
+}
+
+#tema #explica>a{
+float: right;
+color: #797A7D;
+size: 85%;
+}
+
+#tema #explica div.explica ul{
+padding: 0;
+margin: 5px;
+background-color: #e6eaf0;
+}
+
+#tema #explica div.explica ul li{
+padding: 10px 0;
+margin: 0 10px;
+list-style-type: none;
+color: #504194;
+font-size: 80%;
+border-top: 1px solid white;
+}
+
+#tema #explica div.explica ul li img{
+vertical-align: middle;
+margin: 4px 4px 0 0;
+}
+
+#tema #explica div.explica ul li:first-child{
+border-top: 0;
+}
+
+#tema #explica div.video{
+float: right;
+}
+
+#tema #respostas {
+width: 945px;
+margin: 0 auto;
+text-align: left;
+display: inline-block;
+}
+
+#tema #respostas dt{
+margin: 30px 0 0 0;
+padding: 0;
+clear: left;
+}
+
+#tema #respostas dt h3{
+color: #504194;
+font-size: 250%;
+padding: 0;
+margin: 0;
+}
+
+#tema #respostas dt p{
+width: 450px;
+font-size: 110%;
+color: #797a7d;
+}
+
+#tema #respostas dt>div{
+float: right;
+text-align: right;
+}
+
+#tema #respostas dt>div a{
+color: #797a7d;
+font-size: 90%;
+}
+
+#tema #respostas dt div span{
+
+}
+
+#tema #respostas dd{
+margin: 20px 0 50px;
+padding: 0;
+float: left;
+}
+
+#tema #respostas dd figure{
+border: 1px solid #ddd;
+padding: 5px;
+float: left;
+cursor: pointer;
+background-color: white;
+margin: 0 15px 0 0;
+}
+
+#tema #respostas dd figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+}
+
+#tema #respostas dd figure figcaption img{
+vertical-align: middle;
+}
+
+#tema #respostas dd figure figcaption span{
+float: right;
+color: #e74c3c;
+}
+
+#tema #tudo_sobre {
+text-align: left;
+width: 945px;
+margin: 0 auto 80px;
+}
+
+#tema #tudo_sobre nav{
+float: right;
+color: #ddd;
+}
+
+#tema #tudo_sobre nav a{
+margin: 0 10px;
+color: #797a7d;
+font-size: 90%;
+}
+
+#tema #tudo_sobre h3 {
+color: #504194;
+font-size: 250%;
+padding: 0;
+margin: 0;
+}
+
+#tema #tudo_sobre div {
+margin-top: 20px;
+}
+
+#tema #tudo_sobre figure {
+border: 1px solid #ddd;
+padding: 5px;
+float: left;
+cursor: pointer;
+background-color: white;
+margin: 0 17px 0 0;
+}
+
+#tema #tudo_sobre figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+}
+
+#tema #tudo_sobre figure figcaption img{
+vertical-align: middle;
+}
+
+#tema #tudo_sobre figure figcaption span{
+float: right;
+color: #e74c3c;
+}
+
+#tema #outros_temas {
+width: 945px;
+margin: 40px auto 300px;
+text-align: left;
+padding-bottom: 80px;
+clear: both;
+padding-top: 30px;
+}
+
+#tema #outros_temas h3 {
+color: #504194;
+font-size: 250%;
+padding: 0;
+margin: 0;
+width: 280px;
+float: left;
+}
+
+#tema #outros_temas>span {
+float: right;
+cursor: pointer;
+}
+
+#tema #outros_temas>p {
+width: 180px;
+font-size: 110%;
+color: #797a7d;
+float: left;
+margin: 0;
+padding: 0;
+}
+
+#tema #outros_temas>form {
+margin: 0 50px 0 20px;
+float: left;
+margin-bottom: 20px;
+}
+
+#tema #outros_temas>form input[type="text"]{
+padding: 10px;
+width: 175px;
+border-radius: 5px;
+margin: 2px 4px 0 0;
+border: 1px solid #797a7d;
+height: 40px;
+}
+
+#tema #outros_temas>form span{
+background-color: white;
+color: black;
+padding: 11px 13px;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 2px;
+border: 1px solid #797a7d;
+}
+
+#tema #outros_temas article {
+float: left;
+margin-top: 20px;
+}
+
+#tema #outros_temas figure {
+border: 1px solid #ddd;
+padding: 5px;
+float: left;
+cursor: pointer;
+background-color: white;
+margin: 0 17px 0 0;
+}
+
+#tema #outros_temas figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+}
+
+#tema #outros_temas figure figcaption img{
+vertical-align: middle;
+}
+
+#tema #outros_temas figure figcaption span{
+float: right;
+color: #e74c3c;
+}
+#tema #outros_temas img {
+	margin-top: 6px	
+}
+
+.noAswers {
+	border: solid 1px #ccc;
+	padding: 50px;
+	width: 830px;
+	margin-bottom: 20px;
+}
+
+#themeList {
+	width: 960px;
+	margin: auto;
+}
+#themeList a {
+	display: inline-block;
+	width: 250px;
+	height: 140px;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 55px;
+	border: dashed 2px #504194;
+	border-radius: 2000px;
+	padding-top: 120px;
+	color: #504194;
+}

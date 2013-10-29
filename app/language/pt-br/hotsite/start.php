@@ -1,0 +1,4 @@
+<?php 
+	
+	$LANGUAGE['signup'] = 'Cadastrar ▸';
+?>

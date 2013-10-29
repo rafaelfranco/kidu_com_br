@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<test>
+		<name>Cadastro CaminhoFeliz</name>
+		<actions>
+			<action name="add" target="nome" value="Rafael Marcos De Sousa Franco"></action>
+			<action name="add" target="email" value="rafaelfranco@me.com"></action>
+			<action name="add" target="reemail" value="rafaelfranco@me.com"></action>
+			<action name="add" target="senha" value="oXP3mmK4etHkLg"></action>
+			<action name="add" target="resenha" value="oXP3mmK4etHkLg"></action>
+		</actions>
+	</test>
+	<test>
+		<name>Logar rafael</name>
+		<actions>
+			<action name="add" target="login" value="rafaelfranco@me.com"></action>
+			<action name="add" target="pass" value="oXP3mmK4etHkLg"></action>
+		</actions>
+	</test>
+
+</root>

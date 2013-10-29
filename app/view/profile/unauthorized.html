@@ -1,0 +1,94 @@
+<html>
+	<head>
+		[#head#]
+	</head>
+	<body id="conteudo">
+		[#header#]
+		<div id="fb-root"></div>
+		<script>
+		  // Additional JS functions here
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '224408377690232', // App ID
+		      channelUrl : '//www.kidu.com.br/channel.html', // Channel File
+		      status     : true, // check login status
+		      cookie     : true, // enable cookies to allow the server to access the session
+		      xfbml      : true  // parse XFBML
+		    });
+
+		    // Additional init code here
+		    FB.getLoginStatus(function(response) {
+				  if (response.status === 'connected') {
+				  	$('#AccessToken').val(response.authResponse.accessToken);
+				    // connected
+				  } else if (response.status === 'not_authorized') {
+				    // not_authorized
+				  } else {
+				    // not_logged_in
+				  }
+			});
+		  };
+		  
+		  // Load the SDK Asynchronously
+		  (function(d){
+		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement('script'); js.id = id; js.async = true;
+		     js.src = "//connect.facebook.net/en_US/all.js";
+		     ref.parentNode.insertBefore(js, ref);
+		   }(document));
+
+
+		function authorize() {
+			    FB.api('/me?fields=name,email,id', function(response) {
+			    //caso já esteja cadstrado logo o usuario
+		    	$.ajax({
+					url: '/action/authorize/',
+					type: 'POST',
+					async:false,
+					data: { 
+	      					facebook_id: response.id,
+	      					fb_access_token: $('#AccessToken').val()
+	     				},
+				        success: function(json) {
+				        	if(json == 'success') {
+				        		window.location = '/profile';
+				        	}
+				        }
+				});
+			});
+		}
+
+			function login() {
+			    FB.login(function(response) {
+			        if (response.authResponse) {
+			            // connected
+
+						authorize();
+			        } else {
+			            // cancelled
+			        }
+			    }, {scope: 'email'});
+			}
+		</script>
+			<section>
+			<h3>[#name_user#]</h3> <a class="red" href="/logoff"> {sair}</a>
+			<br class="tudo">
+			<input type="hidden" id="AccessToken" />
+			<dl id="respostas">
+				<dt>
+					<div class="aviso amarelo">
+						<p>
+							Ainda não recebemos a autorização do seu cadastro pelo seu responsável.<br>
+							Enquanto você não estiver autorizado, só você vê as respostas aos desafios que você postou! 
+
+							<br><br>
+							<a href="javascript:login()">AUTORIZAR</a>
+						</p>
+					</div>
+				</dt>
+				</dl>
+				</section>
+		[#footer#]
+	</body>
+</html>

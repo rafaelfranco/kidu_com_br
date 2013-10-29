@@ -1,0 +1,41 @@
+<html>
+	[#head#]
+	<script type="text/javascript" src="/js/hotsite/upload.js"></script> 
+	<body id="desafio">
+		[#header#]
+		<section>
+			<a href="/" id="link_wikidu"><img src="/images/wikidu.gif" width="85" height="112" alt="Wikidu"></a>
+			<h3><span>Tema</span><br>[#theme#]</h3>
+			<h2>
+			<a href="" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>
+			<a href="" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>
+			<span>Desafio</span><br>[#challenge#]
+			</h2>
+			<br class="tudo">
+			<article id="explica">
+			<form enctype="multipart/form-data" method="post" id="postFile" action="/action/postfile">
+				<input type="hidden" name="challenge_id" value="[#challenge_id#]" />
+				<fieldset>
+				<p>Está faltando a resposta<br>mais importante:<br><strong>Sua resposta!</strong></p>
+				Upload de arquivo
+				<input type="file" class="botao" name="upload" id="uploadFile" style="width:300px;" />
+				</fieldset>
+			</form>
+			<div id="disclaimer">
+			<p>[#description#]</p>
+			</div>
+			<div id="socorro"><p><strong>Socorro!</strong><br>Como responder a este desafio?</p></div>
+			</article>
+			<br class="tudo">
+		</section>
+		<br class="tudo">
+		<dl id="respostas">
+			<dt>
+				<h3>Respostas a este desafio</h3>
+			</dt>
+			<dd>
+				[#answers#]
+			</dd>
+		</dl>
+</body>
+</html>
