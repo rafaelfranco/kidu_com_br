@@ -1,0 +1,592 @@
+body:not(#home){
+background-color: white;
+font: 14px normal arial, sans-serif;
+padding: 80px 0 0;
+margin: 0;
+text-align: center;
+}
+
+body#home{
+background-color: white;
+font: 14px normal arial, sans-serif;
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+br.tudo {
+clear: both;
+line-height: 1px;
+}
+
+section {
+width: 940px;
+margin: 0 auto;	
+position: relative;
+}
+
+body header {
+background-color: #504194;
+margin: 0;
+padding: 5px 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 400;
+}
+
+fieldset{
+border: 0;
+}
+
+header>div {
+width: 950px;
+margin: 0 auto;
+text-align: left;
+}
+
+header form#busca {
+float: left;
+margin: 5px 0 0 0;
+padding: 0;
+}
+
+header form#busca input[type="text"]{
+padding: 10px;
+width: 175px;
+border-radius: 5px;
+margin: 2px 4px 0 0;
+}
+
+header form#busca span{
+background-color: white;
+color: black;
+padding: 11px 13px;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 2px;
+}
+
+header form#busca h1{
+padding: 3px 10px 3px 0;
+margin: 5px 30px 0 5px;
+font-size: 30px;
+float: left;
+}
+
+header nav {
+float: left;
+color: white;
+padding: 30px 0 0 197px;
+}
+
+header nav a{
+margin: 0 7px;
+color: white;
+font-size: 90%;
+}
+
+header div div{
+float: right;
+color: white;
+margin: 10px 5px 0 0;
+}
+
+header div div img{
+float: left;
+vertical-align: top;
+margin-right: 5px;
+}
+
+header div div a{
+color: white;
+font-size: 90%;
+}
+
+fieldset#login, fieldset#menu{
+border: 1px solid black;
+border-top: 0;
+border-radius: 20px;
+border-top-right-radius: 0;
+border-top-left-radius: 0;
+width: 200px;
+background-color: white;
+position: absolute;
+right: 0;
+top: 0;
+padding-top: 10px;
+height: 80px;
+}
+
+#home #login, #home #menu {
+top: -33px;
+}
+
+fieldset#login.some, fieldset#menu.some{
+display: none;
+}
+
+fieldset#login label{
+width: 60px;
+text-align: right;
+float: left;
+margin-right: 7px;
+}
+
+fieldset#login button{
+float: right;
+margin: 10px 10px 0;
+}
+
+form.deslogado fieldset#login p{
+margin-left: 30px;
+}
+
+form.deslogado fieldset#login a{
+color: black;
+}
+
+fieldset#login input[type="text"], fieldset#login input[type="password"] {
+border: 1px solid black;
+}
+
+#home h1 {
+margin: 30px auto;
+font-size: 150px;
+}
+
+#home ul {
+margin: 0;
+padding: 0;
+}
+
+#home ul li{
+float: left;
+width: 300px;
+list-style-type: none;
+margin-right: 10px;
+}
+
+#home ul li figure{
+cursor: pointer;
+}
+
+#home a#desafio {
+position: absolute;	
+background-color: yellow;
+font-size: 20px;
+padding: 20px;
+left: 0;
+}
+
+#home header nav  {
+text-align: right;
+width: 940px;
+margin: 0 auto;
+padding-top: 15px;
+}
+
+#home header nav a{
+color: black;
+font-weight: bold;
+}
+
+#home header nav #faca_parte {
+margin-left: 400px;
+margin-right: 250px;
+}
+
+body:not(#home) h1{
+margin: 0;
+}
+
+#desafio section {
+text-align: left;	
+}
+
+#desafio article form {
+width: 330px;
+float: left;
+margin-right: 20px;
+}
+
+#desafio #envia_arquivo {
+padding: 10px 0;
+border-top: 1px solid black;
+}
+
+#desafio #video {
+float: left;
+margin-right: 15px;
+}
+
+#cadastro section {
+text-align: left;
+}
+
+#cadastro section form{
+float: left;
+margin-right: 30px;
+margin-left: 100px;
+}
+
+#cadastro section form label{
+width: 100px;
+text-align: right;
+float: left;
+margin-right: 10px;
+}
+
+#cadastro section form button{
+float: right;
+}
+
+#cadastro article {
+width: 300px;
+float: left;
+}
+
+#cadastro #alertas{
+background-color: #FCC9D3;
+border: 2px dashed #EA4D62;
+padding: 10px 15px;
+color: #EA4D62;
+font-size: 14px;
+display: none;
+}
+
+#minha_pagina section{
+text-align: left;
+}
+
+#minha_pagina article{
+border: 1px solid black;
+width: 300px;
+text-align: center;
+}
+
+#minha_pagina article figure{
+background-color: #FAFAFA;
+margin: 0 auto;
+}
+
+#minha_pagina article figure img{
+margin: 20px;
+}
+
+#minha_pagina article figure figcaption{
+padding: 15px;
+}
+
+/**********   Tema    *************/
+
+#tema #explica {
+text-align: left;
+}
+
+#tema #explica h2{
+color: #504194;
+font-size: 350%;
+padding: 0;
+margin: 20px 0 0 0;
+}
+
+#tema #explica p{
+padding: 0;
+margin: 0;
+width: 450px;
+font-size: 110%;
+color: #797a7d;
+}
+
+#tema #explica div.explica {
+float: left;
+border: 1px solid #DDDDDD;
+width: 280px;
+}
+
+#tema #explica>a{
+float: right;
+color: #797A7D;
+size: 85%;
+}
+
+#tema #explica div.explica ul{
+padding: 0;
+margin: 5px;
+background-color: #e6eaf0;
+}
+
+#tema #explica div.explica ul li{
+padding: 10px 0;
+margin: 0 10px;
+list-style-type: none;
+color: #504194;
+font-size: 80%;
+border-top: 1px solid white;
+}
+
+#tema #explica div.explica ul li img{
+vertical-align: middle;
+margin: 4px 4px 0 0;
+}
+
+#tema #explica div.explica ul li:first-child{
+border-top: 0;
+}
+
+#tema #explica div.video{
+float: right;
+}
+
+#tema #respostas {
+width: 940px;
+margin: 0 auto;
+text-align: left;
+}
+
+#tema #respostas dt{
+margin: 30px 0 0 0;
+padding: 0;
+clear: left;
+}
+
+#tema #respostas dt h3{
+color: #504194;
+font-size: 250%;
+padding: 0;
+margin: 0;
+}
+
+#tema #respostas dt p{
+width: 450px;
+font-size: 110%;
+color: #797a7d;
+}
+
+#tema #respostas dt>div{
+float: right;
+text-align: right;
+}
+
+#tema #respostas dt>div a{
+color: #797a7d;
+font-size: 90%;
+}
+
+#tema #respostas dt div span{
+
+}
+
+#tema #respostas dd{
+margin: 20px 0 50px;
+padding: 0;
+float: left;
+}
+
+#tema #respostas dd figure{
+border: 1px solid #ddd;
+padding: 5px;
+float: left;
+cursor: pointer;
+background-color: white;
+margin: 0 15px 0 0;
+}
+
+#tema #respostas dd figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+}
+
+#tema #respostas dd figure figcaption img{
+vertical-align: middle;
+}
+
+#tema #respostas dd figure figcaption span{
+float: right;
+color: #e74c3c;
+}
+
+#tema #tudo_sobre {
+text-align: left;
+width: 940px;
+margin: 0 auto 80px;
+}
+
+#tema #tudo_sobre nav{
+float: right;
+color: #ddd;
+}
+
+#tema #tudo_sobre nav a{
+margin: 0 10px;
+color: #797a7d;
+font-size: 90%;
+}
+
+#tema #tudo_sobre h3 {
+color: #504194;
+font-size: 250%;
+padding: 0;
+margin: 0;
+}
+
+#tema #tudo_sobre div {
+margin-top: 20px;
+}
+
+#tema #tudo_sobre figure {
+border: 1px solid #ddd;
+padding: 5px;
+float: left;
+cursor: pointer;
+background-color: white;
+margin: 0 17px 0 0;
+}
+
+#tema #tudo_sobre figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+}
+
+#tema #tudo_sobre figure figcaption img{
+vertical-align: middle;
+}
+
+#tema #tudo_sobre figure figcaption span{
+float: right;
+color: #e74c3c;
+}
+
+#tema #outros_temas {
+width: 940px;
+margin: 40px auto 300px;
+text-align: left;
+padding-bottom: 80px;
+clear: both;
+}
+
+#tema #outros_temas h3 {
+color: #504194;
+font-size: 250%;
+padding: 0;
+margin: 0;
+width: 280px;
+float: left;
+}
+
+#tema #outros_temas>span {
+float: right;
+cursor: pointer;
+}
+
+#tema #outros_temas>p {
+width: 180px;
+font-size: 110%;
+color: #797a7d;
+float: left;
+margin: 0;
+padding: 0;
+}
+
+#tema #outros_temas>form {
+margin: 0 0 0 20px;
+float: left;
+}
+
+#tema #outros_temas>form input[type="text"]{
+padding: 10px;
+width: 175px;
+border-radius: 5px;
+margin: 2px 4px 0 0;
+border: 1px solid #797a7d;
+}
+
+#tema #outros_temas>form span{
+background-color: white;
+color: black;
+padding: 11px 13px;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 2px;
+border: 1px solid #797a7d;
+}
+
+#tema #outros_temas article {
+float: left;
+margin-top: 20px;
+}
+
+#tema #outros_temas figure {
+border: 1px solid #ddd;
+padding: 5px;
+float: left;
+cursor: pointer;
+background-color: white;
+margin: 0 17px 0 0;
+}
+
+#tema #outros_temas figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+}
+
+#tema #outros_temas figure figcaption img{
+vertical-align: middle;
+}
+
+#tema #outros_temas figure figcaption span{
+float: right;
+color: #e74c3c;
+}
+
+/********* Footer ***********/
+
+footer {
+height: 80px;
+background-color: blue;
+width: 100%;	
+}
+
+footer#avatar {
+background-color: #c2d4ed;
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 200px;
+z-index: 900;
+background: transparent url('../imagens/fundo_footer.gif') repeat-x 0 100%;
+}
+
+footer#avatar dl {
+margin: 0 20px 0 0;
+padding-bottom: 20px;
+}
+
+footer#avatar dl dt{
+float: right;
+}
+
+footer#avatar dl dd{
+float: right;
+text-align: right;
+margin-right: 20px;
+font-size: 90%;
+color: #504194;
+font-weight: bold;
+line-height: 180%;
+padding-top: 80px;
+}
+
+footer#avatar dl dd img{
+vertical-align: middle;
+}
+
+footer#avatar dl dd h5{
+text-align: right;
+font-size: 130%;
+color: #504194;
+}
