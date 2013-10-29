@@ -96,8 +96,9 @@ class action extends simplePHP {
 
     $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
 
-    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access_id'=>1));
-    
+    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>1));
+   
+   #pre($res); 
     //redirect to profile
     if($res->status == 0) {
       $this->redirect('/profile');
