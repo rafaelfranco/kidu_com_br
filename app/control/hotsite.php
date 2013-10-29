@@ -86,6 +86,12 @@ class hotsite extends simplePHP {
             //busca  a lista de comunidades
             return $this->keys;
         }
+
+        public function _actionHelp() {
+            //busca  a lista de comunidades
+            return $this->keys;
+        }
+        
         
         
        /**
@@ -95,7 +101,9 @@ class hotsite extends simplePHP {
        public function _actionLogoff() {
           unset($_SESSION['username']);
           $this->redirect('/');
-       }     
+       }   
+
+
             
           
              

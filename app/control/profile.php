@@ -59,9 +59,22 @@ class profile extends simplePHP {
 
         public function _actionStart() {
             //get user answers
-            $answers = $this->core->getWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
+            $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
+           
+
             foreach ($answers->result as $answer) {
-                $answers_html .= '<figure>
+                
+                
+                if($answer->access_id == 1) {
+                    $answers_html .= '<figure class="oculto">
+                                    <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
+                                   <figcaption>
+                                    <strong>Conteúdo oculto</strong>
+                                    <a href="">Por quê?</a>
+                                    </figcaption>
+                                </figure>';
+                } else {
+                    $answers_html .= '<figure>
                                     <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
                                         <span><img src="/images/ico_curtir.gif" width="36" height="36">0</span>
@@ -69,6 +82,8 @@ class profile extends simplePHP {
                                         <strong>'.$answer->owner->name.'</strong>
                                     </figcaption>
                                 </figure>';
+                }
+                
                 $allFiles_html .= $answers_html;
             }
 

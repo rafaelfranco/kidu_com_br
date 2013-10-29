@@ -68,6 +68,7 @@ class theme extends simplePHP {
                 //get answers for this challenge
                 $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
+                    if($answer->access_id == 2) {
                    $answers_html .= '<figure>
                                     <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
@@ -76,6 +77,7 @@ class theme extends simplePHP {
                                         <strong>'.$answer->owner->name.'</strong>
                                         </figcaption>
                                     </figure>';
+                                    }
 
                     $allFiles_html .= $answers_html;
                 }
@@ -154,6 +156,7 @@ class theme extends simplePHP {
             $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
             foreach ($answers->result as $answer) {
+                if($answer->access_id == 2) {
                    $answers_html .= '<figure>
                                     <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
@@ -162,6 +165,7 @@ class theme extends simplePHP {
                                         <strong>'.$answer->owner->name.'</strong>
                                         </figcaption>
                                     </figure>';
+                                }
 
                   
             }

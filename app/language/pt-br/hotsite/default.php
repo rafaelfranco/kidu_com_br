@@ -11,4 +11,5 @@
 
     $LANGUAGE['settings'] = 'Configurações';
 	$LANGUAGE['exit'] = 'Sair';
+	$LANGUAGE['help'] = 'Ajuda';
 ?>
