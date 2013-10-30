@@ -12,4 +12,6 @@
     $LANGUAGE['settings'] = 'Configurações';
 	$LANGUAGE['exit'] = 'Sair';
 	$LANGUAGE['help'] = 'Ajuda';
+	$LANGUAGE['termsofuse'] = 'Termos de Uso';
+	
 ?>
