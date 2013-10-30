@@ -109,21 +109,20 @@ class action extends simplePHP {
 
   public function _actionGetFile() {
         $file_id = $this->getParameter(3);
-        $file = $this->core->getWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
+        $file = $this->core->callWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
 
         $img = str_replace('small', 'full', $file->result[0]->file_icon);
        
-       # pre($file->result[0]);
+        $challenge = $this->core->getWs('group.get',array('guid'=>$file->result[0]->container_guid));
+        
        echo '<dl style="left: 213px;">
         <dt>
         <span onclick="fecha_modal()">Fechar | X</span>
-        <h4>'.$file_id .'</h4>
-        <p>Nome do tema</p>
 
         <h4>Desafio</h4>
-        <p>Nome do desafio pra onde esta resposta foi postada</p>
+        <p>'.$challenge->result->name.'</p>
         <p><br></p>
-        <p>Postado em<br><time>12.12.2013 - 17h45</time></p>
+        <p>Postado em<br><time>'.date('d.m.Y - h:m',$file->result[0]->time_created).'</time></p>
 
         <div><img src="imagens/ico_curtir.gif" width="36" height="36"> 12</div>
         <br class="tudo">

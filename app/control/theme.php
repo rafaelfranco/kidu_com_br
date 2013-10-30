@@ -66,10 +66,10 @@ class theme extends simplePHP {
             foreach ($challenges->result as $challenge) {
                 $answers_html = '';
                 //get answers for this challenge
-                $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
+                $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
                     if($answer->access_id == 2) {
-                   $answers_html .= '<figure>
+                   $answers_html .= '<figure onclick="showModal('.$answer->guid.')">
                                     <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
                                         <span><img src="/images/ico_curtir.gif" width="36" height="36">0</span>
@@ -112,8 +112,6 @@ class theme extends simplePHP {
         public function _actionChallenges() {
             //get theme details
             $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
-
-           
             for($i=1;$i <= 5;$i++) {
                 if($i <= $_SESSION['nivel']) {
                     $this->keys['nivel-'.$i] = '';
@@ -127,13 +125,37 @@ class theme extends simplePHP {
             $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['nivel'] = $_SESSION['nivel'];
             
+            
+            $doneChallenges = $this->core->getDoneChallenges();
+
             //get challeges for this theme and nivel
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
             foreach ($challenges->result as $challenge) {
-               // pre($challenge);
+                if(in_array($challenge->guid, $doneChallenges)) {
+                    $challenge_list .= '<li><img src="/images/estrela-cheia.gif" width="33" height="30" alt="estrela"><a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'">'.$challenge->name.'</a></li>';
+                } else {
+                    $challenge_list .= '<li><img src="/images/estrela-vazia.gif" width="33" height="30" alt="estrela"><a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'">'.$challenge->name.'</a></li>';    
+                }
+                
             }
-
-
+            $this->keys['challengeList'] = $challenge_list;
+            $x = 0;
+            $a = 1;
+            //apply challenge guide rules
+            for($i=1;$i<=count($doneChallenges);$i++) {
+                $x++;
+                if($x == 1) {
+                    $stars_list .= '<li>'; 
+                }
+                $stars_list .= '<img src="/images/estrela.gif" width="22" height="22" alt="estrela">';
+                if($x == 3) {
+                    $a++;
+                    $stars_list .= '</li>'; 
+                    $x = 0;
+                    $this->keys['nivel-'.$a] = '';
+                }
+            }
+            $this->keys['stars'] = $stars_list;
 
             //get other themes
             return $this->keys;
@@ -153,11 +175,11 @@ class theme extends simplePHP {
             $this->keys['description'] = $challenge->result->fields->description->value;
 
             //get answers for this challenge
-            $answers = $this->core->getWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
+            $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
             foreach ($answers->result as $answer) {
                 if($answer->access_id == 2) {
-                   $answers_html .= '<figure>
+                   $answers_html .= '<figure onclick="showModal('.$answer->guid.')">
                                     <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
                                         <span><img src="/images/ico_curtir.gif" width="36" height="36">0</span>
@@ -183,6 +205,34 @@ class theme extends simplePHP {
             #groupid group.join
             $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(3)));
             $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(4)));
+
+
+            #get all challenges on this theme to make arrows links
+            $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
+            $x = 0;
+            foreach ($challenges->result as $challenge) {
+                $challenges_list[$x] = $challenge->guid;
+                if($challenge->guid == $this->getParameter(4)) {
+                    $current_challenge = $x;
+                }
+                $x++;
+            }
+            
+            if($current_challenge == 0) {
+                $this->keys['back'] = '';
+            } else {
+                $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>';
+            }
+            
+            if($challenges_list[$current_challenge+1] != '') {
+                 $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>';
+            } else {
+                $this->keys['next'] = '';
+            }
+           
+            
+
+
 
             //get other themes
             return $this->keys;

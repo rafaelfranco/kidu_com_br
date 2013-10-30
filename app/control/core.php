@@ -122,6 +122,14 @@ class core extends simplePHP {
             }
         }
 
-       
+    public function getDoneChallenges() {
+      $answers = $this->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
+      foreach ($answers->result as $answer) {
+        if($answer->access_id == 2) {
+          $doneChallenges[$answer->container_guid] = $answer->container_guid;
+        }
+      }
+      return $doneChallenges;
+    } 
 }
 ?>

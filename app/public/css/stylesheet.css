@@ -1152,6 +1152,9 @@ font-size: 110%;
 cursor: pointer;
 position: relative;
 }
+#tabuleiro #instrucoes dl dd ul li a{
+	color: #333;
+}
 
 #tabuleiro #instrucoes dl dd ul li:hover{
 font-weight: bold;
