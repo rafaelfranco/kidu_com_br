@@ -6,6 +6,9 @@
 	#import configs
 	include 'config/envinroments.php';
 	include 'config/webservices.php';
+	include 'config/redirects.php';
+
+
 
 	#define SimplePhp Path
 	if($_SERVER['HTTP_HOST'] == DEVEVOPMENT_URL) {
