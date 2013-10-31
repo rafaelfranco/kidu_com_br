@@ -762,7 +762,104 @@ color: black;
 color: #504194;
 }
 
+/**************** opine *********************/
 
+#opine header #opine {
+display: none;
+}
+
+#opine input[type=text],
+#opine textarea {
+width: 420px;
+margin: 0 0 22px 60px;
+border: 0;
+border-radius: 7px;
+background-color: #FFFFFF;
+padding: 7px 10px;
+font-size: 14px;
+color: #999999;
+border: inset 2px #a7b5dd;
+}
+
+#opine {
+padding-top: 50px;
+}
+
+#opine header{
+margin-bottom: 110px;
+}
+
+#opine section {
+width: 100%;
+padding: 0 0 40px 0;
+position: relative;
+}
+
+#opine section h2{
+width: 940px;
+margin: 0 auto 0;
+padding: 30px 0 20px;
+}
+
+#opine section h2 span{
+float: left;
+visibility: hidden;
+}
+
+#opine #mensagem {
+width: 940px;
+margin: 0 auto 40px;
+}
+
+#opine #mensagem fieldset{
+border: solid 1px #E2E2E2;
+width: 540px;
+float: left;
+background-color: #F5F5F5;
+margin-right: 40px;
+padding: 30px 0 10px;
+}
+
+#opine #mensagem fieldset h4{
+color: #c0bdc9;
+font-size: 140%;
+margin: 30px 0 15px 60px;
+font-weight: normal;
+}
+
+#opine #mensagem fieldset p{
+font-size: 90%;
+color: #c8c6cf;
+clear: left;
+text-align: right;
+margin: 0 60px 20px 0;
+padding: 0 0 20px 0;
+line-height: .1em;
+}
+
+#opine #mensagem fieldset p a{
+color: #504194;
+}
+
+#opine #mensagem fieldset label{ 
+width: 160px;
+margin-left: 60px;
+}
+
+#opine #mensagem fieldset .botao {
+margin: 15px 0 20px 352px;
+cursor: pointer;
+float: left;
+}
+
+#opine #mensagem article {
+margin-left: 30px;
+color: black;
+}
+
+#opine #mensagem article h3, #opine #mensagem article a{
+color: #504194;
+}
 
 #teamKidu {
 text-align: center;
@@ -1152,9 +1249,6 @@ font-size: 110%;
 cursor: pointer;
 position: relative;
 }
-#tabuleiro #instrucoes dl dd ul li a{
-	color: #333;
-}
 
 #tabuleiro #instrucoes dl dd ul li:hover{
 font-weight: bold;
@@ -1218,7 +1312,7 @@ font-weight: block;
 margin: 15px 0 0 15px;
 }
 
-/***** ConteÃºdos ****/
+/***** Conteúdos ****/
 
 body#conteudo {
 padding: 55px 0 0;
@@ -1300,7 +1394,7 @@ padding: 5px;
 float: left;
 cursor: pointer;
 background-color: white;
-margin: 0 15px 15px 0;
+margin: 0 15px 0 0;
 }
 
 #conteudo #respostas dd figure figcaption{

@@ -13,5 +13,11 @@
 	$LANGUAGE['exit'] = 'Sair';
 	$LANGUAGE['help'] = 'Ajuda';
 	$LANGUAGE['termsofuse'] = 'Termos de Uso';
+
+	
+	$LANGUAGE['name'] = 'Nome';	
+	$LANGUAGE['email'] = 'E-mail';	
+	$LANGUAGE['message'] = 'Mensagem';	
+	$LANGUAGE['send'] = 'Enviar';	
 	
 ?>

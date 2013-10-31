@@ -133,6 +133,27 @@ class action extends simplePHP {
         </dl>';
         exit;
   }
+
+  public function _actionSendMessage() {
+    #envia o email
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+    $headers .= 'From:contato@kidu.com.br<contato@kidu.com.br>' . "\r\n";
+
+    extract($_POST);
+
+    $emailTPL = "Novo contato recebido.<br/><br/>";
+    $emailTPL .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
+    $emailTPL .= "Nome = $pessoa <br/>";
+    $emailTPL .= "E-mail = $unidade <br/>";
+    $emailTPL .= "Mensagem = $valor <br/>";
+    $emailTPL .= "- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
+
+    mail('info@kidu.com.br','Novo contato recebido',$emailTPL,$headers);
+    mail('rafaelfranco@me.com','Novo contato recebido',$emailTPL,$headers);
+    echo 'sucesso;';
+    exit;
+  }
 }
 
 ?>

@@ -9,7 +9,34 @@ function setInvalid(element,msg) {
 }
 //Funcoes executadas no load da aplicação
 $(document).ready(function() {
-	
+	$('#sendMessage').click(function(){
+		errors = 0;
+		//validade empty fields
+		errors += validateEmpty('name');
+		errors += validateEmpty('email');
+		errors += validateEmpty('message');
+
+		$.ajax({
+			url: '/action/sendMessage/',
+			type: 'POST',
+			async:false,
+			data: { 
+  					name: $('#name').attr('value'),  
+  					email: $('#email').attr('value'),  
+  					message: $('#message').attr('value')
+ 				},
+		        success: function(json) {
+		        	dados = json.split(";");
+		        	//cadastre realizado com sucesso
+		        	if(dados[0] == 'sucesso') {
+		        		alert('Mensagem enviada com sucesso!');
+		        	}
+		        }
+		});
+		
+
+	});
+
     $.datepicker.regional['pt-BR'] = {
             closeText: 'Fechar',
             prevText: '&#x3c;Anterior',
@@ -142,6 +169,9 @@ $(document).ready(function() {
 			        }
 			});
 		}
+
+
+
 	});
 	
 

@@ -96,7 +96,13 @@ class hotsite extends simplePHP {
             //busca  a lista de comunidades
             return $this->keys;
         }
+
+        public function _actionContact() {
+            //busca  a lista de comunidades
+            return $this->keys;
+        }
         
+
         
         
        /**
