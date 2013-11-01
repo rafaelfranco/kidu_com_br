@@ -1451,6 +1451,44 @@ float: right;
 color: #e74c3c;
 }
 
+/***** educadores ****/
+
+body#educadores {
+padding: 55px 0 0;
+}
+
+#educadores section{
+width: 940px;
+margin: 0 auto 80px;
+}
+
+#educadores section img{
+margin-left: 40px;
+}
+
+#educadores section h3{
+float: left;
+margin: 30px 50px 30px 0;
+}
+
+#educadores section p{
+margin: 20px 0 0 180px;
+width: 450px;
+color: gray;
+font-size: 110%;
+}
+
+#educadores section p.olho{
+width: 700px;
+vertical-align: middle;
+padding-top: 30px;
+}
+
+#educadores section h4{
+margin: 40px 0 0 100px;
+font-size: 160%;
+}
+
 .aviso {
 width: 640px;
 margin: 0 auto;
