@@ -139,8 +139,8 @@ class core extends simplePHP {
 
       $authenticationURL= 'https://www.google.com/accounts/ClientLogin';
       $httpClient = Zend_Gdata_ClientLogin::getHttpClient(
-                  $username = 'rafaelphp@gmail.com',
-                  $password = 'mariogalaxy01',
+                  $username = 'kidu@kidu.com.br',
+                  $password = 'kiduthefuture7',
                   $service = 'youtube',
                   $client = null,
                   $source = 'Kidu', // a short string identifying your application
