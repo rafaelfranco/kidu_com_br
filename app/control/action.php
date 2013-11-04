@@ -89,16 +89,21 @@ class action extends simplePHP {
     
   }
   public function _actionPostfile() {
-    
+
     #save file local
     $file = $this->loadModule('file');
     $file_name = $file->uploadFile($_FILES['upload'],APP_PATH.'/public/tmp/');
 
+    #if is a video, save on youtube and get the youtube key
+    $type = explode('/',$_FILES['upload']['type']);
+    if($type[0] == 'video') {
+      $youtubeCode = $this->core->youtubePost($file_name,$_POST['challenge_id']);
+    }
+    
     $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
+    //save file on ELGG
+    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>1,'description'=>$youtubeCode));
 
-    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>1));
-   
-   #pre($res); 
     //redirect to profile
     if($res->status == 0) {
       $this->redirect('/profile');
@@ -115,7 +120,13 @@ class action extends simplePHP {
        
         $challenge = $this->core->getWs('group.get',array('guid'=>$file->result[0]->container_guid));
         
-       echo '<dl style="left: 213px;">
+        if($file->result[0]->description != '') {
+          $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
+        } else {
+          $center = '<img src="'.$img.'" width="700" height="700" alt="Menininha meu amor">';
+        }
+
+        echo '<dl style="left: 213px;">
         <dt>
         <span onclick="fecha_modal()">Fechar | X</span>
 
@@ -128,7 +139,7 @@ class action extends simplePHP {
         <br class="tudo">
         </dt>
         <dd>
-        <img src="'.$img.'" width="700" height="700" alt="Menininha meu amor"><br class="tudo">
+        '.$center.'<br class="tudo">
         </dd>
         </dl>';
         exit;
