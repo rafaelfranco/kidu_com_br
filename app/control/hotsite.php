@@ -35,7 +35,7 @@ class hotsite extends simplePHP {
              #if not logged in redirect to hotsite
             if($this->core->isLogged()) {
                 //user data
-                $this->keys['name_user'] = $_SESSION['name'];
+                $this->keys['name_user'] = $_SESSION['username'];
                 $this->keys['avatar'] = $_SESSION['avatar_url'];
             }
 

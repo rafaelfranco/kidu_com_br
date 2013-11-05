@@ -32,7 +32,7 @@ class theme extends simplePHP {
               $this->redirect('/');
             } else {
                 //user data
-                $this->keys['name_user'] = $_SESSION['name'];
+                $this->keys['name_user'] = $_SESSION['username'];
                 $this->keys['avatar'] = $_SESSION['avatar_url'];
             }
 
