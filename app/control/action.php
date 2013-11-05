@@ -59,7 +59,7 @@ class action extends simplePHP {
         $keys['guid'] = $_SESSION['guid'];
         $html = $this->applyKeys($html,$keys);
 
-        $this->email->send($email,'Seu filho que brincar no KIDU',$html,'Kidu','cadastro@kidu.com.br');
+        $this->email->send($data['father-email'],'Seu filho que brincar no KIDU',$html,'Kidu','cadastro@kidu.com.br');
 
         
         echo 'success;';
