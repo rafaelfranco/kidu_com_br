@@ -42,14 +42,28 @@ class action extends simplePHP {
       //do signup
       $response = $this->core->getWs('user.register',$data);
 
-      if($response->status == -1) {
-        echo 'erro;';
-        echo $response->message;
-      } else {
+     if($response->status == -1) {
+       echo 'erro;';
+       echo $response->message;
+     } else {
+        
         //do login
         $this->core->doLogin($data['username'],$data['password']);
+
+        //send email
+        #load email module
+        $this->email = $this->loadModule('email');
+
+        $html = file_get_contents('../view/email/convite.html');
+
+        $keys['guid'] = $_SESSION['guid'];
+        $html = $this->applyKeys($html,$keys);
+
+        $this->email->send($email,'Seu filho que brincar no KIDU',$html,'Kidu','cadastro@kidu.com.br');
+
+        
         echo 'success;';
-      }
+     }
       exit;
   }   
 
