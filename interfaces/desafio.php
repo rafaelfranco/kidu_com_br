@@ -4,7 +4,9 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" /> 
-    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <!-- JS -->
     <script type="text/javascript" src="js/jquery.js"></script> 
     <script type="text/javascript" src="js/global.js?v=1"></script> 
@@ -19,6 +21,20 @@
     <meta name="author" content="\">
     <!-- End: ../view/hotsite/global/head.html -->
     <script type="text/javascript" src="js/hotsite/signin.js"></script> 
+
+<script type="text/javascript">
+function mostra_botao(){
+document.getElementById('acoes').getElementsByTagName('div')[0].style.display = 'none';
+document.getElementById('acoes').getElementsByTagName('div')[1].style.display = 'block';
+}
+
+function mostra_arrastar(){
+document.getElementById('acoes').getElementsByTagName('div')[1].style.display = 'none';
+document.getElementById('acoes').getElementsByTagName('div')[0].style.display = 'block';   
+}
+
+</script>
+
   </head>
 
 <body id="desafio">
@@ -35,9 +51,15 @@
 <br class="tudo">
 <article id="explica">
 <form enctype="multipart/form-data" method="post" action="minha_pagina.php">
-<fieldset>
+<fieldset id="acoes">
+
 <p>Está faltando a resposta<br>mais importante:<br><strong>Sua resposta!</strong></p>
+<!--p><small>Arraste o arquivo para cá<br>ou use o botão tradicional.</small></p-->
+
+<div>
 <span class="botao">Upload de arquivo</span>
+<input name="upload" id="uploadFile" type="file">
+</div>
 </fieldset>
 </form>
 <div id="disclaimer">

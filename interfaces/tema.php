@@ -432,7 +432,9 @@ In et aliquet nisl. Pellentesque tempus vulputate mauris eu cursus. Proin volutp
 <br class="tudo">
 <p>&nbsp;</p>
 
-<footer id="avatar">
+
+
+<!--footer id="avatar">
 <dl>
 <dt><img src="imagens/avatar.png" width="61" height="199"></dt>
 <dd>
@@ -442,8 +444,17 @@ Lista de amigos <img src="imagens/ico_footer_amigos.png" width="22" height="21">
 <h5>Beneditazinha</h5>
 </dd>	
 </dl>
-</footer>
+</footer-->
 
+<footer id="logado">
+<div>
+<div>
+<strong>
+	<a href="/profile">bananinha</a>
+</strong><span><a href="/help">ajuda</a> | <a href="/logoff">sair</a></span>
+</div>
+</div>
+</footer>
 
 <footer id="info">Quero ver isso aqui! <button>Opa!</button></footer>
 </body>

@@ -13,5 +13,5 @@
 </nav>
 
 </div>
-<div id="opine"><a href="opine.php"><img src="images/opine.gif" width="16" height="41"></a></div>
+<div id="opine" onclick="location.href=opine.php"><a href="opine.php"><img src="images/opine.gif" width="16" height="41"></a></div>
 </header>

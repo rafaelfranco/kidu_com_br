@@ -4,7 +4,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
     <link rel="stylesheet" href="css/jquery-ui.css" /> 
-    
+    <link href='http://fonts.googleapis.com/css?family=Gochi+Hand' rel='stylesheet' type='text/css'>
     <!-- JS -->
     <script type="text/javascript" src="js/jquery.js"></script> 
     <script type="text/javascript" src="js/global.js?v=1"></script> 
@@ -85,6 +85,19 @@ Enquanto você não estiver autorizado, só você vê as respostas aos desafios 
 
 <figure onclick="abre_modal(this)">
 <img src="imagens/minininha.jpg" height="285" width="285" alt="Kidu">
+<figcaption>
+<span>
+<img src="imagens/ico_curtir.gif" width="36" height="36">
+13</span>
+    
+<strong>12.12.2013</strong>
+</figcaption>
+</figure>
+
+<figure onclick="abre_modal(this)">
+<div>
+<p><span>Mauris bibendum lectus in neque semper mollis. Donec interdum egestas sem vitae congue. Vestibulum quis quam euismod, mattis dolor.</span></p>
+</div>
 <figcaption>
 <span>
 <img src="imagens/ico_curtir.gif" width="36" height="36">

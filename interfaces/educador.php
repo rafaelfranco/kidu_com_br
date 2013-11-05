@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <!-- Start: ../view/hotsite/global/head.html -->
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" /> 
+    
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery.js"></script> 
+    <script type="text/javascript" src="js/global.js?v=1"></script> 
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    
+    <title>KIDU</title>
+    
+    <!-- META -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="\">
+    <!-- End: ../view/hotsite/global/head.html -->
+    <script type="text/javascript" src="js/hotsite/signin.js"></script> 
+  </head>
+
+<body id="educadores">
+<?php include "header.inc" ;?>
+<section>
+<h3>Aos educadores</h3>
+<p class="olho">Kidu é o sistema educacional que dá novo significado<br>ao aprendizado escolar.</p>
+<br class="tudo">
+<img src="images/foto_educadores.jpg" width="760" height="459" alt="Educadores">
+
+<h4>O que é o Kidu?</h4>
+
+<p>Uma plataforma educativa que pode ser acessada via tablet, notebook, netbook, desktop e até mesmo com smartphones. Com o Kidu o professor engaja seus alunos em desafios para serem realizados fora do computador e, sem sua maioria, com a mediação do próprio educador.</p>
+
+<p>Além ter à sua disposição um repertório de atividades que atendem às demandas do currículo escolar, com o Kidu o professor acompanha o desempenho da turma e identifica as habilidades e competências que estão sendo desenvolvidas a cada projeto.</p>
+
+<h4>O que são os Desafios do KIDU?</h4>
+
+<p>São propostas de projetos transversais desafiadores para serem realizados pelos alunos fora do computador, individualmente ou em grupo.</p>
+
+<p>Lúdicas, criativas, instigantes e, ao mesmo tempo, com educativas e multidisciplinares, as atividades são oferecidas em linguagens e com níveis de complexidade diferentes. </p>
+
+<p>Missões como escrever uma história ambienta no período das grandes navegações, desenhar um projeto de submarino, confeccionar um figurino do tempo dos Faraós,  construir uma maquete de castelo medieva ou produzir uma animação em stop-motion  sobre tartarugas marinhas são apresentadas sempre de maneira divertida, instigantes e muito desafiadoras. Quanto aos temas, o céu é o limite. Ou nem ele.</p>
+
+<p>Todos os projetos atendem a demandas do currículo escolar e ao serem realizados pelos alunos ajudam no desenvolvimento de competências e habilidades.</p>
+
+<h4>Como o Kidu funciona?</h4>
+
+<p>O Kidu é uma plataforma digital colaborativa.</p>
+
+<p>Para quem conhece o YouTube, a Wikipédia ou mesmo o Facebook, este conceito de plataforma colaborativa é fácil de entender. São ambientes digitais interativos onde quem cria e compartilha os conteúdos é a própria comunidade.</p>
+
+<h4>Mas no Kidu, como é?</h4>
+
+<p>Assim como o YouTube, o Kidu permite ao aluno compartilhar em vídeo projetos, conhecimentos, experiências ou atividades.   </p>
+<p>Diferentemente do YouTube, os conteúdos compartilhados no Kidu são respostas a desafios  desafios concebidos com o propósito de desenvolver habilidades e competências. E, além de vídeos, podem ser em texto, fotos ou áudios.</p>
+
+<p>Assim  como no Facebook, os participantes podem interagir e socializar.  </p>
+<p>Diferentemente do Facebook, no Kidu os pais precisam aprovar cada um dos amigos dos filhos.</p>
+
+<p>Assim como na Wikipédia, é a comunidade que desenvolve os conteúdos de referência. </p>
+<p>Diferentemente da Wikipédia, no Kidu todo conteúdo é moderado por Educadores antes de ir para o ar.</p>
+
+<h4>WIKIDU: uma wikipédia feita por e para crianças</h4>
+
+<p>Todo conteúdo compartilhado no Kidu, após moderado e avaliado, passa a alimentar um acervo de conteúdos sobre os mais diversos temas do universo infantil e escolar: a Wikidu, um portal de referência feito de forma totalmente colaborativa.</p>
+
+<p>Com a Wikidu, o educador pode compartilhar a experiência de seus alunos e também mergulhar no conteúdo feito pelas outras crianças. Um acervo para inspirar o educador, valorizar o aprendizado das crianças e construir conhecimento em sintonia com a era digital.</p>
+
+<h4>Por que o Kidu engaja as crianças?</h4>
+
+<p>Porque o Kidu fala a língua desta geração. Os recursos de socialização, interação e gameficação tornam a dinâmica muito mais eficiente e atendem às demandas de comunicação e de aprendizagem desta turma que nasceu em plena era digital.</p>
+
+<p>Ao compartilhar na Web o conteúdo feito pelas crianças, o Kidu valoriza e reconhece a importância destes trabalhos produzidos dentro da escola.</p>
+
+<p>Ao permitir que o conhecimento da criança extrapole os muros das escolas e, através desta inovadora Wikipédia, sirva de referência para que outras crianças aprendam e inspirem-se, o Kidu dá mais significado ao aprendizado.</p>
+
+<h4>Por que é bom para os Educadores e para a Escola?</h4>
+
+<p>Com uma interface fácil e amigável, o Kidu indica e sugere aos professores atividades e projetos (Desafios do Kidu) para serem desenvolvidos em cada etapa do currículo.</p>
+
+<p>Utilizando a plataforma, o professor acompanha a evolução de seus alunos enquanto é orientado a atuar conforme as potencialidades e dificuldades de cada criança.</p>
+
+<p>Ao professor, cabe o papel mais importante: acompanhar pessoalmente a turma durante todo o processo - da execução dos projetos à avaliação deles - para permitir que a experiência de cada um seja cada vez mais rica.</p>
+
+<p>O Kidu é o primeiro produto digital que coloca à disposição dos educadores recursos de compartilhamento, socialização, interação e gameficação para engajar os alunos em suas próprias atividades educativas desenvolvidas dentro da escola e fora do computador.</p>
+
+<p>É também o primeiro produto digital que orienta o educador quanto à escolha de projetos transversais a partir do currículo escolar e de competências e habilidades a serem desenvolvidas. </p>
+
+</section>
+
+<footer id="logado">
+<div>
+<div>
+<strong>Jubileuzinho</strong><span><a href="index.php">ajuda</a> | <a href="index.php">sair</a></span>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
