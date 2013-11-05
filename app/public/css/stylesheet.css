@@ -1272,6 +1272,10 @@ cursor: pointer;
 position: relative;
 }
 
+#tabuleiro #instrucoes dl dd ul li a{
+color: black;
+}
+
 #tabuleiro #instrucoes dl dd ul li:hover{
 font-weight: bold;
 }
