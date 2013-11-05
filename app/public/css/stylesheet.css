@@ -1572,3 +1572,6 @@ margin: 0;
 display: block;
 float: left;
 }
+.likeButton {
+	cursor: pointer;
+}

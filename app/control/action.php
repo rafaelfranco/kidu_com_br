@@ -127,22 +127,24 @@ class action extends simplePHP {
         }
 
         echo '<dl style="left: 213px;">
-        <dt>
-        <span onclick="fecha_modal()">Fechar | X</span>
+                <dt>
+                  <span onclick="fecha_modal()">Fechar | X</span>
 
-        <h4>Desafio</h4>
-        <p>'.$challenge->result->name.'</p>
-        <p><br></p>
-        <p>Postado em<br><time>'.date('d.m.Y - h:m',$file->result[0]->time_created).'</time></p>
+                  <h4>Desafio</h4>
+                  <p>'.$challenge->result->name.'</p>
+                  <p><br></p>
+                  <p>Postado em<br><time>'.date('d.m.Y - h:m',$file->result[0]->time_created).'</time></p>
 
-        <div><img src="imagens/ico_curtir.gif" width="36" height="36"> 12</div>
-        <br class="tudo">
-        </dt>
-        <dd>
-        '.$center.'<br class="tudo">
-        </dd>
-        </dl>';
-        exit;
+                    <div onclick="likeItem('.$file_id.');">
+                      <img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$file_id.'" >'.$file->result[0]->likes.'</span>
+                    </div>
+                  <br class="tudo">
+                </dt>
+                <dd>
+                '.$center.'<br class="tudo">
+                </dd>
+              </dl>';
+              exit;
   }
 
   public function _actionSendMessage() {
@@ -165,6 +167,14 @@ class action extends simplePHP {
     echo 'sucesso;';
     exit;
   }
+
+  public function _actionAddlike() {
+    $entity_guid = $_POST['item_id'];
+    $res = $this->core->callWs('file.add_like',array('entity_guid'=>$entity_guid));
+    echo ($res->result);
+    exit;
+  }
+
 }
 
 ?>

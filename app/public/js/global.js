@@ -387,3 +387,21 @@ function fecha_modal() {
 	$('#modal').html('');
 	$('#modal').hide();
 }
+
+function likeItem(item_id) {
+	current_likes = parseInt($('#likes-'+item_id).html()) + 1;
+	$.ajax({
+		url: '/action/addlike/',
+		type: 'POST',
+		data: {item_id: item_id},
+	})
+	.done(function(data) {
+		if(data == 'You now like this item') {
+			current_likes = parseInt($('#likes-'+item_id).html()) + 1;
+			$('#likes-'+item_id).html(current_likes);
+		}
+	});
+
+	
+	
+}
