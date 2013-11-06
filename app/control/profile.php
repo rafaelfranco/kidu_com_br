@@ -62,7 +62,7 @@ class profile extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
            
             foreach ($answers->result as $answer) {
-                if($answer->access_id == 1) {
+                if($answer->access_id == 0) {
                     $answers_html .= '<figure class="oculto">
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                        <figcaption>
