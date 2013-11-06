@@ -67,7 +67,8 @@ class profile extends simplePHP {
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                        <figcaption>
                                         <strong>Conteúdo oculto</strong>
-                                        <a href="">Por quê?</a>
+                                        <a href="" onclick="this.parentNode.getElementsByTagName('span')[0].style.display = 'inline'; return false;">Por quê?</a>
+                                        <span class="aviso" onclick="this.style.display = 'none';"><strong>Fechar</strong><br><br>Este conteúdo ainda não pode ser exibido porque não foi avaliado pelos educadores do Kidu. Aguarde.</span>
                                         </figcaption>
                                     </figure>';
                 } else {

@@ -1442,6 +1442,27 @@ text-decoration: underline;
 margin-top: 20px;
 }
 
+#conteudo #respostas dd figure.oculto figcaption span.aviso{
+position: absolute;
+width: 200px;
+padding: 15px;
+background-color: #F5F5F5;
+bottom: 0;
+display: none;
+z-index: 800;
+border-radius: 5px;
+border: 1px solid gray;
+}
+
+#conteudo #respostas dd figure.oculto figcaption span.aviso strong{
+background-color: gray;
+float: right;
+font-size: 80%;
+padding: 3px;
+color: white;
+margin-bottom: 5px;
+}
+
 #conteudo #respostas dd figure figcaption img{
 vertical-align: middle;
 }
