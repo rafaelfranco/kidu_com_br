@@ -90,7 +90,8 @@ class theme extends simplePHP {
                                 <h3>'.$challenge->briefdescription.'</h3>
                                 <div>
                                     <span>
-                                    <a href="/theme/challenges/'.$this->getParameter(3).'/'.$challenge->guid.'" >
+                                    <!--a href="/theme/challenges/'.$this->getParameter(3).'/'.$challenge->guid.'" -->
+                                    <a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'" >
                                     <img src="/images/bot_faca_voce.gif" alt="Faça você!" width="110" height="40"></a>
                                     </span><br>
                                     <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a>
