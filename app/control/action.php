@@ -116,7 +116,7 @@ class action extends simplePHP {
     
     $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
     //save file on ELGG
-    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>1,'description'=>$youtubeCode));
+    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>0,'description'=>$youtubeCode));
 
     //redirect to profile
     if($res->status == 0) {
