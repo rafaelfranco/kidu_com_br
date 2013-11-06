@@ -1428,6 +1428,7 @@ padding: 5px;
 font-size: 90%;
 color: #ddd;
 height: 35px;
+position: relative;
 }
 
 #conteudo #respostas dd figure.oculto figcaption strong{
