@@ -150,7 +150,7 @@ class action extends simplePHP {
                   <p><a style="color:#666;" href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
                   
                   <h4>Desafio</h4>
-                  <p><a style="color:#666;" href="/theme/challenge/'.$file->result[0]->container_guid.'">'.$challenge->result->name.'</a></p>
+                  <p><a style="color:#666;" href="/theme/challenge/'.$challenge->result->container_guid.'/'.$file->result[0]->container_guid.'">'.$challenge->result->name.'</a></p>
                   <p><br></p>
                   <p>Postado em<br><time>'.date('d.m.Y - h:m',$file->result[0]->time_created).'</time></p>
 
