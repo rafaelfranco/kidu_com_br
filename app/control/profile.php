@@ -93,13 +93,13 @@ class profile extends simplePHP {
 
             return $this->keys;
         }
-        
+            
 
          public function _actionView() {
             $username = $this->getParameter(3);
 
             $this->keys['name_user'] = $username;
-            
+
             //get user answers
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
            

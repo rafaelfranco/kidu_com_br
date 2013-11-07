@@ -172,7 +172,7 @@ class theme extends simplePHP {
 
             $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['theme'] = $theme->result->name;
-            $this->keys['challenge'] = $challenge->result->name;
+            $this->keys['challenge'] = $challenge->result->name;   
             $this->keys['description'] = $challenge->result->fields->description->value;
 
             //get answers for this challenge
