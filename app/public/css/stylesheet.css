@@ -1601,3 +1601,6 @@ float: left;
 .likeButton {
 	cursor: pointer;
 }
+figcaption a {
+	color: #666;
+}
