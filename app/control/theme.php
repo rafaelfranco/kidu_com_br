@@ -69,15 +69,16 @@ class theme extends simplePHP {
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
                     if($answer->access_id == 2) {
-                    $answers_html .= '<figure ">
+                        $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
+                        $answers_html .= '<figure ">
                                     <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
-                                        <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
+                                        '.$likeIcon.'
                                         <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
                                         <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
                                         </figcaption>
                                     </figure>';
-                                    }
+                    }
 
                     
                 }
@@ -180,17 +181,16 @@ class theme extends simplePHP {
 
             foreach ($answers->result as $answer) {
                 if($answer->access_id == 2) {
-                   $answers_html .= '<figure>
+                    $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
+                    $answers_html .= '<figure>
                                     <img  onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
-                                        <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
+                                       '.$likeIcon.'
                                         <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
                                         <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
                                         </figcaption>
                                     </figure>';
-                                }
-
-                  
+                    }     
             }
             if($answers_html == '') {
                 $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));

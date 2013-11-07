@@ -394,14 +394,11 @@ function likeItem(item_id) {
 		url: '/action/addlike/',
 		type: 'POST',
 		data: {item_id: item_id},
-	})
-	.done(function(data) {
+	}).done(function(data) {
 		if(data == 'You now like this item') {
 			current_likes = parseInt($('#likes-'+item_id).html()) + 1;
 			$('#likes-'+item_id).html(current_likes);
+			$('#ico-'+item_id).attr('src','/images/ico_curtir.gif');
 		}
 	});
-
-	
-	
 }

@@ -206,9 +206,19 @@ class core extends simplePHP {
       } catch (Zend_Gdata_App_Exception $e) {
         return $e->getMessage();
       }
-
-
-      pre($file);
     }
+    public function likeIcon($guid,$likes)
+    {
+      
+      if($likes == 0) {
+        $html = '<span  onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
+      } else {
+        $html = '<span  onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
+      } 
+      
+
+      return $html;
+    }
+
 }
 ?>
