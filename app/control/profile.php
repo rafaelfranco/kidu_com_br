@@ -32,7 +32,7 @@ class profile extends simplePHP {
               $this->redirect('/');
             } else {
                 //user data
-                $this->keys['name_user'] = $_SESSION['username'];
+                $this->keys['loggeduser'] = $_SESSION['username'];
                 $this->keys['avatar'] = $_SESSION['avatar_url'];
             }
 
