@@ -74,14 +74,13 @@ class theme extends simplePHP {
                                     <figcaption>
                                         <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
                                         <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                        <strong>'.$answer->owner->name.'</strong>
+                                        <strong><a href="/profile/view/'.$answer->owner->username.'">'.$answer->owner->username.'</a></strong>
                                         </figcaption>
                                     </figure>';
                                     }
 
                     
                 }
-                
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
                     $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
@@ -186,7 +185,7 @@ class theme extends simplePHP {
                                     <figcaption>
                                         <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
                                         <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                        <strong>'.$answer->owner->name.'</strong>
+                                        <strong><a href="/profile/view/'.$answer->owner->username.'">'.$answer->owner->username.'</a></strong>
                                         </figcaption>
                                     </figure>';
                                 }

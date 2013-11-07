@@ -77,7 +77,7 @@ class profile extends simplePHP {
                                         <figcaption>
                                             <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
                                             <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                            <strong>'.$answer->owner->name.'</strong>
+                                            <strong><a href="/profile/view/'.$answer->owner->username.'">'.$answer->owner->username.'</a></strong>
                                         </figcaption>
                                     </figure>';
                 }
