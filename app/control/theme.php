@@ -68,7 +68,7 @@ class theme extends simplePHP {
                 //get answers for this challenge
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
-                    if($answer->access_id == 2) {
+                    if($answer->tags == 'aprovado') {
                         $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
                         $answers_html .= '<figure ">
                                     <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
@@ -180,7 +180,7 @@ class theme extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
             foreach ($answers->result as $answer) {
-                if($answer->access_id == 2) {
+                if($answer->tags == 'aprovado') {
                     $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
                     $answers_html .= '<figure>
                                     <img  onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">

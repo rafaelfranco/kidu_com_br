@@ -63,7 +63,7 @@ class profile extends simplePHP {
            
             foreach ($answers->result as $answer) {
                 $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
-                if($answer->access_id == 0) {
+                if($answer->tags != 'aprovado') {
                     $answers_html .= '<figure class="oculto">
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                        <figcaption>
@@ -105,7 +105,7 @@ class profile extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
            
             foreach ($answers->result as $answer) {
-                if($answer->access_id == 0) {
+                if($answer->tags != 'aprovado') {
                     $answers_html .= '<figure class="oculto">
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                        <figcaption>
