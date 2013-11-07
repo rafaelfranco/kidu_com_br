@@ -133,7 +133,10 @@ class action extends simplePHP {
         $img = str_replace('small', 'full', $file->result[0]->file_icon);
        
         $challenge = $this->core->getWs('group.get',array('guid'=>$file->result[0]->container_guid));
-        
+       
+
+        $theme =  $this->core->getWs('group.get',array('guid'=>$challenge->result->container_guid));
+       
         if($file->result[0]->description != '') {
           $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
         } else {
@@ -143,9 +146,11 @@ class action extends simplePHP {
         echo '<dl style="left: 213px;">
                 <dt>
                   <span onclick="fecha_modal()">Fechar | X</span>
-
+                  <h4>Tema</h4>
+                  <p><a style="color:#666;" href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
+                  
                   <h4>Desafio</h4>
-                  <p>'.$challenge->result->name.'</p>
+                  <p><a style="color:#666;" href="/theme/challenge/'.$file->result[0]->container_guid.'">'.$challenge->result->name.'</a></p>
                   <p><br></p>
                   <p>Postado em<br><time>'.date('d.m.Y - h:m',$file->result[0]->time_created).'</time></p>
 
