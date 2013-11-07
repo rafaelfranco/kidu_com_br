@@ -69,7 +69,7 @@ class theme extends simplePHP {
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
                     if($answer->access_id == 2) {
-                   $answers_html .= '<figure onclick="showModal('.$answer->guid.')">
+                    $answers_html .= '<figure onclick="showModal('.$answer->guid.')">
                                     <img src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                     <figcaption>
                                         <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
@@ -79,9 +79,10 @@ class theme extends simplePHP {
                                     </figure>';
                                     }
 
-                    $allFiles_html .= $answers_html;
+                    
                 }
                 
+                $allFiles_html .= $answers_html;
                 if($answers_html == '') {
                     $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
                 }
