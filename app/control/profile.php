@@ -94,6 +94,48 @@ class profile extends simplePHP {
             return $this->keys;
         }
         
+
+         public function _actionView() {
+            $username = $this->getParameter(3);
+
+            $this->keys['name_user'] = $username;
+            
+            //get user answers
+            $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
+           
+            foreach ($answers->result as $answer) {
+                if($answer->access_id == 0) {
+                    $answers_html .= '<figure class="oculto">
+                                        <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
+                                       <figcaption>
+                                        <strong>Conteúdo oculto</strong>
+                                        <a href="" onclick="this.parentNode.getElementsByTagName(\'span\')[0].style.display = \'inline\'; return false;">Por quê?</a>
+                                        <span class="aviso" onclick="this.style.display = \'none\';"><strong>Fechar</strong><br><br>Este conteúdo ainda não pode ser exibido porque não foi avaliado pelos educadores do Kidu. Aguarde.</span>
+                                        </figcaption>
+                                    </figure>';
+                } else {
+                    $answers_html .= '<figure>
+                                        <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
+                                        <figcaption>
+                                            <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
+                                            <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
+                                            <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
+                                        </figcaption>
+                                    </figure>';
+                }
+                
+                $allFiles_html .= $answers_html;
+            }
+
+            if($answers_html == '') {
+                $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers noneAnswers'));
+            }
+
+            $this->keys['answers'] = $answers_html;
+
+            return $this->keys;
+        }
+        
                
 }
 ?>
