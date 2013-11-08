@@ -1054,7 +1054,7 @@ margin: 40px 0;
 
 #desafio article#explica form fieldset div {
 position: relative;
-width: 195px;
+width: 250px;
 margin: 0 auto;
 }
 
@@ -1065,6 +1065,17 @@ top: 0;
 opacity: 0;
 cursor: pointer;
 width: 195px;
+margin-top: -17px;
+padding: 10px 15px;
+background-color: blue;
+}
+
+#desafio article#explica form fieldset div textarea{
+padding: 10px;
+width: 250px;
+margin: 0 auto 30px;
+border-radius: 10px;
+border: 1px solid silver;
 }
 
 #desafio #respostas {
