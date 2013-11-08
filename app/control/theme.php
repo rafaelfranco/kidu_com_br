@@ -173,9 +173,8 @@ class theme extends simplePHP {
             $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
 
             if($challenge->result->text_enabled == 1) {
-                $html = file_get_contents('../view/theme/challengeText.html');
+                $this->redirect('/theme/challengeText/'.$this->getParameter(3).'/'.$this->getParameter(4));
             }
-
 
             $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['theme'] = $theme->result->name;
@@ -240,6 +239,77 @@ class theme extends simplePHP {
             return $this->keys;
         }
         
+
+        public function _actionChallengeText() {
+
+            //get theme details
+            $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
+
+            //get challenge details
+            $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
+            
+            $this->keys['challenge_id'] = $this->getParameter(4);
+            $this->keys['theme'] = $theme->result->name;
+            $this->keys['challenge'] = $challenge->result->name;   
+            $this->keys['description'] = $challenge->result->fields->description->value;
+
+            //get answers for this challenge
+            $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
+
+            foreach ($answers->result as $answer) {
+                if($answer->tags == 'aprovado') {
+                    $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
+                    $answers_html .= '<figure>
+                                    <img  onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
+                                    <figcaption>
+                                       '.$likeIcon.'
+                                        <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
+                                        <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
+                                        </figcaption>
+                                    </figure>';
+                    }     
+            }
+            if($answers_html == '') {
+                $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
+            }
+
+                
+            $this->keys['challenges'] = $challenge_html;
+            $this->keys['answers'] = $answers_html ;
+            
+            //ADD USER TO THOSE GROUPS
+            #username
+            
+            #groupid group.join
+            $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(3)));
+            $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(4)));
+
+
+            #get all challenges on this theme to make arrows links
+            $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
+            $x = 0;
+            foreach ($challenges->result as $challenge) {
+                $challenges_list[$x] = $challenge->guid;
+                if($challenge->guid == $this->getParameter(4)) {
+                    $current_challenge = $x;
+                }
+                $x++;
+            }
+            
+            if($current_challenge == 0) {
+                $this->keys['back'] = '';
+            } else {
+                $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>';
+            }
+            
+            if($challenges_list[$current_challenge+1] != '') {
+                 $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>';
+            } else {
+                $this->keys['next'] = '';
+            }
+            //get other themes
+            return $this->keys;
+        }
                
 }
 ?>
