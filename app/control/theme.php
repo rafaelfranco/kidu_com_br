@@ -165,11 +165,17 @@ class theme extends simplePHP {
 
 
         public function _actionChallenge() {
+
             //get theme details
             $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
 
             //get challenge details
             $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
+
+            if($challenge->result->text_enabled == 1) {
+                $html = file_get_contents('../view/theme/challengeText.html');
+            }
+
 
             $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['theme'] = $theme->result->name;
