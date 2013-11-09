@@ -220,5 +220,40 @@ class core extends simplePHP {
       return $html;
     }
 
+    public function answerHtml($answer,$onlyApproved=false)
+    {
+      $likeIcon = $this->likeIcon($answer->guid,$answer->likes);
+      
+      if($answer->MIMEType == 'text/plain') {
+        $file = '<div onclick="showModal('.$answer->guid.')" ><p><span>'.strip_tags($answer->description).'</span></p></div>';
+      } else {
+        $file = '<img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">';
+      }
+
+      if($answer->tags != 'aprovado') {
+          if($onlyApproved == false) {
+            $answers_html .= '<figure class="oculto">
+                                '.$file.'
+                               <figcaption>
+                                <strong>Conteúdo oculto</strong>
+                                <a href="" onclick="this.parentNode.getElementsByTagName(\'span\')[0].style.display = \'inline\'; return false;">Por quê?</a>
+                                <span class="aviso" onclick="this.style.display = \'none\';"><strong>Fechar</strong><br><br>Este conteúdo ainda não pode ser exibido porque não foi avaliado pelos educadores do Kidu. Aguarde.</span>
+                                </figcaption>
+                            </figure>';
+          }
+        } else {
+            $answers_html .= '<figure>
+                                '.$file.'
+                                <figcaption>
+                                    '.$likeIcon.'
+                                    <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
+                                    <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
+                                </figcaption>
+                            </figure>';
+        }
+
+        return $answers_html;
+    }
+
 }
 ?>

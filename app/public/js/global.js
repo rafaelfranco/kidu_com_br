@@ -194,6 +194,14 @@ $(function() {
     });
   });
 
+	$('#sendTextChallenge').click(function() {
+		if($('#textAnswer').val() == '') {
+			alert('Preencha a resposta!');
+		} else {
+			$('form').submit();
+		}
+	});
+
 });
 function closeModal() {
 	$('#fullBlack').hide();

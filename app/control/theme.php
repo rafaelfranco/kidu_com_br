@@ -68,19 +68,7 @@ class theme extends simplePHP {
                 //get answers for this challenge
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
-                    if($answer->tags == 'aprovado') {
-                        $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
-                        $answers_html .= '<figure ">
-                                    <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                    <figcaption>
-                                        '.$likeIcon.'
-                                        <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                        <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
-                                        </figcaption>
-                                    </figure>';
-                    }
-
-                    
+                    $answers_html .= $this->core->answerHtml($answer,true); 
                 }
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
@@ -185,17 +173,7 @@ class theme extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
             foreach ($answers->result as $answer) {
-                if($answer->tags == 'aprovado') {
-                    $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
-                    $answers_html .= '<figure>
-                                    <img  onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                    <figcaption>
-                                       '.$likeIcon.'
-                                        <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                        <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
-                                        </figcaption>
-                                    </figure>';
-                    }     
+                $answers_html .= $this->core->answerHtml($answer,true);        
             }
             if($answers_html == '') {
                 $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
@@ -257,22 +235,11 @@ class theme extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
             foreach ($answers->result as $answer) {
-                if($answer->tags == 'aprovado') {
-                    $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
-                    $answers_html .= '<figure>
-                                    <img  onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                    <figcaption>
-                                       '.$likeIcon.'
-                                        <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                        <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
-                                        </figcaption>
-                                    </figure>';
-                    }     
+                $answers_html .= $this->core->answerHtml($answer,true);      
             }
             if($answers_html == '') {
                 $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
             }
-
                 
             $this->keys['challenges'] = $challenge_html;
             $this->keys['answers'] = $answers_html ;

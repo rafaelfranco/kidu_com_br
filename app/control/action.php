@@ -126,6 +126,22 @@ class action extends simplePHP {
     }
   }
 
+
+  public function _actionPostfiletext() {
+
+    $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/tmp.txt';
+
+    //save file on ELGG
+    $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>2,'description'=>$_POST['textAnswer']));
+
+    //redirect to profile
+    if($res->status == 0) {
+      $this->redirect('/profile');
+    } else {
+      $this->redirect('/logoff');
+    }
+  }
+
   public function _actionGetFile() {
         $file_id = $this->getParameter(3);
         $file = $this->core->callWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
@@ -137,11 +153,16 @@ class action extends simplePHP {
 
         $theme =  $this->core->getWs('group.get',array('guid'=>$challenge->result->container_guid));
        
-        if($file->result[0]->description != '') {
-          $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
+        if($file->result[0]->MIMEType == 'text/plain') {
+          $center = '<div class="text">'.$file->result[0]->description.'</div>';
         } else {
-          $center = '<img src="'.$img.'" width="700" height="700" alt="Menininha meu amor">';
+          if($file->result[0]->description != '') {
+            $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
+          } else {
+            $center = '<img src="'.$img.'" width="700" height="700" alt="Menininha meu amor">';
+          }
         }
+        
 
         echo '<dl style="left: 213px;">
                 <dt>

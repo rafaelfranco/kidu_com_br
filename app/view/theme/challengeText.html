@@ -6,25 +6,18 @@
 		<section>
 			<a href="/" id="link_wikidu"><img src="/images/wikidu.gif" width="85" height="112" alt="Wikidu"></a>
 			<h3><span>Tema</span><br>[#theme#]</h3>
-			<h2>
-			[#back#]
-			[#next#]
-			
-			<span>Desafio</span><br>[#challenge#]
-			</h2>
+			<h2>[#back#][#next#]<span>Desafio</span><br>[#challenge#]</h2>
 			<br class="tudo">
 			<article id="explica">
-			<form enctype="multipart/form-data" method="post" id="postFile" action="/action/postfile">
-			<input type="hidden" name="challenge_id" value="[#challenge_id#]" />
-			
-			<fieldset id="acoes">
-			<p><strong>Está faltando sua resposta!</strong><br>Escreva abaixo</p>
-			<div>
-			<textarea></textarea>
-			<span class="botao">Enviar</span>
-			</div>
-			</fieldset>
-
+			<form enctype="multipart/form-data" method="post" id="postFile" action="/action/postfiletext">
+				<input type="hidden" name="challenge_id" value="[#challenge_id#]" />
+				<fieldset id="acoes">
+					<p><strong>Está faltando sua resposta!</strong><br>Escreva abaixo</p>
+					<div>
+					<textarea id="textAnswer" name="textAnswer"></textarea>
+					<span id="sendTextChallenge" class="botao">Enviar</span>
+					</div>
+				</fieldset>
 			</form>
 			<div id="disclaimer">
 			<p>[#description#]</p>

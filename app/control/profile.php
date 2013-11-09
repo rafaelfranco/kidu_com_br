@@ -62,27 +62,7 @@ class profile extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
            
             foreach ($answers->result as $answer) {
-                $likeIcon = $this->core->likeIcon($answer->guid,$answer->likes);
-                if($answer->tags != 'aprovado') {
-                    $answers_html .= '<figure class="oculto">
-                                        <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                       <figcaption>
-                                        <strong>Conteúdo oculto</strong>
-                                        <a href="" onclick="this.parentNode.getElementsByTagName(\'span\')[0].style.display = \'inline\'; return false;">Por quê?</a>
-                                        <span class="aviso" onclick="this.style.display = \'none\';"><strong>Fechar</strong><br><br>Este conteúdo ainda não pode ser exibido porque não foi avaliado pelos educadores do Kidu. Aguarde.</span>
-                                        </figcaption>
-                                    </figure>';
-                } else {
-                    $answers_html .= '<figure>
-                                        <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                        <figcaption>
-                                            '.$likeIcon.'
-                                            <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                            <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
-                                        </figcaption>
-                                    </figure>';
-                }
-                
+                $answers_html .= $this->core->answerHtml($answer);
                 $allFiles_html .= $answers_html;
             }
 

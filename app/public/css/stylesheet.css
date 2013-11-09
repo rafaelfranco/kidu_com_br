@@ -1589,6 +1589,11 @@ margin: 30px 15px;
 #modal dl dt div img{
 vertical-align: middle;
 }
+#modal dd .text {
+	width: 680px;
+	padding: 10px;
+	background-color: #fcf;
+}
 
 #modal dl dt h4{
 margin: 20px 15px 0;
@@ -1614,4 +1619,184 @@ float: left;
 }
 figcaption a {
 	color: #666;
+}
+
+#conteudo #respostas dd figure div{
+width: 285px;
+height: 285px;
+background: #f9c667; /* Old browsers */
+background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
+position: relative;
+overflow: hidden;
+}
+
+#conteudo #respostas dd figure div p{
+height: 204px;
+width: 222px;
+position: absolute;
+right: 0;
+bottom: 0;
+background: transparent url('../images/fundo_caixa_texto.png') no-repeat 0 0;
+overflow: hidden;
+padding: 0;
+margin: 0;
+}
+
+#conteudo #respostas dd figure div p span{
+padding: 60px 0 0 0;
+margin-left: 70px;
+width: 300px;
+color: #225196;
+font-family: 'Gochi Hand', cursive;
+display: block;
+font-size: 140%;
+}
+
+#conteudo #respostas dd figure div p span:first-letter{
+text-transform: uppercase;
+font-size: 300%;
+line-height: .3em;
+}
+
+#conteudo #respostas dd figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+height: 35px;
+}
+
+
+#tema #respostas dd figure div{
+width: 285px;
+height: 285px;
+background: #f9c667; /* Old browsers */
+background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
+position: relative;
+overflow: hidden;
+}
+
+#tema #respostas dd figure div p{
+height: 204px;
+width: 222px;
+position: absolute;
+right: 0;
+bottom: 0;
+background: transparent url('../images/fundo_caixa_texto.png') no-repeat 0 0;
+overflow: hidden;
+padding: 0;
+margin: 0;
+}
+
+#tema #respostas dd figure div p span{
+padding: 60px 0 0 0;
+margin-left: 70px;
+width: 300px;
+color: #225196;
+font-family: 'Gochi Hand', cursive;
+display: block;
+font-size: 140%;
+}
+
+#tema #respostas dd figure div p span:first-letter{
+text-transform: uppercase;
+font-size: 300%;
+line-height: .3em;
+}
+
+#tema #respostas dd figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+height: 35px;
+}
+
+
+
+#tema #todas dd figure div{
+width: 285px;
+height: 285px;
+background: #f9c667; /* Old browsers */
+background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
+position: relative;
+overflow: hidden;
+}
+
+#tema #todas dd figure div p{
+height: 204px;
+width: 222px;
+position: absolute;
+right: 0;
+bottom: 0;
+background: transparent url('../images/fundo_caixa_texto.png') no-repeat 0 0;
+overflow: hidden;
+padding: 0;
+margin: 0;
+}
+
+#tema #todas dd figure div p span{
+padding: 60px 0 0 0;
+margin-left: 70px;
+width: 300px;
+color: #225196;
+font-family: 'Gochi Hand', cursive;
+display: block;
+font-size: 140%;
+}
+
+#tema #todas dd figure div p span:first-letter{
+text-transform: uppercase;
+font-size: 300%;
+line-height: .3em;
+}
+
+#tema #todas dd figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+height: 35px;
+}
+
+
+#desafio #respostas dd figure div{
+width: 285px;
+height: 285px;
+background: #f9c667; /* Old browsers */
+background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
+position: relative;
+overflow: hidden;
+}
+
+#desafio #respostas dd figure div p{
+height: 204px;
+width: 222px;
+position: absolute;
+right: 0;
+bottom: 0;
+background: transparent url('../images/fundo_caixa_texto.png') no-repeat 0 0;
+overflow: hidden;
+padding: 0;
+margin: 0;
+}
+
+#desafio #respostas dd figure div p span{
+padding: 60px 0 0 0;
+margin-left: 70px;
+width: 300px;
+color: #225196;
+font-family: 'Gochi Hand', cursive;
+display: block;
+font-size: 140%;
+}
+
+#desafio #respostas dd figure div p span:first-letter{
+text-transform: uppercase;
+font-size: 300%;
+line-height: .3em;
+}
+
+#desafio #respostas dd figure figcaption{
+padding: 5px;
+font-size: 90%;
+color: #ddd;
+height: 35px;
 }
