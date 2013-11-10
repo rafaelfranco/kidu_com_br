@@ -94,10 +94,18 @@ class action extends simplePHP {
   }
 
   public function _actionGetgroups() {
-    $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));
-    
+    if($_POST['text'] != '') {
+      $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
+    } else {
+      $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));  
+    }
+    $x = 0;
     foreach ($res->result as $group) {
       echo '<a href="/theme/view/'.$group->guid.'"><div>'.$group->name.'</div></a>';
+      $x++;
+    }
+    if($x==0) {
+      echo '<p>Não foram encontrados resultados</p>';
     }
     exit;
     
@@ -219,9 +227,13 @@ class action extends simplePHP {
   {
     $search = $_POST['search'];
     $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
-    
+    $x = 0;
     foreach ($res->result as $theme) {
       echo '<a href="/theme/view/'.$theme->guid.'"><div>'.$theme->name.'</div></a>';
+      $x++;
+    }
+    if($x==0) {
+      echo '<p>Não foram encontrados resultados</p>';
     }
     exit;
   }

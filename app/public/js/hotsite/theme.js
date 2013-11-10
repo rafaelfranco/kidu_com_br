@@ -4,7 +4,7 @@ $(document).ready(function() {
 		url: '/action/getgroups/',
 		type: 'POST',
 		data: { 
-				text: $('#inputSearch').val()
+				text: $('#searchInput').val()
 				},
 	        success: function(json) {
 	        	$('#themeList').html(json);

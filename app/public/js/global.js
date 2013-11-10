@@ -173,6 +173,13 @@ $(function() {
 			});
 		}
 	});
+	$('#topSearch').click(function() {
+		if($('#topInputsearch').val() == ''){
+			alert('Preencha a pesquisa!');
+		} else {
+			window.location = '/home/'+$('#topInputsearch').val();
+		}
+	});
 
 
 });
