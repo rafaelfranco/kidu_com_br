@@ -101,9 +101,15 @@ font-size: 90%;
 }
 
 #tema #respostas dd{
-margin: 20px 0 50px;
+margin: 8px 0 50px;
 padding: 0;
 float: left;
+border-bottom: dashed 1px #ccc;
+padding-bottom: 15px;
+width: 945px;
+margin-bottom: 10px;
+overflow: auto;
+width: 20000px;
 }
 
 #tema #respostas dd figure{
@@ -293,4 +299,7 @@ color: #e74c3c;
 	border-radius: 2000px;
 	padding-top: 120px;
 	color: #504194;
+}
+.boxAnswers {
+	overflow: scroll;
 }
