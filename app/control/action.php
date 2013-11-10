@@ -215,6 +215,17 @@ class action extends simplePHP {
     exit;
   }
 
+  public function _actionSearchThemes()
+  {
+    $search = $_POST['search'];
+    $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
+    
+    foreach ($res->result as $theme) {
+      echo '<a href="/theme/view/'.$theme->guid.'"><div>'.$theme->name.'</div></a>';
+    }
+    exit;
+  }
+
 }
 
 ?>
