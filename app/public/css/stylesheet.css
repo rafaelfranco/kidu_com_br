@@ -1714,7 +1714,7 @@ height: 35px;
 
 #tema #todas dd figure div{
 width: 285px;
-height: 285px;
+height: 265px;
 background: #f9c667; /* Old browsers */
 background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
 position: relative;
@@ -1799,4 +1799,8 @@ padding: 5px;
 font-size: 90%;
 color: #ddd;
 height: 35px;
+}
+#todas  {
+	width: 960px;
+	margin-left: -5px;
 }

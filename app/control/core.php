@@ -227,7 +227,8 @@ class core extends simplePHP {
       if($answer->MIMEType == 'text/plain') {
         $file = '<div onclick="showModal('.$answer->guid.')" ><p><span>'.strip_tags($answer->description).'</span></p></div>';
       } else {
-        $file = '<img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">';
+        $img = str_replace('medium','full', $answer->file_icon);
+        $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="285" width="285" alt="Kidu">';
       }
 
       if($answer->tags != 'aprovado') {
