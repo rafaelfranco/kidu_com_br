@@ -181,6 +181,16 @@ $(function() {
 		}
 	});
 
+	$('#searchBottom').click(function() {
+		if($('#inputSearch').val() == ''){
+			alert('Preencha a pesquisa!');
+		} else {
+			window.location = '/home/'+$('#inputSearch').val();
+		}
+	});
+
+	
+
 
 });
 function closeModal() {
