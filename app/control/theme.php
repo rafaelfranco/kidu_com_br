@@ -278,6 +278,33 @@ class theme extends simplePHP {
             //get other themes
             return $this->keys;
         }
+
+        public function _actionChallengeAnswers() {
+
+            //get challenge details
+            $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
+            
+            $this->keys['challenge_id'] = $this->getParameter(3);
+            $this->keys['challenge'] = $challenge->result->name;   
+            $this->keys['description'] = $challenge->result->fields->description->value;
+
+            //get answers for this challenge
+            $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(3)));
+
+            foreach ($answers->result as $answer) {
+                $answers_html .= $this->core->answerHtml($answer,true);      
+            }
+            if($answers_html == '') {
+                $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
+            }
+                
+            $this->keys['challenges'] = $challenge_html;
+            $this->keys['answers'] = $answers_html ;
+            
+            
+            //get other themes
+            return $this->keys;
+        }
                
 }
 ?>
