@@ -101,14 +101,16 @@ font-size: 90%;
 }
 
 #tema #respostas dd{
-margin: 8px 0 50px;
+margin: 20px 0 50px;
 padding: 0;
 float: left;
-border-bottom: dashed 1px #ccc;
-padding-bottom: 15px;
-width: 945px;
-margin-bottom: 10px;
-overflow: auto;
+overflow-x: scroll;
+overflow-y: hidden;
+width: 100%;
+}
+
+#tema #respostas dd div{
+width: 1575px;
 }
 
 #tema #respostas dd figure{

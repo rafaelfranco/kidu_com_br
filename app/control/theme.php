@@ -68,8 +68,10 @@ class theme extends simplePHP {
                 $answers_html = '';
                 //get answers for this challenge
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
+                $conta_respostas = 0; //depois ver se rola pegar este número pelo $answers
                 foreach ($answers->result as $answer) {
                     $answers_html .= $this->core->answerHtml($answer,true); 
+                    $conta_respostas++;
                 }
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
@@ -88,9 +90,9 @@ class theme extends simplePHP {
                                 </div>
                                 <p>'.$challenge->description.'</p>
                             </dt>
-                            <dd>'.
+                            <dd><div style="width: ' . 315 * $conta_respostas . 'px">'.
                                 $answers_html 
-                            .'</dd>';
+                            .'</div></dd>';
             }
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $allFiles_html ;

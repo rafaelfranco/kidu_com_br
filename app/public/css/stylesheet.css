@@ -1119,10 +1119,17 @@ font-size: 90%;
 
 }
 
-#desafio #respostas dd{
+#desafios #respostas dd{
 margin: 20px 0 50px;
 padding: 0;
 float: left;
+overflow-x: scroll;
+overflow-y: hidden;
+width: 100%;
+}
+
+#desafios #respostas dd div{
+width: 1575px;
 }
 
 #desafio #respostas dd figure{
@@ -1711,8 +1718,6 @@ font-size: 90%;
 color: #ddd;
 height: 35px;
 }
-
-
 
 #tema #todas dd figure div{
 width: 285px;
