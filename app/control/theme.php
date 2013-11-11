@@ -75,6 +75,9 @@ class theme extends simplePHP {
                     $conta_respostas++;
                     }
                 }
+
+var_dump($answer->tags);
+
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
                     $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
