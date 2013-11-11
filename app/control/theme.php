@@ -74,9 +74,8 @@ class theme extends simplePHP {
                     if($answer->tags == 'aprovado'){
                     $conta_respostas++;
                     }
+                var_dump($answer->tags);
                 }
-
-var_dump($answer);
 
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
