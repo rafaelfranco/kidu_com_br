@@ -230,7 +230,7 @@ class core extends simplePHP {
         $img = str_replace('medium','full', $answer->file_icon);
         $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="285" width="285" alt="Kidu">';
       }
-      $num_resposta_aprovadas = 0;
+
       if($answer->tags != 'aprovado') {
           if($onlyApproved == false) {
             $answers_html .= '<figure class="oculto">
@@ -243,7 +243,6 @@ class core extends simplePHP {
                             </figure>';
           }
         } else {
-            $num_resposta_aprovadas++;
             $answers_html .= '<figure>
                                 '.$file.'
                                 <figcaption>
@@ -253,11 +252,8 @@ class core extends simplePHP {
                                 </figcaption>
                             </figure>';
         }
-        $respostas = array();
-        $respostas["numero"] = $num_resposta_aprovadas;
-        $respostas["html"] = $answers_html;
-        //return $answers_html;
-        return $respostas;
+
+        return $answers_html;
     }
 
 }

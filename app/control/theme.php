@@ -71,7 +71,9 @@ class theme extends simplePHP {
                 $conta_respostas = 0; //depois ver se rola pegar este número pelo $answers
                 foreach ($answers->result as $answer) {
                     $answers_html .= $this->core->answerHtml($answer,true); 
+                    if($answer->tags == 'aprovado'){
                     $conta_respostas++;
+                    }
                 }
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
@@ -89,11 +91,12 @@ class theme extends simplePHP {
                                     <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a>
                                 </div>
                                 <p>'.$challenge->description.'</p>
-                            </dt>
-                            <dd><div style="width: ' . 315 * $respostas["numero"] . 'px">'.
-                                //$answers_html 
-                                $respostas["html"]
-                            .'</div></dd>';
+                            </dt>';
+                            if($conta_respostas > 0){
+                            $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . '>'. $answers_html .'</div></dd>';
+                            } else {
+                            $challenge_html .= '<dd><div>'. $answers_html .'</div></dd>';
+                            }
             }
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $allFiles_html ;
