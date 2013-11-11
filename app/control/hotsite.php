@@ -45,7 +45,8 @@ class hotsite extends simplePHP {
             #$tests = $this->loadModule('tests');
             #$this->keys['tests'] = $tests->loadTests();
             
-            $this->keys['search'] = $this->getParameter(2); 
+            //$this->keys['search'] = $this->getParameter(2); 
+            $this->keys['search'] = $_GET['search'];
             #set global keys
 
             #include system globals

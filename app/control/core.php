@@ -211,9 +211,9 @@ class core extends simplePHP {
     {
       
       if($likes == 0) {
-        $html = '<span  onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
+        $html = '<span onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
       } else {
-        $html = '<span  onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
+        $html = '<span onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
       } 
       
 
