@@ -90,8 +90,9 @@ class theme extends simplePHP {
                                 </div>
                                 <p>'.$challenge->description.'</p>
                             </dt>
-                            <dd><div style="width: ' . 315 * $conta_respostas . 'px">'.
-                                $answers_html 
+                            <dd><div style="width: ' . 315 * $respostas["numero"] . 'px">'.
+                                //$answers_html 
+                                $respostas["html"]
                             .'</div></dd>';
             }
             $this->keys['challenges'] = $challenge_html;
