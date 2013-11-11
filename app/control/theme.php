@@ -88,9 +88,9 @@ class theme extends simplePHP {
                                 </div>
                                 <p>'.$challenge->description.'</p>
                             </dt>
-                            <dd><div class="boxAnswers">'.
+                            <dd>'.
                                 $answers_html 
-                            .'</div></dd>';
+                            .'</dd>';
             }
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $allFiles_html ;
