@@ -109,10 +109,6 @@ overflow-y: hidden;
 width: 100%;
 }
 
-#tema #respostas dd div{
-width: 1575px;
-}
-
 #tema #respostas dd figure{
 border: 1px solid #ddd;
 padding: 5px;
