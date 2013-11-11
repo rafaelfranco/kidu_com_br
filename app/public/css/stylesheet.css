@@ -507,6 +507,8 @@ font-size: 90%;
 margin: 20px 0 50px;
 padding: 0;
 float: left;
+overflow-x: scroll;
+overflow-y: hidden;
 }
 
 #tema #respostas dd figure{
