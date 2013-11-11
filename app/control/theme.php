@@ -76,7 +76,7 @@ class theme extends simplePHP {
                     }
                 }
 
-var_dump($answer->tags);
+var_dump($answer);
 
                 $allFiles_html .= $answers_html;
                 if($answers_html == '') {
