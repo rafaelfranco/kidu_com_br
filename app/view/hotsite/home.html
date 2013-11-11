@@ -13,9 +13,9 @@
 
     	<div id="homeLogo"><img src="/images/marca_kidu_home.gif" alt="Kidu" width="463" height="168"></div>
 
-		<form id="busca_home">
-		<input type="text" id="searchInput" value="[#search#]" placeholder="  Encontre temas" />
-			<span class="botao2" id="homeSearch">Buscar</span>
+		<form id="busca_home" action="/hotsite/home" method="POST" >
+		<input type="text" id="searchInput" name="searchInput" value="[#search#]" placeholder="  Encontre temas" />
+			<span class="botao2" name="homeSearch" id="homeSearch">Buscar</span>
 		</form>
 
 		<div id="themeList">

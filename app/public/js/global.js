@@ -141,7 +141,6 @@ $(function() {
           response( cache[ term ] );
           return;
         }
- 
         $.getJSON( "/hotsite/locais/", request, function( data, status, xhr ) {
           cache[ term ] = data;
           response( data );
@@ -188,10 +187,6 @@ $(function() {
 			window.location = '/home/'+$('#inputSearch').val();
 		}
 	});
-
-	
-
-
 });
 function closeModal() {
 	$('#fullBlack').hide();

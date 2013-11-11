@@ -66,6 +66,7 @@ class hotsite extends simplePHP {
 
         public function _actionStart() {
             //caso ja esteja logado manda pra home logada
+
             if(!empty($_SESSION['username'])){
               $this->redirect('/home');
             } 
@@ -75,6 +76,9 @@ class hotsite extends simplePHP {
 
         public function _actionHome() {
             //busca  a lista de comunidades
+            if($_POST['searchInput']!= '') {
+                $this->redirect('/home/'.$_POST['searchInput']);
+            }
             return $this->keys;
         }
 
