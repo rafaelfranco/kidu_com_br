@@ -79,6 +79,7 @@ class hotsite extends simplePHP {
             if($_POST['searchInput']!= '') {
                 $this->redirect('/home/'.$_POST['searchInput']);
             }
+            $this->keys['search'] = $this->getParameter(2);
             return $this->keys;
         }
 
