@@ -94,11 +94,11 @@ class theme extends simplePHP {
                                 </div>
                                 <p>'.$challenge->description.'</p>
                             </dt>';
-                            if($conta_respostas > 0){
-                            $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . '>'. $answers_html .'</div></dd>';
-                            } else {
+                            // if($conta_respostas > 0){
+                            // $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . '>'. $answers_html .'</div></dd>';
+                            // } else {
                             $challenge_html .= '<dd><div>'. $answers_html .'</div></dd>';
-                            }
+                            // }
             }
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $allFiles_html ;
