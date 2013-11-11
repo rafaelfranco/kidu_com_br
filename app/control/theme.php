@@ -95,9 +95,9 @@ class theme extends simplePHP {
                                 <p>'.$challenge->description.'</p>
                             </dt>';
                             if($conta_respostas > 0){
-                            $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . '>'. $answers_html .'</div></dd>';
+                            $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . 'px">'. $answers_html .'</div></dd>';
                             } else {
-                            $challenge_html .= '<dd><div>'. $answers_html .'</div></dd>';
+                            $challenge_html .= '<dd>'. $answers_html .'</dd>';
                             }
             }
             $this->keys['challenges'] = $challenge_html;
