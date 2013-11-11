@@ -64,17 +64,17 @@ class theme extends simplePHP {
             //get challenges from this theme
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
 
+            $conta_respostas = 0;
             foreach ($challenges->result as $challenge) {
                 $answers_html = '';
                 //get answers for this challenge
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
-                $conta_respostas = 0; //depois ver se rola pegar este número pelo $answers
                 foreach ($answers->result as $answer) {
                     $answers_html .= $this->core->answerHtml($answer,true); 
                     if($answer->tags == 'aprovado'){
                     $conta_respostas++;
                     }
-                echo $answer->tags;
+                //echo $answer->tags;
                 }
 
                 $allFiles_html .= $answers_html;
@@ -94,11 +94,11 @@ class theme extends simplePHP {
                                 </div>
                                 <p>'.$challenge->description.'</p>
                             </dt>';
-                            // if($conta_respostas > 0){
-                            // $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . '>'. $answers_html .'</div></dd>';
-                            // } else {
+                            if($conta_respostas > 0){
+                            $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . '>'. $answers_html .'</div></dd>';
+                            } else {
                             $challenge_html .= '<dd><div>'. $answers_html .'</div></dd>';
-                            // }
+                            }
             }
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $allFiles_html ;
