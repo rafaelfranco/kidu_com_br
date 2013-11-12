@@ -374,6 +374,7 @@ function showModal(file) {
             success: function(json) {
 				$('#modal').html(json);
              	document.getElementById('modal').getElementsByTagName('dl')[0].style.left = ((window.innerWidth - 900)/2) + "px";
+             	document.getElementById('modal').getElementsByTagName('dl')[0].style.top = ((window.innerHeight - 600)/2) + "px";
              }
         });
 }

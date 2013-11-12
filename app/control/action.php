@@ -152,17 +152,19 @@ class action extends simplePHP {
 
   public function _actionGetFile() {
         $file_id = $this->getParameter(3);
+
         $file = $this->core->callWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
 
         $img = str_replace('medium', 'full', $file->result[0]->file_icon);
        
         $challenge = $this->core->getWs('group.get',array('guid'=>$file->result[0]->container_guid));
        
-
         $theme =  $this->core->getWs('group.get',array('guid'=>$challenge->result->container_guid));
        
+        $likeIcon = $this->core->likeIcon($file_id,$file->result[0]->likes);
+
         if($file->result[0]->MIMEType == 'text/plain') {
-          $center = '<div class="text">'.$file->result[0]->description.'</div>';
+          $center = '<blockquote><div>'.$file->result[0]->description.'</div></blockquote>';
         } else {
           if($file->result[0]->description != '') {
             $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
@@ -171,21 +173,17 @@ class action extends simplePHP {
           }
         }
         
-
         echo '<dl>
                 <dt>
-                  <span onclick="fecha_modal()">Fechar | X</span>
+                  <span class="fechar" onclick="fecha_modal()">Fechar | X</span>
                   <h4>Tema</h4>
-                  <p><a style="color:#666;" href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
+                  <p><a href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
                   
                   <h4>Desafio</h4>
-                  <p><a style="color:#666;" href="/theme/challenge/'.$challenge->result->container_guid.'/'.$file->result[0]->container_guid.'">'.$challenge->result->name.'</a></p>
+                  <p><a href="/theme/challenge/'.$challenge->result->container_guid.'/'.$file->result[0]->container_guid.'">'.$challenge->result->name.'</a></p>
                   <p><br></p>
                   <p>Postado em<br><time>'.date('d.m.Y - h:m',$file->result[0]->time_created).'</time></p>
-
-                    <div onclick="likeItem('.$file_id.');">
-                      <img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$file_id.'" >'.$file->result[0]->likes.'</span>
-                    </div>
+                  ' . $likeIcon . '
                   <br class="tudo">
                 </dt>
                 <dd>

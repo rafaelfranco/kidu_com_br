@@ -112,7 +112,7 @@ class profile extends simplePHP {
                     $answers_html .= '<figure class="resposta">
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                         <figcaption>
-                                            <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$answer->guid.'" >'.$answer->likes.'</b></span>
+                                            '. $this->core->likeIcon($answer->guid,$answer->likes) .'
                                             <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
                                             <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
                                         </figcaption>

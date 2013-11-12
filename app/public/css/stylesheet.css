@@ -542,22 +542,12 @@ color: #ddd;
 position: relative;
 }
 
+figure.resposta figcaption a{
+color: #ddd;
+}
+
 figure.resposta figcaption img{
 vertical-align: middle;
-}
-
-figure.resposta figcaption span{
-float: right;
-color: #e74c3c;
-}
-
-figure.resposta figcaption span b{
-padding: 5px;
-vertical-align: middle;
-}
-
-figure.resposta figcaption span b.cinza{
-color: #B5B5B5;
 }
 
 figure.resposta.oculto figcaption strong{
@@ -1507,6 +1497,8 @@ width: 900px;
 position: absolute;
 background-color: white;
 padding: 10px;
+height: 600px;
+display: table;
 }
 
 #modal dl dt{
@@ -1515,7 +1507,7 @@ width: 200px;
 position: relative;
 }
 
-#modal dl dt>span{
+#modal dl dt span.fechar {
 float: right;
 padding: 3px;
 background-color: silver;
@@ -1529,18 +1521,66 @@ margin: 0 15px;
 padding: 0;
 }
 
+#modal dl dt p a{
+color: gray;
+}
+
 #modal dl dt div{
-color: red;
 margin: 30px 15px;
 }
 
 #modal dl dt div img{
 vertical-align: middle;
+margin-right: 4px;
 }
-#modal dd .text {
-	width: 680px;
-	padding: 10px;
-	background-color: #fcf;
+
+#modal dl dt div span{
+float: right;
+color: #e74c3c;
+}
+
+#modal dl dt div span b{
+padding: 5px;
+vertical-align: middle;
+}
+
+#modal dl dt div b.cinza{
+color: #B5B5B5;
+}
+
+#modal dd blockquote {
+width: 700px;
+height: 580px;
+background: #f9c667; /* Old browsers */
+background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
+position: relative;
+padding: 0;
+margin: 0;
+text-align: left;
+}
+
+#modal dd blockquote div{
+float: left;
+background: transparent url('../images/fundo_modal_texto.png') no-repeat 0 0;
+width: 442px;
+height: 279px;
+margin: 140px 120px;
+}
+
+#modal dd blockquote p{
+padding: 60px 0 0 0;
+margin-left: 70px;
+width: 370px;
+color: #225196;
+font-family: 'Gochi Hand', cursive;
+display: block;
+font-size: 160%;
+}
+
+#modal dd blockquote div p:first-letter{
+text-transform: uppercase;
+font-size: 300%;
+line-height: .3em;
 }
 
 #modal dl dt h4{
@@ -1556,17 +1596,36 @@ color: gray;
 float: left;
 padding: 0;
 margin: 0;
+width: 700px;
+height: 600px;
+text-align: center;
+background: linear-gradient(135deg, rgb(251,251,251) 0%,rgb(200,190,190) 100%);
+display: table-cell;
+vertical-align: middle;
 }
 
 #modal dl dd img{
-display: block;
-float: left;
+margin: 0 auto;
 }
-.likeButton {
-	cursor: pointer;
+
+/****   Curtir   ****/
+
+span.curtir{
+float: right;
+color: #e74c3c;
 }
-figcaption a {
-	color: #666;
+
+span.curtir img{
+vertical-align: middle;
+}
+
+span.curtir b{
+padding: 5px;
+vertical-align: middle;
+}
+
+span.curtir b.cinza{
+color: #B5B5B5;
 }
 
 #tema #todas {
