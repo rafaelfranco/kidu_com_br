@@ -142,6 +142,19 @@ color: white;
 font-size: 90%;
 }*/
 
+#bodyHome nav {
+width: 940px;
+margin: 0 auto 60px;
+font-size: 90%;
+padding-top: 15px;
+height: 70px;
+}
+
+#bodyHome nav a{
+margin-right: 30px;
+text-decoration: underline;
+}
+
 #bodyHome nav > ul {
 	list-style: none;
 	padding: 0px;
@@ -233,18 +246,6 @@ cursor: pointer;
 
 #bodyHome #temas ul li figure figcaption{
 padding: 10px;
-}
-
-#bodyHome nav {
-width: 940px;
-margin: 0 auto 60px;
-font-size: 90%;
-padding-top: 15px;
-}
-
-#bodyHome nav a{
-margin-right: 30px;
-text-decoration: underline;
 }
 
 #bodyHome form label{
