@@ -99,7 +99,7 @@ class theme extends simplePHP {
                             } else if ($conta_respostas > 3) {
                             $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . 'px">'. $answers_html .'</div></dd>';
                             } else {
-                            $challenge_html .= '<dd class="sem_resposta">'. $answers_html .'</dd>';
+                            $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
                             }
             }
             $this->keys['challenges'] = $challenge_html;
