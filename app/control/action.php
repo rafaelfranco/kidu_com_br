@@ -101,7 +101,7 @@ class action extends simplePHP {
     }
     $x = 0;
     foreach ($res->result as $group) {
-      echo '<a href="/theme/view/'.$group->guid.'"><div>'.$group->name.'</div></a>';
+      echo '<div><a href="/theme/view/'.$group->guid.'">'.$group->name.'</a></div>';
       $x++;
     }
     if($x==0) {
@@ -167,9 +167,9 @@ class action extends simplePHP {
           $center = '<blockquote><div>'.$file->result[0]->description.'</div></blockquote>';
         } else {
           if($file->result[0]->description != '') {
-            $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
+            $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe><br class="tudo">';
           } else {
-            $center = '<img src="'.$img.'">';
+            $center = '<img src="'.$img.'"><br class="tudo">';
           }
         }
         
@@ -187,7 +187,7 @@ class action extends simplePHP {
                   <br class="tudo">
                 </dt>
                 <dd>
-                '.$center.'<br class="tudo">
+                '.$center.'
                 </dd>
               </dl>';
               exit;

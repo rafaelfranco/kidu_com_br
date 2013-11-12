@@ -1497,8 +1497,6 @@ width: 900px;
 position: absolute;
 background-color: white;
 padding: 10px;
-height: 600px;
-display: table;
 }
 
 #modal dl dt{
@@ -1597,7 +1595,6 @@ float: left;
 padding: 0;
 margin: 0;
 width: 700px;
-height: 600px;
 text-align: center;
 background: linear-gradient(135deg, rgb(251,251,251) 0%,rgb(200,190,190) 100%);
 display: table-cell;
