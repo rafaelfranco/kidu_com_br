@@ -202,16 +202,32 @@ class theme extends simplePHP {
             //get answers for this challenge
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
-            foreach ($answers->result as $answer) {
-                $answers_html .= $this->core->answerHtml($answer,true);        
+            if($answers->status == -20){header('Location: /logoff');};
+
+            $answers_html = '';
+            $conta_respostas_desafio = 0;
+            if($answers->status != -1){
+                foreach ($answers->result as $answer) {
+                $answers_html .= $this->core->answerHtml($answer,true); 
+                    if($answer->tags == 'aprovado'){
+                    $conta_respostas_desafio++;
+                    }
+                }
             }
+
             if($answers_html == '') {
                 $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
             }
 
-                
-            $this->keys['challenges'] = $challenge_html;
-            $this->keys['answers'] = $answers_html ;
+            if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            } else if ($conta_respostas_desafio > 3) {
+            $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+            } else {
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            }
+
+            $this->keys['answers'] = $respostas ;
             
             //ADD USER TO THOSE GROUPS
             #username
@@ -219,7 +235,6 @@ class theme extends simplePHP {
             #groupid group.join
             $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(3)));
             $res = $this->core->callWs('group.join',array('username'=>$_SESSION['username'],'groupid'=>$this->getParameter(4)));
-
 
             #get all challenges on this theme to make arrows links
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
@@ -264,15 +279,32 @@ class theme extends simplePHP {
             //get answers for this challenge
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$this->getParameter(4)));
 
-            foreach ($answers->result as $answer) {
-                $answers_html .= $this->core->answerHtml($answer,true);      
+            if($answers->status == -20){header('Location: /logoff');};
+
+            $answers_html = '';
+            $conta_respostas_desafio = 0;
+            if($answers->status != -1){
+                foreach ($answers->result as $answer) {
+                $answers_html .= $this->core->answerHtml($answer,true); 
+                    if($answer->tags == 'aprovado'){
+                    $conta_respostas_desafio++;
+                    }
+                }
             }
+
             if($answers_html == '') {
                 $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
             }
-                
-            $this->keys['challenges'] = $challenge_html;
-            $this->keys['answers'] = $answers_html ;
+
+            if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            } else if ($conta_respostas_desafio > 3) {
+            $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+            } else {
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            }
+
+            $this->keys['answers'] = $respostas ;
             
             //ADD USER TO THOSE GROUPS
             #username

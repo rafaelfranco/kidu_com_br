@@ -53,26 +53,35 @@ class profile extends simplePHP {
             #topo
             $this->keys['top'] = $this->includeHTML('../view/profile/global/top.html');
 
-            
-
         }
 
         public function _actionStart() {
         $answers_html = '';
         $allFiles_html = '';
-            //get user answers
-            $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
-           
+        $conta_respostas_desafio = 0;
+        
+        $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
+            if($answers->status == -20){header('Location: /logoff');};
+
             foreach ($answers->result as $answer) {
                 $answers_html .= $this->core->answerHtml($answer);
                 $allFiles_html .= $answers_html;
+                $conta_respostas_desafio++;
             }
 
             if($answers_html == '') {
                 $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers noneAnswers'));
             }
 
-            $this->keys['answers'] = $answers_html;
+            if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            } else if ($conta_respostas_desafio > 3) {
+            $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+            } else {
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            }
+
+            $this->keys['answers'] = $respostas ;
 
             return $this->keys;
         }
@@ -85,10 +94,13 @@ class profile extends simplePHP {
 
             //get user answers
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
-           
+           if($answers->status == -20){header('Location: /logoff');};
+
+            $answers_html = '';
+            $conta_respostas_desafio = 0;
             foreach ($answers->result as $answer) {
                 if($answer->tags != 'aprovado') {
-                    $answers_html .= '<figure class="oculto">
+                    $answers_html .= '<figure class="resposta oculto">
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                        <figcaption>
                                         <strong>Conteúdo oculto</strong>
@@ -97,28 +109,35 @@ class profile extends simplePHP {
                                         </figcaption>
                                     </figure>';
                 } else {
-                    $answers_html .= '<figure>
+                    $answers_html .= '<figure class="resposta">
                                         <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
                                         <figcaption>
-                                            <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$answer->guid.'" >'.$answer->likes.'</span></span>
+                                            <span  onclick="likeItem('.$answer->guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$answer->guid.'" >'.$answer->likes.'</b></span>
                                             <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
                                             <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
                                         </figcaption>
                                     </figure>';
                 }
                 
-                $allFiles_html .= $answers_html;
+            $conta_respostas_desafio++;
             }
 
             if($answers_html == '') {
                 $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers noneAnswers'));
             }
 
-            $this->keys['answers'] = $answers_html;
+            if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            } else if ($conta_respostas_desafio > 3) {
+            $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+            } else {
+            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+            }
+
+            $this->keys['answers'] = $respostas ;
 
             return $this->keys;
         }
         
-               
 }
 ?>

@@ -80,7 +80,7 @@ class hotsite extends simplePHP {
             }
             $this->keys['search'] = $this->getParameter(2);
 
-            if(!empty($_SESSION['username'])){
+            if(empty($_SESSION['username'])){
               $this->keys['footer'] = '';
             } 
             return $this->keys;

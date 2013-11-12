@@ -508,11 +508,9 @@ color: #797a7d;
 font-size: 90%;
 }
 
-#tema #respostas dt div span{
+/****  Scroll horizontal das respostas  ****/
 
-}
-
-#tema #respostas dd{
+#respostas dd{
 margin: 20px 0 50px;
 padding: 0 0 25px;
 float: left;
@@ -521,7 +519,7 @@ overflow-y: hidden;
 width: 100%;
 }
 
-#tema #respostas dd.sem_scroll{
+#respostas dd.sem_scroll{
 overflow-x: hidden;
 overflow-y: hidden;
 }
@@ -541,6 +539,7 @@ figure.resposta figcaption{
 padding: 5px;
 font-size: 90%;
 color: #ddd;
+position: relative;
 }
 
 figure.resposta figcaption img{
@@ -555,6 +554,10 @@ color: #e74c3c;
 figure.resposta figcaption span b{
 padding: 5px;
 vertical-align: middle;
+}
+
+figure.resposta figcaption span b.cinza{
+color: #B5B5B5;
 }
 
 figure.resposta.oculto figcaption strong{
@@ -578,7 +581,9 @@ bottom: 0;
 display: none;
 z-index: 800;
 border-radius: 5px;
-border: 1px solid gray;
+border: 1px solid silver;
+color: #504194;
+box-shadow: 2px 2px 2px #B5B5B5;
 }
 
 figure.resposta.oculto figcaption span.aviso strong{
@@ -655,7 +660,7 @@ padding: 0;
 margin: 0;
 }
 
-#tema #tudo_sobre div {
+#tema #tudo_sobre>div {
 margin-top: 20px;
 }
 
@@ -1163,23 +1168,6 @@ color: #797a7d;
 font-size: 90%;
 }
 
-#desafio #respostas dt div span{
-
-}
-
-#desafios #respostas dd{
-margin: 20px 0 50px;
-padding: 0;
-float: left;
-overflow-x: scroll;
-overflow-y: hidden;
-width: 100%;
-}
-
-#desafios #respostas dd div{
-width: 1575px;
-}
-
 /********** Tabuleiro *******/
 
 body#tabuleiro {
@@ -1446,16 +1434,6 @@ color: #797a7d;
 #conteudo #respostas dt>div a{
 color: #797a7d;
 font-size: 90%;
-}
-
-#conteudo #respostas dt div span{
-
-}
-
-#conteudo #respostas dd{
-margin: 20px 0 50px;
-padding: 0;
-float: left;
 }
 
 /***** educadores ****/

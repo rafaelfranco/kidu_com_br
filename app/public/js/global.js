@@ -373,6 +373,7 @@ function showModal(file) {
 		async: 'false',
             success: function(json) {
 				$('#modal').html(json);
+             	document.getElementById('modal').getElementsByTagName('dl')[0].style.left = ((window.innerWidth - 900)/2) + "px";
              }
         });
 }
@@ -391,6 +392,7 @@ function likeItem(item_id) {
 		if(data == 'You now like this item') {
 			current_likes = parseInt($('#likes-'+item_id).html()) + 1;
 			$('#likes-'+item_id).html(current_likes);
+			$('#likes-'+item_id).attr('class','');
 			$('#ico-'+item_id).attr('src','/images/ico_curtir.gif');
 		}
 	});

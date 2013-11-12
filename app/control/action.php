@@ -167,12 +167,12 @@ class action extends simplePHP {
           if($file->result[0]->description != '') {
             $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe>';
           } else {
-            $center = '<img src="'.$img.'" width="700" height="700" alt="Menininha meu amor">';
+            $center = '<img src="'.$img.'">';
           }
         }
         
 
-        echo '<dl style="left: 213px;">
+        echo '<dl>
                 <dt>
                   <span onclick="fecha_modal()">Fechar | X</span>
                   <h4>Tema</h4>
