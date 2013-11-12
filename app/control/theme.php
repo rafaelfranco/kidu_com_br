@@ -64,46 +64,57 @@ class theme extends simplePHP {
             //get challenges from this theme
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
 
+            $conta_respostas_geral = 0;
             foreach ($challenges->result as $challenge) {
-            $conta_respostas = 0;
-                $answers_html = '';
-                //get answers for this challenge
-                $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
+            $conta_respostas_desafio = 0;
+            $answers_html = '';
+            //get answers for this challenge
+            $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
                 foreach ($answers->result as $answer) {
-                    $answers_html .= $this->core->answerHtml($answer,true); 
+                $answers_html .= $this->core->answerHtml($answer,true); 
                     if($answer->tags == 'aprovado'){
-                    $conta_respostas++;
+                    $conta_respostas_desafio++;
+                    $conta_respostas_geral++;
                     }
-                //echo $answer->tags;
                 }
 
-                $allFiles_html .= $answers_html;
+            $allFiles_html .= $answers_html;
+                
                 if($answers_html == '') {
-                    $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
+                $answers_html = $this->html->div('Não existem respostas para esse desafio ainda :(',array('class'=>'noAswers'));
                 }
 
                 $challenge_html .= '<dt>
-                                <h3>'.$challenge->briefdescription.'</h3>
-                                <div>
-                                    <span>
-                                    <!--a href="/theme/challenges/'.$this->getParameter(3).'/'.$challenge->guid.'" -->
-                                    <a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'" >
-                                    <img src="/images/bot_faca_voce.gif" alt="Faça você!" width="110" height="40"></a>
-                                    </span><br>
-                                    <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a>
-                                </div>
-                                <p>'.$challenge->description.'</p>
-                            </dt>';
-                            if($conta_respostas < 3  && $conta_respostas > 0){
-                            $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
-                            } else if ($conta_respostas > 3) {
-                            $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . 'px">'. $answers_html .'</div></dd>';
-                            } else {
-                            $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
-                            }
+                <h3>'.$challenge->briefdescription.'</h3>
+                <div>
+                <span>
+                <!--a href="/theme/challenges/'.$this->getParameter(3).'/'.$challenge->guid.'" -->
+                <a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'" >
+                <img src="/images/bot_faca_voce.gif" alt="Faça você!" width="110" height="40"></a>
+                </span><br>
+                <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a>
+                </div>
+                <p>'.$challenge->description.'</p>
+                </dt>';
+                
+                if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
+                $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
+                } else if ($conta_respostas_desafio > 3) {
+                $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+                } else {
+                $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
+                }
+
+                if($conta_respostas_geral < 3  && $conta_respostas_geral > 0){
+                $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
+                } else if ($conta_respostas_geral > 3) {
+                $todas_respostas .= '<dd><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
+                } else {
+                $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
+                }
             }
             $this->keys['challenges'] = $challenge_html;
-            $this->keys['allFiles'] = $allFiles_html ;
+            $this->keys['allFiles'] = $todas_respostas;
             
             //get other themes
             return $this->keys;

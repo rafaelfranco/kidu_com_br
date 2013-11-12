@@ -505,7 +505,7 @@ font-size: 90%;
 
 #tema #respostas dd{
 margin: 20px 0 50px;
-padding: 0;
+padding: 0 0 25px;
 float: left;
 overflow-x: scroll;
 overflow-y: hidden;
@@ -1724,6 +1724,19 @@ color: #ddd;
 height: 35px;
 }
 
+#tema #todas dd{
+margin: 20px 0 50px;
+padding: 0 0 25px;
+float: left;
+overflow-x: scroll;
+overflow-y: hidden;
+}
+
+#tema #todas dd.sem_scroll{
+overflow-x: hidden;
+overflow-y: hidden;
+}
+
 #tema #todas dd figure div{
 width: 285px;
 height: 265px;
@@ -1812,6 +1825,7 @@ font-size: 90%;
 color: #ddd;
 height: 35px;
 }
+
 #todas  {
 	width: 960px;
 	margin-left: -5px;
