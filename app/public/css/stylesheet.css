@@ -511,6 +511,11 @@ overflow-x: scroll;
 overflow-y: hidden;
 }
 
+#tema #respostas dd.sem_scroll{
+overflow-x: hidden;
+overflow-y: hidden;
+}
+
 #tema #respostas dd figure{
 border: 1px solid #ddd;
 padding: 5px;

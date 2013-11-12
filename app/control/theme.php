@@ -94,10 +94,12 @@ class theme extends simplePHP {
                                 </div>
                                 <p>'.$challenge->description.'</p>
                             </dt>';
-                            if($conta_respostas > 0){
+                            if($conta_respostas < 3  && $conta_respostas > 0){
+                            $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
+                            } else if ($conta_respostas > 3) {
                             $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas . 'px">'. $answers_html .'</div></dd>';
                             } else {
-                            $challenge_html .= '<dd>'. $answers_html .'</dd>';
+                            $challenge_html .= '<dd class="sem_resposta">'. $answers_html .'</dd>';
                             }
             }
             $this->keys['challenges'] = $challenge_html;
