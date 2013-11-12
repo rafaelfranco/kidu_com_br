@@ -104,15 +104,16 @@ class theme extends simplePHP {
                 } else {
                 $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
                 }
-
-                if($conta_respostas_geral < 3  && $conta_respostas_geral > 0){
-                $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
-                } else if ($conta_respostas_geral > 3) {
-                $todas_respostas .= '<dd><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
-                } else {
-                $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
-                }
             }
+
+            if($conta_respostas_geral < 3  && $conta_respostas_geral > 0){
+            $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
+            } else if ($conta_respostas_geral > 3) {
+            $todas_respostas .= '<dd><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
+            } else {
+            $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
+            }
+
             $this->keys['challenges'] = $challenge_html;
             $this->keys['allFiles'] = $todas_respostas;
             

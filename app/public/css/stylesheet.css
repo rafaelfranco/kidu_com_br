@@ -1724,6 +1724,10 @@ color: #ddd;
 height: 35px;
 }
 
+#tema #todas {
+width: 940px;
+}
+
 #tema #todas dd{
 margin: 20px 0 50px;
 padding: 0 0 25px;
@@ -1824,9 +1828,4 @@ padding: 5px;
 font-size: 90%;
 color: #ddd;
 height: 35px;
-}
-
-#todas  {
-	width: 960px;
-	margin-left: -5px;
 }
