@@ -64,8 +64,8 @@ class theme extends simplePHP {
             //get challenges from this theme
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
 
-            $conta_respostas = 0;
             foreach ($challenges->result as $challenge) {
+            $conta_respostas = 0;
                 $answers_html = '';
                 //get answers for this challenge
                 $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
