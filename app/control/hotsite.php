@@ -45,8 +45,7 @@ class hotsite extends simplePHP {
             #$tests = $this->loadModule('tests');
             #$this->keys['tests'] = $tests->loadTests();
             
-            //$this->keys['search'] = $this->getParameter(2); 
-            $this->keys['search'] = $this->getVar('search');
+            $this->keys['search'] = $this->getParameter(2); 
             #set global keys
 
             #include system globals
@@ -76,7 +75,7 @@ class hotsite extends simplePHP {
 
         public function _actionHome() {
             //busca  a lista de comunidades
-            if($_POST['searchInput']!= '') {
+            if(isset($_POST['searchInput']) && $_POST['searchInput']!= '') {
                 $this->redirect('/home/'.$_POST['searchInput']);
             }
             $this->keys['search'] = $this->getParameter(2);
@@ -110,11 +109,6 @@ class hotsite extends simplePHP {
         public function _actionContact() {
             //busca  a lista de comunidades
             return $this->keys;
-        }
-        
-        public function getVar($nome) {
-            //retorna o valor de um campo passado via get
-            return $_GET[$nome];
         }
         
        /**

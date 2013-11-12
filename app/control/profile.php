@@ -58,6 +58,8 @@ class profile extends simplePHP {
         }
 
         public function _actionStart() {
+        $answers_html = '';
+        $allFiles_html = '';
             //get user answers
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
            

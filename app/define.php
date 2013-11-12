@@ -9,6 +9,12 @@
 	include 'config/redirects.php';
 
 
+	if($_SERVER['HTTP_HOST'] == XTO_URL) {
+		define('SIMPLEPHP_PATH', '/Users/User/Documents/GitHub/kidu_com_br/SimplePHP/');
+		define('APP_PATH', '/Users/User/Documents/GitHub/kidu_com_br/app/');
+		define('ELGG_WS','http://engine.kidu.com.br/services/api/rest/json/');
+		define('ELGG_WS_API_KEY','e5692e5a207837560efcc24de3ec7b466bb56e7e');
+	}
 
 	#define SimplePhp Path
 	if($_SERVER['HTTP_HOST'] == DEVEVOPMENT_URL) {

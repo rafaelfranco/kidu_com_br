@@ -100,30 +100,6 @@ font-size: 90%;
 
 }
 
-#tema #respostas dd figure{
-border: 1px solid #ddd;
-padding: 5px;
-float: left;
-cursor: pointer;
-background-color: white;
-margin: 0 15px 0 0;
-}
-
-#tema #respostas dd figure figcaption{
-padding: 5px;
-font-size: 90%;
-color: #ddd;
-}
-
-#tema #respostas dd figure figcaption img{
-vertical-align: middle;
-}
-
-#tema #respostas dd figure figcaption span{
-float: right;
-color: #e74c3c;
-}
-
 #tema #tudo_sobre {
 text-align: left;
 width: 945px;
@@ -150,30 +126,6 @@ margin: 0;
 
 #tema #tudo_sobre div {
 margin-top: 20px;
-}
-
-#tema #tudo_sobre figure {
-border: 1px solid #ddd;
-padding: 5px;
-float: left;
-cursor: pointer;
-background-color: white;
-margin: 0 9px 0 0;
-}
-
-#tema #tudo_sobre figure figcaption{
-padding: 5px;
-font-size: 90%;
-color: #ddd;
-}
-
-#tema #tudo_sobre figure figcaption img{
-vertical-align: middle;
-}
-
-#tema #tudo_sobre figure figcaption span{
-float: right;
-color: #e74c3c;
 }
 
 #tema #outros_temas {
@@ -238,29 +190,6 @@ float: left;
 margin-top: 20px;
 }
 
-#tema #outros_temas figure {
-border: 1px solid #ddd;
-padding: 5px;
-float: left;
-cursor: pointer;
-background-color: white;
-margin: 0 17px 0 0;
-}
-
-#tema #outros_temas figure figcaption{
-padding: 5px;
-font-size: 90%;
-color: #ddd;
-}
-
-#tema #outros_temas figure figcaption img{
-vertical-align: middle;
-}
-
-#tema #outros_temas figure figcaption span{
-float: right;
-color: #e74c3c;
-}
 #tema #outros_temas img {
 	margin-top: 6px	
 }
@@ -276,15 +205,21 @@ color: #e74c3c;
 	width: 960px;
 	margin: auto;
 }
+
 #themeList a {
-	display: inline-block;
-	width: 250px;
-	height: 140px;
-	text-align: center;
-	vertical-align: middle;
-	margin-right: 55px;
-	border: dashed 2px #504194;
-	border-radius: 2000px;
-	padding-top: 120px;
-	color: #504194;
+float: left;
+width: 250px;
+height: 140px;
+text-align: center;
+vertical-align: middle;
+margin: 0 20px 20px 0;
+border: dashed 2px #504194;
+border-radius: 20px;
+padding: 120px 0 0;
+color: #504194;
+background-color: #D5D5D5;
+}
+
+#themeList a:hover {
+background-color: silver;
 }

@@ -94,7 +94,7 @@ class action extends simplePHP {
   }
 
   public function _actionGetgroups() {
-    if($_POST['text'] != '') {
+    if(isset($_POST['text']) && $_POST['text'] != '') {
       $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
     } else {
       $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));  

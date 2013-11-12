@@ -42,11 +42,6 @@ class simplePHP extends util {
         return (count($url) > $position) ? $url[$position] : '';
     }
 
-    public function getVar($qual) {
-        #get the var passed via GET
-        return ($_GET[$qual]);
-    }
-
     /**
      * loadPage function
      * @param <string> $controler

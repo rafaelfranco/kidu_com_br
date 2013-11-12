@@ -65,16 +65,23 @@ class theme extends simplePHP {
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
 
             $conta_respostas_geral = 0;
+            $allFiles_html = '';
+            $challenge_html = '';
             foreach ($challenges->result as $challenge) {
             $conta_respostas_desafio = 0;
             $answers_html = '';
             //get answers for this challenge
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
-                foreach ($answers->result as $answer) {
-                $answers_html .= $this->core->answerHtml($answer,true); 
-                    if($answer->tags == 'aprovado'){
-                    $conta_respostas_desafio++;
-                    $conta_respostas_geral++;
+                
+                if($answers->status == -20){header('Location: /logoff');};
+
+                if($answers->status != -1){
+                    foreach ($answers->result as $answer) {
+                    $answers_html .= $this->core->answerHtml($answer,true); 
+                        if($answer->tags == 'aprovado'){
+                        $conta_respostas_desafio++;
+                        $conta_respostas_geral++;
+                        }
                     }
                 }
 
@@ -107,11 +114,11 @@ class theme extends simplePHP {
             }
 
             if($conta_respostas_geral < 3  && $conta_respostas_geral > 0){
-            $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
+            $todas_respostas = '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
             } else if ($conta_respostas_geral > 3) {
-            $todas_respostas .= '<dd><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
+            $todas_respostas = '<dd><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
             } else {
-            $todas_respostas .= '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
+            $todas_respostas = '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
             }
 
             $this->keys['challenges'] = $challenge_html;

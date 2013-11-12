@@ -5,7 +5,9 @@
  * @copyright KIDU - www.kidu.com.br
  * @author Rafael Franco <rfranco@rfti.com.br>
  * @package core
- * */
+ * 
+ * corrigidos por XTO
+ */
 class core extends simplePHP {
         
         private $model;
@@ -102,7 +104,7 @@ class core extends simplePHP {
                 $return['avatar_url'] = $response->result->avatar_url;
                 $return['authorized'] = $response->result->authorized;
                 $return['guid'] = $response->result->guid;
-                $return['nivel'] = ($response->result->nivel != '') ? $response->result->nivel : 1;
+                //$return['nivel'] = ($response->result->nivel != '') ? $response->result->nivel : 1;
                 
                 return $return;
             } else {
@@ -207,13 +209,12 @@ class core extends simplePHP {
         return $e->getMessage();
       }
     }
-    public function likeIcon($guid,$likes)
-    {
-      
+    
+    public function likeIcon($guid,$likes){
       if($likes == 0) {
-        $html = '<span onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
+        $html = '<span onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';
       } else {
-        $html = '<span onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><span id="likes-'.$guid.'" >'.$likes.'</span></span>';
+        $html = '<span onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';
       } 
       
 
@@ -231,9 +232,10 @@ class core extends simplePHP {
         $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="285" width="285" alt="Kidu">';
       }
 
+      $answers_html = '';
       if($answer->tags != 'aprovado') {
           if($onlyApproved == false) {
-            $answers_html .= '<figure class="oculto">
+            $answers_html .= '<figure class="resposta oculto">
                                 '.$file.'
                                <figcaption>
                                 <strong>Conteúdo oculto</strong>
@@ -243,7 +245,7 @@ class core extends simplePHP {
                             </figure>';
           }
         } else {
-            $answers_html .= '<figure>
+            $answers_html .= '<figure class="resposta">
                                 '.$file.'
                                 <figcaption>
                                     '.$likeIcon.'

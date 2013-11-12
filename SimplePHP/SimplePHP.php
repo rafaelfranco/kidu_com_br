@@ -15,7 +15,7 @@
 	$simplePHP->loadPage();
 
 	#apply keys
-	$content = $simplePHP->applyKeys($template,$keys);
+	$content = $simplePHP->applyKeys($template=null,$keys);
 
     echo $content;
 ?>
