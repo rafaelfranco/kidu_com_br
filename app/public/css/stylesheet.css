@@ -509,6 +509,7 @@ padding: 0 0 25px;
 float: left;
 overflow-x: scroll;
 overflow-y: hidden;
+width: 100%;
 }
 
 #tema #respostas dd.sem_scroll{
@@ -1734,6 +1735,7 @@ padding: 0 0 25px;
 float: left;
 overflow-x: scroll;
 overflow-y: hidden;
+width: 100%;
 }
 
 #tema #todas dd.sem_scroll{

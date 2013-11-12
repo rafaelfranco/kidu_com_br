@@ -100,15 +100,6 @@ font-size: 90%;
 
 }
 
-#tema #respostas dd{
-margin: 20px 0 50px;
-padding: 0;
-float: left;
-overflow-x: scroll;
-overflow-y: hidden;
-width: 100%;
-}
-
 #tema #respostas dd figure{
 border: 1px solid #ddd;
 padding: 5px;
