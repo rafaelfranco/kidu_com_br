@@ -181,7 +181,7 @@ class core extends simplePHP {
       // and that individual keywords cannot contain whitespace
       $myVideoEntry->SetVideoTags('kidu, desafio');
 
-      $myVideoEntry->SetVideoPrivate('unlisted');
+      #$myVideoEntry->SetVideoPrivate('unlisted');
 
       // set some developer tags -- this is optional
       // (see Searching by Developer Tags for more details)
