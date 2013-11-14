@@ -12,6 +12,10 @@ body {
 	color: #504194;
 }
 
+img {
+border: 0;
+}
+
 h2 {
 	display: block;
 	font-family: 'normal arial', sans-serif;
@@ -542,6 +546,11 @@ color: #ddd;
 position: relative;
 }
 
+figure.resposta figcaption strong time{
+margin-top: 10px;
+display: block;
+}
+
 figure.resposta figcaption a{
 color: #ddd;
 }
@@ -696,6 +705,10 @@ width: 175px;
 border-radius: 5px;
 margin: 2px 4px 0 0;
 border: 1px solid #797a7d;
+}
+
+#tema #outros_temas>form input[type="submit"]{
+display: none;
 }
 
 #tema #outros_temas>form span{

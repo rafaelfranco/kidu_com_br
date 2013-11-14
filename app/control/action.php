@@ -155,7 +155,7 @@ class action extends simplePHP {
 
         $file = $this->core->callWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
 
-        $img = str_replace('medium', 'full', $file->result[0]->file_icon);
+        $img = str_replace('medium', 'large', $file->result[0]->file_icon);
        
         $challenge = $this->core->getWs('group.get',array('guid'=>$file->result[0]->container_guid));
        

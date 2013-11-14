@@ -1,6 +1,6 @@
 //home page after login
-$(document).ready(function() {
-	$.ajax({
+jubileu = function(){
+$.ajax({
 		url: '/action/getgroups/',
 		type: 'POST',
 		data: { 
@@ -10,4 +10,18 @@ $(document).ready(function() {
 	        	$('#themeList').html(json);
 	        }
 	});
+}
+
+$(document).ready(function() {
+jubileu();
+
+	$('#searchBottom').click(function() {
+		if($('#inputSearch').val() == ''){
+			alert('Preencha a pesquisa!');
+		} else {
+			//window.location = '/home/'+$('#inputSearch').val();
+			jubileu();
+		}
+	});
+
 });

@@ -55,39 +55,20 @@ class profile extends simplePHP {
 
         }
 
-        public function _actionStart() {
+        public function _actionStart() {//meu proprio perfil
         $answers_html = '';
-        $allFiles_html = '';
         $conta_respostas_desafio = 0;
         
         $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
             if($answers->status == -20){header('Location: /logoff');};
 
-            foreach ($answers->result as $answer) {
-                $answers_html .= $this->core->answerHtml($answer);
-                $allFiles_html .= $answers_html;
-                $conta_respostas_desafio++;
-            }
-
-            if($answers_html == '') {
-                $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers noneAnswers'));
-            }
-
-            if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
-            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
-            } else if ($conta_respostas_desafio > 3) {
-            $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
-            } else {
-            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
-            }
-
-            $this->keys['answers'] = $respostas ;
+            $this->keys['answers'] = $this->core->pega_todas_respostas($answers,false);
 
             return $this->keys;
         }
             
 
-         public function _actionView() {
+         public function _actionView() {//perfil de outro
             $username = $this->getParameter(3);
 
             $this->keys['name_user'] = $username;
@@ -96,45 +77,7 @@ class profile extends simplePHP {
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
            if($answers->status == -20){header('Location: /logoff');};
 
-            $answers_html = '';
-            $conta_respostas_desafio = 0;
-            foreach ($answers->result as $answer) {
-                if($answer->tags != 'aprovado') {
-                    $answers_html .= '<figure class="resposta oculto">
-                                        <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                       <figcaption>
-                                        <strong>Conteúdo oculto</strong>
-                                        <a href="" onclick="this.parentNode.getElementsByTagName(\'span\')[0].style.display = \'inline\'; return false;">Por quê?</a>
-                                        <span class="aviso" onclick="this.style.display = \'none\';"><strong>Fechar</strong><br><br>Este conteúdo ainda não pode ser exibido porque não foi avaliado pelos educadores do Kidu. Aguarde.</span>
-                                        </figcaption>
-                                    </figure>';
-                } else {
-                    $answers_html .= '<figure class="resposta">
-                                        <img onclick="showModal('.$answer->guid.')" src="'.$answer->file_icon.'" height="285" width="285" alt="Kidu">
-                                        <figcaption>
-                                            '. $this->core->likeIcon($answer->guid,$answer->likes) .'
-                                            <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                            <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
-                                        </figcaption>
-                                    </figure>';
-                }
-                
-            $conta_respostas_desafio++;
-            }
-
-            if($answers_html == '') {
-                $answers_html = $this->html->div('Você ainda não respondeu desafios :(',array('class'=>'noAswers noneAnswers'));
-            }
-
-            if($conta_respostas_desafio < 3  && $conta_respostas_desafio > 0){
-            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
-            } else if ($conta_respostas_desafio > 3) {
-            $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
-            } else {
-            $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
-            }
-
-            $this->keys['answers'] = $respostas ;
+            $this->keys['answers'] = $this->core->pega_todas_respostas($answers,true);
 
             return $this->keys;
         }

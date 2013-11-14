@@ -51,13 +51,13 @@
 			<section id="outros_temas">
 				<h3>Outros temas</h3>
 				<p>Um pequeno texto que vai explicar o que é isso.</p>
-				<form>
-				<input type="text" id="inputSearch" placeholder="Busque outros temas"><span id="searchBottom">Buscar</span>
+				<form onsubmit="jubileu(); return false">
+				<input type="text" id="searchInput" placeholder="Busque outros temas"><span id="searchBottom">Buscar</span>
+				<input type="submit" name="enviar" value="enviar">
 				</form>
 				<a href="/"><img src="/images/bot_ver_temas.gif" align="absmiddle" width="140" height="36" alt="Ver mais temas"></a>
 				<br class="tudo">
-				<div class="otherThemes">
-					<span id="themeList"></span>
+				<div class="otherThemes" id="themeList">
 				</div>
 				<br class="tudo">
 				<p>&nbsp;</p>

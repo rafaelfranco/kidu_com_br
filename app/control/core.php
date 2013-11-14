@@ -221,19 +221,26 @@ class core extends simplePHP {
       return $html;
     }
 
-    public function answerHtml($answer,$onlyApproved=false)
-    {
+    public function answerHtml($answer,$onlyApproved=false) {
       $likeIcon = $this->likeIcon($answer->guid,$answer->likes);
       
       if($answer->MIMEType == 'text/plain') {
         $file = '<div onclick="showModal('.$answer->guid.')" ><p><span>'.strip_tags($answer->description).'</span></p></div>';
       } else {
-        $img = str_replace('medium','full', $answer->file_icon);
+        $img = $answer->file_icon;
         $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="285" width="285" alt="Kidu">';
       }
 
       $answers_html = '';
-      if($answer->tags != 'aprovado') {
+      if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
+      $answers_html .= '<figure class="resposta">'.$file.'<figcaption>'.$likeIcon;
+        if($onlyApproved == false){
+        $answers_html .= '<strong><time>' . date('d-m-Y',$answer->time_updated) . '</time></strong>';
+        } else {
+        $answers_html .= '<img src="/images/ico_usuario.gif" width="36" height="36" alt="User"> <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>';
+        }
+      $answers_html .= '</figcaption></figure>';
+        } else {
           if($onlyApproved == false) {
             $answers_html .= '<figure class="resposta oculto">
                                 '.$file.'
@@ -244,19 +251,35 @@ class core extends simplePHP {
                                 </figcaption>
                             </figure>';
           }
-        } else {
-            $answers_html .= '<figure class="resposta">
-                                '.$file.'
-                                <figcaption>
-                                    '.$likeIcon.'
-                                    <img src="/images/ico_usuario.gif" width="36" height="36" alt="User">   
-                                    <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>
-                                </figcaption>
-                            </figure>';
         }
 
         return $answers_html;
     }
 
+    public function pega_todas_respostas($answers,$onlyApproved){
+    $answers_html = '';
+    $conta_respostas_desafio = 0;
+    
+      foreach ($answers->result as $answer) {
+      $answers_html .= $this->answerHtml($answer,$onlyApproved);
+        if($onlyApproved){
+          if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
+          $conta_respostas_desafio++;
+          }
+        } else {
+        $conta_respostas_desafio++;  
+        }
+      }
+
+      if($conta_respostas_desafio <= 3  && $conta_respostas_desafio > 0){
+      $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
+      } else if ($conta_respostas_desafio > 3) {
+      $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+      } else {
+      $respostas = '<dd class="sem_scroll"><div class="noAnswers">Não existem respostas para esse desafio ainda :(</div></dd>';
+      }
+
+    return $respostas;
+    }
 }
 ?>
