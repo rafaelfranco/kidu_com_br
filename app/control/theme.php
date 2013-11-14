@@ -106,7 +106,7 @@ class theme extends simplePHP {
                 if($conta_respostas_desafio <= 3  && $conta_respostas_desafio > 0){
                 $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
                 } else if ($conta_respostas_desafio > 3) {
-                $challenge_html .= '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+                $challenge_html .= '<dd onscroll="aciona_sombra(this)"><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
                 } else {
                 $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
                 }
@@ -115,7 +115,7 @@ class theme extends simplePHP {
             if($conta_respostas_geral <= 3  && $conta_respostas_geral > 0){
             $todas_respostas = '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
             } else if ($conta_respostas_geral > 3) {
-            $todas_respostas = '<dd><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
+            $todas_respostas = '<dd onscroll="aciona_sombra(this)"><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd>';
             } else {
             $todas_respostas = '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
             }
@@ -229,7 +229,7 @@ class theme extends simplePHP {
                 $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>';
             }
             
-            if($challenges_list[$current_challenge+1] != '') {
+            if(isset($challenges_list[$current_challenge+1]) && $challenges_list[$current_challenge+1] != '') {
                  $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>';
             } else {
                 $this->keys['next'] = '';

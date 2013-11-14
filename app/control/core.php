@@ -274,7 +274,7 @@ class core extends simplePHP {
       if($conta_respostas_desafio <= 3  && $conta_respostas_desafio > 0){
       $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
       } else if ($conta_respostas_desafio > 3) {
-      $respostas = '<dd><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
+      $respostas = '<dd onscroll="aciona_sombra(this)"><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd>';
       } else {
       $respostas = '<dd class="sem_scroll"><div class="noAnswers">Não existem respostas para esse desafio ainda :(</div></dd>';
       }

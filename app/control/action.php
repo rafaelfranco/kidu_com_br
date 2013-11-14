@@ -164,7 +164,7 @@ class action extends simplePHP {
         $likeIcon = $this->core->likeIcon($file_id,$file->result[0]->likes);
 
         if($file->result[0]->MIMEType == 'text/plain') {
-          $center = '<blockquote><div>'.$file->result[0]->description.'</div></blockquote>';
+          $center = '<blockquote><div><p>'.$file->result[0]->description.'</p></div></blockquote>';
         } else {
           if($file->result[0]->description != '') {
             $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe><br class="tudo">';

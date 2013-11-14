@@ -391,3 +391,12 @@ function likeItem(item_id) {
 		}
 	});
 }
+
+function aciona_sombra(de_onde){
+de_onde.className = 'sombra';
+	if(de_onde.scrollLeft > 200){
+	de_onde.style.boxShadow = "-10px 0 8px -2px #AAA";
+	} else {
+	de_onde.style.boxShadow = "10px 0 8px -2px #AAA";
+	}
+}
