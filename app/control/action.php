@@ -154,6 +154,10 @@ class action extends simplePHP {
         $file_id = $this->getParameter(3);
 
         $file = $this->core->callWs('file.get_files',array('guid'=>$file_id,'context'=>'one'));
+        if($file->status == -20){
+        echo 'erro_deslogado';
+        return;
+        }
 
         $img = str_replace('medium', 'large', $file->result[0]->file_icon);
        

@@ -365,9 +365,14 @@ function showModal(file) {
 		type: 'GET',
 		async: 'false',
             success: function(json) {
+				if(json.indexOf('erro_deslogado') != -1){
+				alert("Você está deslogado!");
+				document.location = '/logoff';
+				} else {
 				$('#modal').html(json);
              	document.getElementById('modal').getElementsByTagName('dl')[0].style.left = ((window.innerWidth - 900)/2) + "px";
              	document.getElementById('modal').getElementsByTagName('dl')[0].style.top = ((window.innerHeight - 600)/2) + "px";
+	             }
              }
         });
 }

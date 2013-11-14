@@ -539,9 +539,12 @@ figure.resposta{
 border: 1px solid #ddd;
 padding: 5px;
 float: left;
-cursor: pointer;
 background-color: white;
 margin: 0 15px 0 0;
+}
+
+figure.resposta img{
+cursor: pointer;
 }
 
 figure.resposta figcaption{
@@ -610,6 +613,7 @@ background: #f9c667; /* Old browsers */
 background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
 position: relative;
 overflow: hidden;
+cursor: pointer;
 }
 
 figure.resposta div p{
@@ -1515,6 +1519,7 @@ width: 900px;
 position: absolute;
 background-color: white;
 padding: 10px;
+box-shadow: 5px 5px 4px #000000;
 }
 
 #modal dl dt{
@@ -1530,6 +1535,12 @@ background-color: #504194;
 cursor: pointer;
 color: white;
 font-weight: bold;
+border: 1px solid white;
+}
+
+#modal dl dt span.fechar:hover {
+border: 1px solid #504194;
+color: silver;
 }
 
 #modal dl dt p{
@@ -1628,6 +1639,7 @@ margin: 0 auto;
 span.curtir{
 float: right;
 color: #e74c3c;
+cursor: pointer;
 }
 
 span.curtir img{
