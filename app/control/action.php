@@ -100,13 +100,15 @@ class action extends simplePHP {
       $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));  
     }
     $x = 0;
+    echo "<ul>\n";
     foreach ($res->result as $group) {
-      echo '<div><a href="/theme/view/'.$group->guid.'">'.$group->name.'</a></div>';
+      echo '<li><a href="/theme/view/'.$group->guid.'">'.$group->name.'</a></li>';
       $x++;
     }
     if($x==0) {
-      echo '<p>Não foram encontrados resultados</p>';
+      echo '<li>Não foram encontrados resultados</li>';
     }
+    echo "</ul><br class='tudo'>\n";
     exit;
     
   }
@@ -230,12 +232,10 @@ class action extends simplePHP {
     $search = $_POST['search'];
     $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
     $x = 0;
-    echo '<ul>';
     foreach ($res->result as $theme) {
-      echo '<li><a href="/theme/view/'.$theme->guid.'">'.$theme->name.'</a></li>';
+      echo '<div><a href="/theme/view/'.$theme->guid.'">'.$theme->name.'</a></div>';
       $x++;
     }
-    echo '</ul>';
     if($x==0) {
       echo '<p>Não foram encontrados resultados</p>';
     }

@@ -124,24 +124,6 @@ padding: 0;
 margin: 0;
 }
 
-#tema #outros_temas {
-width: 945px;
-margin: 40px auto 300px;
-text-align: left;
-padding-bottom: 80px;
-clear: both;
-padding-top: 30px;
-}
-
-#tema #outros_temas h3 {
-color: #504194;
-font-size: 250%;
-padding: 0;
-margin: 0;
-width: 280px;
-float: left;
-}
-
 #tema #outros_temas>span {
 float: right;
 cursor: pointer;
@@ -198,8 +180,16 @@ margin-top: 20px;
 }
 
 #themeList {
-	width: 960px;
-	margin: auto;
+width: 960px;
+margin: auto;
+}
+
+#themeList ul{
+margin: 0;
+}
+
+#themeList ul li{
+list-style-type: none;
 }
 
 #themeList a {

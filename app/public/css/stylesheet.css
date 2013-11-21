@@ -519,23 +519,62 @@ font-size: 90%;
 
 /****  Scroll horizontal das respostas  ****/
 
-#respostas dd{
+#tema #todas dd.caixa, #respostas dd.caixa{
 margin: 20px 0 50px;
-padding: 0 0 25px;
+padding: 0 0 20px;
 float: left;
 overflow-x: scroll;
 overflow-y: hidden;
-width: 100%;
+width: 90%;
 transition: all 1s;
 }
 
-#respostas dd.sombra{
-box-shadow: 10px 0 8px -2px #AAA;
+#tema #todas dd.sombra_esquerda, #respostas dd.sombra_esquerda{
+margin: 0;
+padding: 0;
+width: 4%;
+height: 370px;
+float: left;
+overflow: hidden;
+position: relative;
+transition: all 1s;
+opacity: 0;
 }
 
-#respostas dd.sem_scroll{
+#tema #todas dd.sombra_direita, #respostas dd.sombra_direita{
+margin: 0;
+padding: 0;
+width: 4%;
+height: 370px;
+float: left;
+overflow: hidden;
+position: relative;
+transition: all 1s;
+}
+
+#tema #todas dd.sombra_direita div, #respostas dd.sombra_direita div, #tema #todas dd.sombra_esquerda div, #respostas dd.sombra_esquerda div{
+height: 370px;
+width: 10px;
+box-shadow: 0 0 8px #AAA;
+border-radius: 10px;
+position: absolute;
+}
+
+#tema #todas dd.sombra_direita div, #respostas dd.sombra_direita div {
+left: -10px;
+}
+
+#tema #todas dd.sombra_esquerda div, #respostas dd.sombra_esquerda div {
+right: -10px;
+}
+
+#tema #todas dd.sem_scroll, #respostas dd.sem_scroll{
 overflow-x: hidden;
 overflow-y: hidden;
+}
+
+#tema #todas {
+width: 940px;
 }
 
 /******* figure resposta ********/
@@ -679,9 +718,8 @@ margin-top: 20px;
 
 #tema #outros_temas {
 width: 940px;
-margin: 40px auto 300px;
+margin: 40px auto;
 text-align: left;
-padding-bottom: 80px;
 clear: both;
 }
 
@@ -1658,22 +1696,4 @@ vertical-align: middle;
 
 span.curtir b.cinza{
 color: #B5B5B5;
-}
-
-#tema #todas {
-width: 940px;
-}
-
-#tema #todas dd{
-margin: 20px 0 50px;
-padding: 0 0 25px;
-float: left;
-overflow-x: scroll;
-overflow-y: hidden;
-width: 100%;
-}
-
-#tema #todas dd.sem_scroll{
-overflow-x: hidden;
-overflow-y: hidden;
 }

@@ -398,10 +398,17 @@ function likeItem(item_id) {
 }
 
 function aciona_sombra(de_onde){
-de_onde.className = 'sombra';
+//de_onde.className = 'sombra';
+//alert(de_onde.scrollWidth);
 	if(de_onde.scrollLeft > 200){
-	de_onde.style.boxShadow = "-10px 0 8px -2px #AAA";
+	de_onde.parentNode.getElementsByTagName('dd')[0].style.opacity = 1;
 	} else {
-	de_onde.style.boxShadow = "10px 0 8px -2px #AAA";
+	de_onde.parentNode.getElementsByTagName('dd')[0].style.opacity = 0;
+	}
+
+	if(de_onde.scrollLeft >= (de_onde.scrollWidth - de_onde.offsetWidth - 50)){
+	de_onde.parentNode.getElementsByTagName('dd')[2].style.opacity = 0;
+	} else {
+	de_onde.parentNode.getElementsByTagName('dd')[2].style.opacity = 1;
 	}
 }
