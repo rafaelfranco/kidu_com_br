@@ -230,10 +230,12 @@ class action extends simplePHP {
     $search = $_POST['search'];
     $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
     $x = 0;
+    echo '<ul>';
     foreach ($res->result as $theme) {
-      echo '<a href="/theme/view/'.$theme->guid.'"><div>'.$theme->name.'</div></a>';
+      echo '<li><a href="/theme/view/'.$theme->guid.'">'.$theme->name.'</a></li>';
       $x++;
     }
+    echo '</ul>';
     if($x==0) {
       echo '<p>Não foram encontrados resultados</p>';
     }

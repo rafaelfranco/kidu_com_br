@@ -285,6 +285,11 @@ color: #797a7d;
 padding: 20px 20px;
 }
 
+#bodyHome #themeList{
+margin: 15px auto 40px;
+padding-bottom: 40px;
+}
+
 /********* Footer ***********/
 
 footer#info {
