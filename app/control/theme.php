@@ -106,7 +106,7 @@ class theme extends simplePHP {
                 if($conta_respostas_desafio <= 3  && $conta_respostas_desafio > 0){
                 $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
                 } else if ($conta_respostas_desafio > 3) {
-                $challenge_html .= '<dd class="sombra_esquerda"><div></div></dd><dd onscroll="aciona_sombra(this)" class="caixa"><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd><dd class="sombra_direita"><div></div></dd>';
+                $challenge_html .= '<dd class="sombra_esquerda"><div onclick="rola_esquerda(this)"></div></dd><dd onscroll="aciona_sombra(this)" class="caixa"><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd><dd class="sombra_direita"><div onclick="rola_direita(this)"></div></dd>';
                 } else {
                 $challenge_html .= '<dd class="sem_scroll">'. $answers_html .'</dd>';
                 }
@@ -115,7 +115,7 @@ class theme extends simplePHP {
             if($conta_respostas_geral <= 3  && $conta_respostas_geral > 0){
             $todas_respostas = '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
             } else if ($conta_respostas_geral > 3) {
-            $todas_respostas = '<dd class="sombra_esquerda"><div></div></dd><dd onscroll="aciona_sombra(this)" class="caixa"><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd><dd class="sombra_direita"><div></div></dd>';
+            $todas_respostas = '<dd class="sombra_esquerda"><div onclick="rola_esquerda(this)"></div></dd><dd onscroll="aciona_sombra(this)" class="caixa"><div style="width: ' . 315 * $conta_respostas_geral . 'px">'. $allFiles_html .'</div></dd><dd class="sombra_direita"><div onclick="rola_direita(this)"></div></dd>';
             } else {
             $todas_respostas = '<dd class="sem_scroll">'. $allFiles_html .'</dd>';
             }

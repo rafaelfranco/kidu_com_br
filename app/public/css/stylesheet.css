@@ -533,9 +533,8 @@ transition: all 1s;
 margin: 0;
 padding: 0;
 width: 4%;
-height: 370px;
+height: 385px;
 float: left;
-overflow: hidden;
 position: relative;
 transition: all 1s;
 opacity: 0;
@@ -545,27 +544,34 @@ opacity: 0;
 margin: 0;
 padding: 0;
 width: 4%;
-height: 370px;
+height: 385px;
 float: left;
-overflow: hidden;
 position: relative;
 transition: all 1s;
 }
 
 #tema #todas dd.sombra_direita div, #respostas dd.sombra_direita div, #tema #todas dd.sombra_esquerda div, #respostas dd.sombra_esquerda div{
-height: 370px;
+height: 385px;
+position: absolute;
+/*
 width: 10px;
 box-shadow: 0 0 8px #AAA;
 border-radius: 10px;
-position: absolute;
+*/
+width: 38px;
+z-index: 300;
 }
 
 #tema #todas dd.sombra_direita div, #respostas dd.sombra_direita div {
-left: -10px;
+left: -7px;
+background: transparent url('../images/seta_rolagem-dir.png') no-repeat 0 0;
+cursor: pointer;
 }
 
 #tema #todas dd.sombra_esquerda div, #respostas dd.sombra_esquerda div {
-right: -10px;
+right: -7px;
+background: transparent url('../images/seta_rolagem-esq.png') no-repeat 0 0;
+cursor: pointer;
 }
 
 #tema #todas dd.sem_scroll, #respostas dd.sem_scroll{
