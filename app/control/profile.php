@@ -72,10 +72,16 @@ class profile extends simplePHP {
             $username = $this->getParameter(3);
 
             $this->keys['name_user'] = $username;
+            $user = $this->core->getWs('user.get_profile',array('username'=>$username));
+
+            if($user->status != 0) {
+                $this->keys['answers'] = 'Usuário não encontrado';
+                return $this->keys;   
+            }
 
             //get user answers
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
-           if($answers->status == -20){header('Location: /logoff');};
+            if($answers->status == -20){header('Location: /logoff');};
 
             $this->keys['answers'] = $this->core->pega_todas_respostas($answers,true);
 
