@@ -105,6 +105,12 @@ class action extends simplePHP {
       echo '<li><a href="/theme/view/'.$group->guid.'">'.$group->name.'</a></li>';
       $x++;
     }
+
+    //search
+    if ($_POST['text'] != '') {
+      $x = $this->core->search($_POST['text']);
+    }
+    
     if($x==0) {
       echo '<li>Não foram encontrados resultados</li>';
     }
@@ -229,13 +235,19 @@ class action extends simplePHP {
 
   public function _actionSearchThemes()
   {
+    //receive search
     $search = $_POST['search'];
+
+    //search themes
     $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
     $x = 0;
     foreach ($res->result as $theme) {
       echo '<div><a href="/theme/view/'.$theme->guid.'">'.$theme->name.'</a></div>';
       $x++;
     }
+    
+    $x = $this->core->search($search);
+
     if($x==0) {
       echo '<p>Não foram encontrados resultados</p>';
     }

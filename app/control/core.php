@@ -281,5 +281,30 @@ class core extends simplePHP {
 
     return $respostas;
     }
+
+  public function search($search)
+  {
+    $x = 0;
+    $res = $this->getWs('user.search',array('search'=>$search));
+    if($res->status == 0) {
+      foreach ($res->result as $user) {
+        $html .='<div><a href="/profile/view/'.$user->username.'">'.$user->username.'</a></div>';
+        $x++;
+      }  
+    }
+    
+    $res = $this->getWs('group.get_groups',array('context'=>'challenge','find'=>$search));
+    if($res->status == 0) {
+      foreach ($res->result as $group) {
+        $html .='<div><a href="/theme/challenge/'.$group->guid_main.'/'.$group->guid.'">'.$group->name.'</a></div>';
+        $x++;
+      }  
+    }
+
+    //search people
+    echo $html;
+
+    return $x;
+  }  
 }
 ?>
