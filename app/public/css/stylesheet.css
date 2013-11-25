@@ -370,6 +370,10 @@ font-size: 90%;
 text-decoration: underline;
 }
 
+footer#logado>div div strong a{
+text-decoration: none;
+}
+
 .botao {
 padding: 12px 30px;
 border-radius: 5px;
@@ -553,11 +557,6 @@ transition: all 1s;
 #tema #todas dd.sombra_direita div, #respostas dd.sombra_direita div, #tema #todas dd.sombra_esquerda div, #respostas dd.sombra_esquerda div{
 height: 385px;
 position: absolute;
-/*
-width: 10px;
-box-shadow: 0 0 8px #AAA;
-border-radius: 10px;
-*/
 width: 38px;
 z-index: 300;
 }
@@ -581,6 +580,13 @@ overflow-y: hidden;
 
 #tema #todas {
 width: 940px;
+}
+
+.noAswers {
+border: solid 1px #ccc;
+padding: 50px;
+width: 750px;
+margin-bottom: 20px;
 }
 
 /******* figure resposta ********/

@@ -397,18 +397,43 @@ function likeItem(item_id) {
 	});
 }
 
+var este_dd;
+
+function achar_posicao_dd(de_onde){
+quantos_dd = de_onde.parentNode.getElementsByTagName('dd').length;
+	
+	for(i=0;i<quantos_dd;i++){
+		if(de_onde.parentNode.getElementsByTagName('dd')[i] == de_onde){
+		este_dd = i;
+		break;
+		}
+	}
+}
+
 function aciona_sombra(de_onde){
 //de_onde.className = 'sombra';
-//alert(de_onde.scrollWidth);
-	if(de_onde.scrollLeft > 200){
-	de_onde.parentNode.getElementsByTagName('dd')[0].style.opacity = 1;
+//alert(de_onde.scrollWidth - de_onde.offsetWidth);
+achar_posicao_dd(de_onde);
+
+	if(de_onde.scrollLeft > 50){
+	de_onde.parentNode.getElementsByTagName('dd')[este_dd - 1].style.opacity = 1;
 	} else {
-	de_onde.parentNode.getElementsByTagName('dd')[0].style.opacity = 0;
+	de_onde.parentNode.getElementsByTagName('dd')[este_dd - 1].style.opacity = 0;
 	}
 
 	if(de_onde.scrollLeft >= (de_onde.scrollWidth - de_onde.offsetWidth - 50)){
-	de_onde.parentNode.getElementsByTagName('dd')[2].style.opacity = 0;
+	de_onde.parentNode.getElementsByTagName('dd')[este_dd + 1].style.opacity = 0;
 	} else {
-	de_onde.parentNode.getElementsByTagName('dd')[2].style.opacity = 1;
+	de_onde.parentNode.getElementsByTagName('dd')[este_dd + 1].style.opacity = 1;
 	}
+}
+
+function rola_esquerda(de_onde){
+achar_posicao_dd(de_onde.parentNode);
+de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd + 1].scrollLeft = de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd + 1].scrollLeft - 800;
+}
+
+function rola_direita(de_onde){
+achar_posicao_dd(de_onde.parentNode);
+de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd - 1].scrollLeft = de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd - 1].scrollLeft + 800;
 }

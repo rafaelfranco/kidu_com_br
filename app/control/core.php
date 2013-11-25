@@ -260,6 +260,7 @@ class core extends simplePHP {
     $answers_html = '';
     $conta_respostas_desafio = 0;
     
+    if(isset($answers->result)){
       foreach ($answers->result as $answer) {
       $answers_html .= $this->answerHtml($answer,$onlyApproved);
         if($onlyApproved){
@@ -270,7 +271,8 @@ class core extends simplePHP {
         $conta_respostas_desafio++;  
         }
       }
-
+    }
+    
       if($conta_respostas_desafio <= 3  && $conta_respostas_desafio > 0){
       $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
       } else if ($conta_respostas_desafio > 3) {
