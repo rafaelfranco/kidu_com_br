@@ -179,7 +179,7 @@ class action extends simplePHP {
           $center = '<blockquote><div><p>'.$file->result[0]->description.'</p></div></blockquote>';
         } else {
           if($file->result[0]->description != '') {
-            $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'" frameborder="0" allowfullscreen></iframe><br class="tudo">';
+            $center = '<iframe width="700" height="500" src="//www.youtube.com/embed/'.$file->result[0]->description.'?showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe><br class="tudo">';
           } else {
             $center = '<img src="'.$img.'"><br class="tudo">';
           }
