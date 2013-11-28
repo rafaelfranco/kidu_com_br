@@ -172,6 +172,7 @@ $(function() {
 			});
 		}
 	});
+	
 	$('#topSearch').click(function() {
 		if($('#topInputsearch').val() == ''){
 			alert('Preencha a pesquisa!');

@@ -284,8 +284,8 @@ class core extends simplePHP {
     return $respostas;
     }
 
-  public function search($search)
-  {
+  public function search($search){//???
+    $html = '';
     $x = 0;
     $res = $this->getWs('user.search',array('search'=>$search));
     if($res->status == 0) {

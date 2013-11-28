@@ -576,6 +576,9 @@ cursor: pointer;
 #tema #todas dd.sem_scroll, #respostas dd.sem_scroll{
 overflow-x: hidden;
 overflow-y: hidden;
+width: 940px;
+margin: 0;
+padding: 0;
 }
 
 #tema #todas {
@@ -1449,7 +1452,7 @@ margin: 0 auto;
 }
 
 #conteudo section h3 {
-padding: 20px 0 0 20px;
+padding: 20px 0 0;
 float: left;
 color: #9087bc;
 border-bottom: 1px solid #f7f7f7;

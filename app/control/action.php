@@ -52,14 +52,14 @@ class action extends simplePHP {
 
         //send email
         #load email module
-        $this->email = $this->loadModule('email');
+        // $this->email = $this->loadModule('email');
 
-        $html = file_get_contents('../view/email/convite.html');
+        // $html = file_get_contents('../view/email/convite.html');
 
-        $keys['guid'] = $_SESSION['guid'];
-        $html = $this->applyKeys($html,$keys);
+        // $keys['guid'] = $_SESSION['guid'];
+        // $html = $this->applyKeys($html,$keys);
 
-        $this->email->send($data['father-email'],'Seu filho que brincar no KIDU',$html,'Kidu','cadastro@kidu.com.br');
+        // $this->email->send($data['father-email'],'Seu filho que brincar no KIDU',$html,'Kidu','cadastro@kidu.com.br');
 
         
         echo 'success;';
@@ -97,7 +97,7 @@ class action extends simplePHP {
     if(isset($_POST['text']) && $_POST['text'] != '') {
       $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
     } else {
-      $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));  
+      $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));//mostra na home apenas os featured
     }
     $x = 0;
     echo "<ul>\n";

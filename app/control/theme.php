@@ -97,8 +97,8 @@ class theme extends simplePHP {
                 <!--a href="/theme/challenges/'.$this->getParameter(3).'/'.$challenge->guid.'" -->
                 <a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'" >
                 <img src="/images/bot_faca_voce.gif" alt="Faça você!" width="110" height="40"></a>
-                </span><br>
-                <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a>
+                </span><!--br>
+                <a href="/theme/challenge-answers/'.$challenge->guid.'">Ver mais respostas a esta questão.</a-->
                 </div>
                 <p>'.$challenge->description.'</p>
                 </dt>';
