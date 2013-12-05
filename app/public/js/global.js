@@ -438,3 +438,17 @@ function rola_direita(de_onde){
 achar_posicao_dd(de_onde.parentNode);
 de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd - 1].scrollLeft = de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd - 1].scrollLeft + 800;
 }
+
+function apaga_arquivo(qual){
+	$.ajax({
+		url: '/action/apagaArquivo/',
+		type: 'POST',
+		data: {id_arquivo: qual},
+		success: function(res){
+		alert(res);
+		}
+	})
+	// .done(function(res) {
+	// alert(res)
+	// });
+}

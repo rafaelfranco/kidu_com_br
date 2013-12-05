@@ -34,7 +34,8 @@ $(document).ready(function() {
 			        	if(dados[0] == 'success') {
 			        		window.location = '/profile';
 			        	} else {
-							alert(dados[1]);
+							//alert(dados[1]);
+							alert(dados);
 			        	}
 			        }
 			});

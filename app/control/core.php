@@ -277,8 +277,10 @@ class core extends simplePHP {
       $respostas = '<dd class="sem_scroll">'. $answers_html .'</dd>';
       } else if ($conta_respostas_desafio > 3) {
       $respostas = '<dd class="sombra_esquerda"><div onclick="rola_esquerda(this)"></div></dd><dd onscroll="aciona_sombra(this)" class="caixa"><div style="width: ' . 315 * $conta_respostas_desafio . 'px">'. $answers_html .'</div></dd><dd class="sombra_direita"><div onclick="rola_direita(this)"></div></dd>';
-      } else {
+      } else if($onlyApproved){
       $respostas = '<dd class="sem_scroll"><div class="noAnswers">Não existem respostas para esse desafio ainda :(</div></dd>';
+      } else {
+      $respostas = '<dd class="sem_scroll"><div class="primeiro_acesso">Olá! Esta é a sua Página Pública no Kidu. Aqui será possível ver todos os desafios que você realizar. Para começar, entre agora na WIKIDU, escolha seu tema favorito e mãos à obra!</div></dd>';  
       }
 
     return $respostas;
