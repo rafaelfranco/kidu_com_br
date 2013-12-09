@@ -95,28 +95,27 @@ class action extends simplePHP {
 
   public function _actionGetgroups() {
     if(isset($_POST['text']) && $_POST['text'] != '') {
-      $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
+    $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
+    $x = $this->core->search($_POST['text']);
+
     } else {
-      $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));//mostra na home apenas os featured
-    }
+    $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));//mostra na home apenas os featured
     $x = 0;
     echo "<ul>\n";
-    foreach ($res->result as $group) {
-      echo '<li><a href="/theme/view/'.$group->guid.'">'.$group->name.'</a></li>';
+      
+      foreach ($res->result as $group) {
+      echo '<li><figure><a href="/theme/view/'.$group->guid.'" title="'.$group->description.'"><img src="'.str_replace('small','large',$group->avatar_url).'"></a><br><figcaption><a href="/theme/view/'.$group->guid.'" title="'.$group->description.'">'.$group->name.'</a></figcaption></li>';
       $x++;
-    }
+      }
 
-    //search
-    if ($_POST['text'] != '') {
-      $x = $this->core->search($_POST['text']);
-    }
-    
-    if($x==0) {
+      if($x==0) {
       echo '<li>Não foram encontrados resultados</li>';
-    }
+      }
+
     echo "</ul><br class='tudo'>\n";
-    exit;
+    }
     
+    exit;
   }
   public function _actionPostfile() {
 
@@ -188,7 +187,7 @@ class action extends simplePHP {
         echo '<dl>
                 <dt>
                   <span class="fechar" onclick="fecha_modal()">Fechar | X</span>
-                  <span class="apagar" onclick="apaga_arquivo(' . $file_id . ')">Apagar</span>
+                  <!--span class="apagar" onclick="apaga_arquivo(' . $file_id . ')">Apagar</span-->
                   <h4>Tema</h4>
                   <p><a href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
                   

@@ -167,39 +167,3 @@ border: 1px solid #797a7d;
 float: left;
 margin-top: 20px;
 }
-
-#tema #outros_temas img {
-	margin-top: 6px	
-}
-
-#themeList {
-width: 960px;
-margin: auto;
-}
-
-#themeList ul{
-margin: 0;
-}
-
-#themeList ul li{
-list-style-type: none;
-}
-
-#themeList a {
-float: left;
-width: 250px;
-height: 140px;
-text-align: center;
-vertical-align: middle;
-margin: 0 20px 20px 0;
-border: dashed 8px green;
-border-radius: 30px;
-padding: 120px 0 0;
-color: #504194;
-background-color: #D5D5D5;
-font-size: 200%;
-}
-
-#themeList a:hover {
-background-color: silver;
-}

@@ -180,14 +180,15 @@ text-decoration: underline;
 #areaMenu a{
 	text-decoration: underline;
 }
+
 #bodyHome {
-	font-family: 'normal arial', sans-serif;
-	margin: 0px;
-	padding: 0px;
-	font-size: 14px;
-	background-repeat:repeat-x;
-	background-color: #504194;
-	color: #FFFFFF;
+font-family: 'normal arial', sans-serif;
+margin: 0px;
+padding: 0px;
+font-size: 14px;
+background-repeat:repeat-x;
+background-color: #504194;
+color: #FFFFFF;
 }
 
 #bodyHome form {
@@ -199,20 +200,6 @@ box-shadow: 2px 5px 4px #444444;
 padding: 20px 0 40px;
 }
 
-#bodyHome form#busca_home {
-background-color: transparent;
-margin: 50px auto 0;
-width: 700px;
-border-radius: 0;
-box-shadow: none;
-padding: 20px 0;
-}
-
-#bodyHome form#busca_home input{
-height: 35px;
-border-radius: 5px;
-}
-
 #bodyHome section {
 width: 380px;
 text-align: right;
@@ -222,34 +209,10 @@ margin: 10px auto;
 text-decoration: underline;
 }
 
-#bodyHome section#temas {
-width: 940px;
-text-align: center;
-line-height: auto;
-font-size: 110%;
-margin: 60px auto;
-text-decoration: none;
-position: relative;
-}
-
-#bodyHome #temas ul {
-margin: 0;
-padding: 0;
-}
-
-#bodyHome #temas ul li{
-float: left;
-width: 300px;
-list-style-type: none;
-margin-right: 10px;
-}
-
-#bodyHome #temas ul li figure{
-cursor: pointer;
-}
-
-#bodyHome #temas ul li figure figcaption{
-padding: 10px;
+#bodyHome form a{
+float: right;
+color: #797a7d;
+padding: 20px 20px;
 }
 
 #bodyHome form label{
@@ -275,19 +238,101 @@ border-radius: 4px;
 opacity: 0;
 }
 
-#bodyHome form#busca_home input[type="text"]{
-width: 500px;
+#bodyHomeLogado dl {
+margin: 0;
+padding: 0;
 }
 
-#bodyHome form a{
-float: right;
-color: #797a7d;
-padding: 20px 20px;
+#bodyHomeLogado dl dt {
+width: 120px;
+float: left;
+margin: 0;
+padding: 0;
+text-align: center;
+font-size: 130%;
 }
 
-#bodyHome #themeList{
-margin: 15px auto 40px;
-padding-bottom: 40px;
+#bodyHomeLogado dl dd {
+margin: 0;
+padding: 0;
+text-align: center;
+width: 650px;
+color: #8E8E8E;
+}
+
+#bodyHomeLogado dl dt a{
+color: #504194;
+}
+
+#bodyHomeLogado dl dt a img{
+border: 0;
+}
+
+#bodyHomeLogado form#busca_home {
+background-color: transparent;
+margin: 50px auto 0;
+width: 800px;
+border-radius: 0;
+box-shadow: none;
+padding: 20px 0 40px;
+}
+
+#bodyHomeLogado form#busca_home input{
+height: 35px;
+border-radius: 5px;
+width: 400px;
+display: auto;
+}
+
+#bodyHomeLogado header input, #bodyHomeLogado #wikidu, #bodyHomeLogado #topSearch{
+display: none;
+}
+
+#themeList {
+width: 900px;
+margin: auto;
+}
+
+#themeList ul{
+margin: 0;
+padding: 0;
+}
+
+#themeList ul li{
+list-style-type: none;
+width: 250px;
+border: 1px solid silver;
+background-color: white;
+float: left;
+list-style-type: none;
+text-align: center;
+margin: 0 15px 15px 0;
+}
+
+#themeList ul li:hover{
+background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 64%, rgba(219,219,219,1) 100%);
+}
+
+#themeList ul li figure{
+width: auto;
+margin: 0;
+padding: 0;
+}
+
+#themeList ul li figure figcaption{
+text-align: left;
+padding: 10px 15px;
+}
+
+#themeList ul li figure figcaption a {
+color: gray;
+font-size: 100%;
+font-weight: bold;
+text-decoration: none;
+}
+
+#themeList a img{
+margin: 10px;
 }
 
 /********* Footer ***********/

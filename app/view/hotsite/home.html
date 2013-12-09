@@ -1,27 +1,24 @@
 <html>
-	<head>
-		[#head#]
-		<script type="text/javascript" src="/js/hotsite/theme.js"></script> 
-	</head>
-	<body id="bodyHome" >
-	    <nav>
-	      <ul>
-	        <!--li><a href="/fathers">Para Pais</a></li>
-	        <li><a href="/teachers">Para Educadores</a></li-->
-	      </ul>
-	    </nav>
+<head>
+[#head#]
+<script type="text/javascript" src="/js/hotsite/theme.js"></script> 
+</head>
+<body id="bodyHomeLogado">
+[#top#]
 
-    	<div id="homeLogo">
-	<a href="/home"><img src="/images/marca_kidu_home.gif" alt="Kidu" width="463" height="168" border="0">
-	<img src="/images/selo_beta.png" alt="Kidu" width="173" height="175" class="selo" border="0"></a>
-	</div>
-
-		<form id="busca_home" action="/hotsite/home" method="POST" >
-		<input type="text" id="searchInput" name="searchInput" value="[#search#]" placeholder="  Encontre temas" />
-			<span class="botao2" name="homeSearch" id="homeSearch">Buscar</span>
-		</form>
-		<div id="themeList"> </div>
-		<p><br class="tudo"></p>
-		[#footer#]
-	</body>
+<form id="busca_home" action="/hotsite/home" method="POST" >
+<dl>
+<dt><a href="/home"><img src="/images/planeta_wikidu.gif" width="80" height="73"><br>WiKidu</a></dt>
+<dd>
+<p>No que você quer ficar fera?</p>
+<input type="text" id="searchInput" name="searchInput" value="[#search#]" placeholder="  Encontre temas" />
+<span class="botao2" name="homeSearch" id="homeSearch">Buscar</span>
+</dd>
+</dl>
+</form>
+<br class="tudo">
+<section id="themeList"> </section>
+<p><br class="tudo"></p>
+[#footer#]
+</body>
 </html>
