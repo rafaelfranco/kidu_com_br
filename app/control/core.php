@@ -290,25 +290,30 @@ class core extends simplePHP {
     $html = '';
     $x = 0;
     $res = $this->getWs('user.search',array('search'=>$search));
-    if($res->status == 0) {
-      foreach ($res->result as $user) {
-        $html .='<div><a href="/profile/view/'.$user->username.'">'.$user->username.'</a></div>';
-        $x++;
-      }  
-    }
+    return $res;
+    // if($res->status == 0) {
+    //   foreach ($res->result as $user) {
+    //     $html .='<div><a href="/profile/view/'.$user->username.'">'.$user->username.'</a></div>';
+    //     $x++;
+    //   }  
+    // } else {
+    //   // $html .= $res->status;
+    //   $html .= "opa";
+    //   var_dump($res);
+    // }
     
-    $res = $this->getWs('group.get_groups',array('context'=>'challenge','find'=>$search));
-    if($res->status == 0) {
-      foreach ($res->result as $group) {
-        $html .='<div><a href="/theme/challenge/'.$group->guid_main.'/'.$group->guid.'">'.$group->name.'</a></div>';
-        $x++;
-      }  
-    }
+    // $res = $this->getWs('group.get_groups',array('context'=>'challenge','find'=>$search));
+    // if($res->status == 0) {
+    //   foreach ($res->result as $group) {
+    //     $html .='<div><a href="/theme/challenge/'.$group->guid_main.'/'.$group->guid.'">'.$group->name.'</a></div>';
+    //     $x++;
+    //   }  
+    // }
 
     //search people
     echo $html;
 
-    return $x;
+    //return $x;
   }  
 }
 ?>

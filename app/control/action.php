@@ -94,29 +94,43 @@ class action extends simplePHP {
   }
 
   public function _actionGetgroups() {
-    if(isset($_POST['text']) && $_POST['text'] != '') {
-    $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
-    $x = $this->core->search($_POST['text']);
-
-    } else {
-    $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));//mostra na home apenas os featured
-    $x = 0;
-    echo "<ul>\n";
-      
-      foreach ($res->result as $group) {
-      echo '<li><figure><a href="/theme/view/'.$group->guid.'" title="'.$group->description.'"><img src="'.str_replace('small','large',$group->avatar_url).'"></a><br><figcaption><a href="/theme/view/'.$group->guid.'" title="'.$group->description.'">'.$group->name.'</a></figcaption></li>';
-      $x++;
-      }
-
-      if($x==0) {
-      echo '<li>Não foram encontrados resultados</li>';
-      }
-
-    echo "</ul><br class='tudo'>\n";
-    }
+  $res = $this->core->getWs('group.get_groups',array('context'=>'featured'));//mostra na home apenas os featured
+  $x = 0;
+  echo "<ul>\n";
     
-    exit;
+    foreach ($res->result as $group) {
+    echo '<li><figure><a href="/theme/view/'.$group->guid.'" title="'.$group->description.'"><img src="'.str_replace('small','large',$group->avatar_url).'" width="200" height="200"></a><br><figcaption><a href="/theme/view/'.$group->guid.'" title="'.$group->description.'">'.$group->name.'</a></figcaption></li>';
+    $x++;
+    }
+
+    if($x==0) {
+    echo '<li>Não foram encontrados resultados</li>';
+    }
+
+  echo "</ul><br class='tudo'>\n";
+  exit;
   }
+
+  public function _actionBusca_tudo() {
+  $agrupamento = array();
+  $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
+  
+    foreach ($res->result as $group) {
+    $subs = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$group->guid));
+    $group->subgrupos = $subs;
+    }
+
+  echo json_encode($res);
+
+  // $x = $this->core->search($_POST['text']);
+  //   if($x->status == -1){
+  //   echo "ninguém com esse nome.";
+  //   }
+
+  exit;
+  }
+
+
   public function _actionPostfile() {
 
     #save file local
@@ -235,22 +249,23 @@ class action extends simplePHP {
 
   public function _actionSearchThemes()
   {
-    //receive search
-    $search = $_POST['search'];
+    // //receive search
+    // $search = $_POST['search'];
 
-    //search themes
-    $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
-    $x = 0;
-    foreach ($res->result as $theme) {
-      echo '<div><a href="/theme/view/'.$theme->guid.'">'.$theme->name.'</a></div>';
-      $x++;
-    }
+    // //search themes
+    // $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$search));
+    // $x = 0;
+    // foreach ($res->result as $theme) {
+    //   echo '<div><a href="/theme/view/'.$theme->guid.'">'.$theme->name.'</a></div>';
+    //   $x++;
+    // }
     
-    $x = $this->core->search($search);
+    // $x = $this->core->search($search);
 
-    if($x==0) {
-      echo '<p>Não foram encontrados resultados</p>';
-    }
+    // if($x==0) {
+    //   echo '<p>Não foram encontrados resultados</p>';
+    // }
+    echo "use a outra função";
     exit;
   }
 

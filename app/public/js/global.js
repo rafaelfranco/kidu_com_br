@@ -162,14 +162,7 @@ $(function() {
 		if($('#searchInput').val() == '') {
 			alert('Preencha a pesquisa!');
 		} else {
-			$.ajax({
-				url: '/action/searchThemes',
-				type: 'POST',
-				data: {search: $('#searchInput').val()},
-			})
-			.done(function(res) {
-				$('#themeList').html(res);
-			});
+			jubileu();
 		}
 	});
 	

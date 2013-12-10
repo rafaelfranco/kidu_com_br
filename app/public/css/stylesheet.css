@@ -238,12 +238,12 @@ border-radius: 4px;
 opacity: 0;
 }
 
-#bodyHomeLogado dl {
+#bodyHomeLogado form dl {
 margin: 0;
 padding: 0;
 }
 
-#bodyHomeLogado dl dt {
+#bodyHomeLogado form dl dt {
 width: 120px;
 float: left;
 margin: 0;
@@ -252,7 +252,7 @@ text-align: center;
 font-size: 130%;
 }
 
-#bodyHomeLogado dl dd {
+#bodyHomeLogado form dl dd {
 margin: 0;
 padding: 0;
 text-align: center;
@@ -260,11 +260,11 @@ width: 650px;
 color: #8E8E8E;
 }
 
-#bodyHomeLogado dl dt a{
+#bodyHomeLogado form dl dt a{
 color: #504194;
 }
 
-#bodyHomeLogado dl dt a img{
+#bodyHomeLogado form dl dt a img{
 border: 0;
 }
 
@@ -282,6 +282,7 @@ height: 35px;
 border-radius: 5px;
 width: 400px;
 display: auto;
+padding-left: 10px;
 }
 
 #bodyHomeLogado header input, #bodyHomeLogado #wikidu, #bodyHomeLogado #topSearch{
@@ -293,12 +294,12 @@ width: 900px;
 margin: auto;
 }
 
-#themeList ul{
+#themeList>ul{
 margin: 0;
 padding: 0;
 }
 
-#themeList ul li{
+#themeList>ul li{
 list-style-type: none;
 width: 250px;
 border: 1px solid silver;
@@ -309,22 +310,22 @@ text-align: center;
 margin: 0 15px 15px 0;
 }
 
-#themeList ul li:hover{
+#themeList>ul li:hover{
 background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 64%, rgba(219,219,219,1) 100%);
 }
 
-#themeList ul li figure{
+#themeList>ul li figure{
 width: auto;
 margin: 0;
 padding: 0;
 }
 
-#themeList ul li figure figcaption{
+#themeList>ul li figure figcaption{
 text-align: left;
 padding: 10px 15px;
 }
 
-#themeList ul li figure figcaption a {
+#themeList>ul li figure figcaption a {
 color: gray;
 font-size: 100%;
 font-weight: bold;
@@ -333,6 +334,46 @@ text-decoration: none;
 
 #themeList a img{
 margin: 10px;
+}
+
+#themeList dl dt{
+float: left;
+font-size: 140%;
+text-align: right;
+padding-left: 30px;
+}
+
+#themeList dl dt a{
+color: #504194;
+}
+
+#themeList dl dt img{
+margin-bottom: 10px;
+}
+
+#themeList dl dd{
+width: 500px;
+font-size: 120%;
+float: left;
+border-left: 2px solid #504194;
+}
+
+#themeList dl dd ul{
+padding: 0 0 0 20px;
+}
+
+#themeList dl dd ul li{
+padding: 5px 15px;
+margin-bottom: 15px;
+list-style-type: none;
+}
+
+#themeList dl dd ul li:hover{
+background-color: #FCFFC6;
+}
+
+#themeList dl dd ul li a{
+color: black;
 }
 
 /********* Footer ***********/
