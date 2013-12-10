@@ -115,11 +115,13 @@ class action extends simplePHP {
   $agrupamento = array();
   $res = $this->core->getWs('group.get_groups',array('context'=>'search','find'=>$_POST['text']));
   
+  if (isset($res->result)){
     foreach ($res->result as $group) {
     $subs = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$group->guid));
     $group->subgrupos = $subs;
     }
-
+  } 
+  
   echo json_encode($res);
 
   // $x = $this->core->search($_POST['text']);
