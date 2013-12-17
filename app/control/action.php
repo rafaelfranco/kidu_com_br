@@ -203,7 +203,7 @@ class action extends simplePHP {
         echo '<dl>
                 <dt>
                   <span class="fechar" onclick="fecha_modal()">Fechar | X</span>
-                  <!--span class="apagar" onclick="apaga_arquivo(' . $file_id . ')">Apagar</span-->
+                  <span class="apagar" onclick="apaga_arquivo(' . $file_id . ')">Apagar</span>
                   <h4>Tema</h4>
                   <p><a href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
                   
@@ -275,7 +275,7 @@ class action extends simplePHP {
   //receive search
   $id_arquivo = $_POST['id_arquivo'];
 
-  $res = $this->core->getWs('file.delete',array('entity_guid'=>$id_arquivo,'username'=>$_SESSION['username']));
+  $res = $this->core->callWs('file.delete',array('entity_guid'=>$id_arquivo,'username'=>$_SESSION['username']));
   //echo $res;
   var_dump($res);
   exit;

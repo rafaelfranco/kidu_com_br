@@ -255,9 +255,13 @@ font-size: 130%;
 #bodyHomeLogado form dl dd {
 margin: 0;
 padding: 0;
-text-align: center;
 width: 650px;
 color: #8E8E8E;
+float: left;
+}
+
+#bodyHomeLogado form dl dd p{
+margin-left: 100px;
 }
 
 #bodyHomeLogado form dl dt a{

@@ -284,7 +284,7 @@ class theme extends simplePHP {
                 $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>';
             }
             
-            if($challenges_list[$current_challenge+1] != '') {
+            if(isset($challenges_list[$current_challenge+1]) && $challenges_list[$current_challenge+1] != '') {
                  $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>';
             } else {
                 $this->keys['next'] = '';
