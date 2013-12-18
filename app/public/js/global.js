@@ -432,16 +432,32 @@ achar_posicao_dd(de_onde.parentNode);
 de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd - 1].scrollLeft = de_onde.parentNode.parentNode.getElementsByTagName('dd')[este_dd - 1].scrollLeft + 800;
 }
 
-function apaga_arquivo(qual){
-	$.ajax({
-		url: '/action/apagaArquivo/',
-		type: 'POST',
-		data: {id_arquivo: qual},
-		success: function(res){
-		alert(res);
-		}
-	})
-	// .done(function(res) {
-	// alert(res)
-	// });
+function apaga_arquivo(tipo, dado){
+	if(tipo == "confirmar"){
+	dado.parentNode.getElementsByTagName('div')[0].style.display = 'block';
+	} else if(tipo == "cancelar"){
+	dado.parentNode.style.display = 'none';
+	} else if(tipo == "mesmo"){
+		$.ajax({
+			url: '/action/apagaArquivo/',
+			type: 'POST',
+			data: {id_arquivo: dado},
+			success: function(res){
+				fecha_modal();
+				document.getElementById('figura_' + dado).style.backgroundColor = '#E8E5E1';
+				document.getElementById('figura_' + dado).getElementsByTagName('figcaption')[0].innerHTML = "<strong class='removido'>Conteúdo removido</strong>";
+					if(document.getElementById('figura_' + dado).getElementsByTagName('img')[0]){
+					document.getElementById('figura_' + dado).getElementsByTagName('img')[0].setAttribute('onclick','');
+					document.getElementById('figura_' + dado).getElementsByTagName('img')[0].style.cursor = 'default';
+					}
+					if(document.getElementById('figura_' + dado).getElementsByTagName('div')[0]){
+					document.getElementById('figura_' + dado).getElementsByTagName('div')[0].setAttribute('onclick','');
+					document.getElementById('figura_' + dado).getElementsByTagName('div')[0].style.cursor = 'default';
+					}
+			}
+		})
+		// .done(function(res) {
+		// alert(res)
+		// });
+	}
 }

@@ -703,6 +703,12 @@ color: #ddd;
 position: relative;
 }
 
+figure.resposta figcaption strong.removido{
+color: #504194;
+padding: 9px 0 6px;
+display: inline-block;
+}
+
 figure.resposta figcaption strong time{
 margin-top: 10px;
 display: block;
@@ -1676,51 +1682,78 @@ width: 200px;
 position: relative;
 }
 
-#modal dl dt span.fechar {
-float: right;
-padding: 3px;
+#modal dl dt div{
+background-color: #b5b5b5;
+width: 177px;
+border-radius: 10px;
+position: absolute;
+top: 30px;
+left: 15px;
+text-align: center;
+color: white;
+display: none;
+}
+
+#modal dl dt div p{
+margin: 8px 20px;
+font-weight: bold;
+font-size: 120%;
+}
+
+#modal dl dt div span{
+text-transform: uppercase;
+width: 160px;
+padding: 10px 0;
+background-color: #FF5F49;
+display: block;
+border-radius: 5px;
+margin: 0 8px 8px;
+cursor: pointer;
+}
+
+#modal dl dt div span.nao{
+background-color: #504194;
+}
+
+#modal dl dt span.apagar {
+float: left;
+padding: 3px 6px;
 background-color: #504194;
 cursor: pointer;
 color: white;
 font-weight: bold;
-border: 1px solid white;
+border-radius: 4px;
+box-shadow: 1px 1px 0 #AAAAAA;
+margin-left: 10px;
 }
 
-#modal dl dt span.fechar:hover {
-border: 1px solid #504194;
-color: silver;
+#modal dl dt span.fechar {
+float: right;
+padding: 3px 6px;
+background-color: #B5B5B5;
+cursor: pointer;
+color: #878787;
+font-weight: bold;
+border-radius: 4px;
+box-shadow: 1px 1px 0 #AAAAAA;
 }
 
-#modal dl dt p{
+#modal dl dt span.fechar b {
+color: white;
+}
+
+#modal dl dt span.fechar strong{
+color: white;
+font-weight: normal;
+}
+
+#modal dl dt>p{
 margin: 0 15px;
 padding: 0;
 }
 
-#modal dl dt p a{
+#modal dl dt>p a{
 color: gray;
-}
-
-#modal dl dt div{
-margin: 30px 15px;
-}
-
-#modal dl dt div img{
-vertical-align: middle;
-margin-right: 4px;
-}
-
-#modal dl dt div span{
-float: right;
-color: #e74c3c;
-}
-
-#modal dl dt div span b{
-padding: 5px;
-vertical-align: middle;
-}
-
-#modal dl dt div b.cinza{
-color: #B5B5B5;
 }
 
 #modal dd blockquote {

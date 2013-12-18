@@ -233,7 +233,7 @@ class core extends simplePHP {
 
       $answers_html = '';
       if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
-      $answers_html .= '<figure class="resposta">'.$file.'<figcaption>'.$likeIcon;
+      $answers_html .= '<figure class="resposta" id="figura_'.$answer->guid.'">'.$file.'<figcaption>'.$likeIcon;
         if($onlyApproved == false){
         $answers_html .= '<strong><time>' . date('d-m-Y',$answer->time_updated) . '</time></strong>';
         } else {
@@ -242,7 +242,7 @@ class core extends simplePHP {
       $answers_html .= '</figcaption></figure>';
         } else {
           if($onlyApproved == false) {
-            $answers_html .= '<figure class="resposta oculto">
+            $answers_html .= '<figure class="resposta oculto" id="figura_'.$answer->guid.'>
                                 '.$file.'
                                <figcaption>
                                 <strong>Conteúdo oculto</strong>

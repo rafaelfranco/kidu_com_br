@@ -202,9 +202,9 @@ class action extends simplePHP {
         
         echo '<dl>
                 <dt>
-                  <span class="fechar" onclick="fecha_modal()">Fechar | X</span>
-                  <span class="apagar" onclick="apaga_arquivo(' . $file_id . ')">Apagar</span>
-                  <h4>Tema</h4>
+                  <span class="fechar" onclick="fecha_modal()"><strong>Fechar</strong> | <b>X</b></span>';
+        if($file->result[0]->owner->guid == $_SESSION['guid']){echo '<div><p>Tem certeza de que quer apagar este conteúdo?</p><span class="nao" onclick="apaga_arquivo(\'cancelar\',this)">Não</span><span class="sim" onclick="apaga_arquivo(\'mesmo\',' . $file_id . ')">Sim</span></div><span class="apagar" onclick="apaga_arquivo(\'confirmar\',this)">Apagar</span>';}
+        echo      '<br class="tudo"><h4>Tema</h4>
                   <p><a href="/theme/view/'.$challenge->result->container_guid.'">'.$theme->result->name.'</a></p>
                   
                   <h4>Desafio</h4>
