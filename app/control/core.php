@@ -210,20 +210,23 @@ class core extends simplePHP {
       }
     }
     
-    public function likeIcon($guid,$likes){
+    public function likeIcon($guid,$likes,$iliked){
       if($likes == 0) {
         $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b class="cinza" id="likes-'.$guid.'" >'.$likes.'</b></span>';
       } else {
+        if(!$iliked) {
+        $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';  
+        } else {
         $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';
+        }
       } 
-      
-
-      return $html;
+      return $html;      
     }
 
     public function answerHtml($answer,$onlyApproved=false) {
-      $likeIcon = $this->likeIcon($answer->guid,$answer->likes);
-      
+      //echo json_encode($answer);
+      $likeIcon = $this->likeIcon($answer->guid,$answer->likes,$answer->iliked);
+
       if($answer->MIMEType == 'text/plain') {
         $file = '<div onclick="showModal('.$answer->guid.')" ><p><span>'.strip_tags($answer->description).'</span></p></div>';
       } else {

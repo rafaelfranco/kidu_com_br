@@ -188,7 +188,7 @@ class action extends simplePHP {
        
         $theme =  $this->core->getWs('group.get',array('guid'=>$challenge->result->container_guid));
        
-        $likeIcon = $this->core->likeIcon($file_id,$file->result[0]->likes);
+        $likeIcon = $this->core->likeIcon($file_id,$file->result[0]->likes,$file->result[0]->iliked);
 
         if($file->result[0]->MIMEType == 'text/plain') {
           $center = '<blockquote><div><p>'.$file->result[0]->description.'</p></div></blockquote>';
@@ -199,7 +199,7 @@ class action extends simplePHP {
             $center = '<img src="'.$img.'"><br class="tudo">';
           }
         }
-        
+
         echo '<dl>
                 <dt>
                   <span class="fechar" onclick="fecha_modal()"><strong>Fechar</strong> | <b>X</b></span>';
