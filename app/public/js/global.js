@@ -376,17 +376,49 @@ function fecha_modal() {
 }
 
 function likeItem(item_id) {
-	current_likes = parseInt($('#likes-'+item_id).html()) + 1;
+mudar_likes = document.getElementsByClassName('curtir curtir_item_' + item_id);
+	for(i=0;i<mudar_likes.length;i++){
+	mudar_likes[i].getElementsByTagName('b')[0].innerHTML = parseInt(mudar_likes[i].getElementsByTagName('b')[0].innerHTML) + 1;
+	mudar_likes[i].setAttribute('onclick','unlikeItem(' + item_id + ')');
+	mudar_likes[i].getElementsByTagName('img')[0].setAttribute('src','/images/ico_curtir.gif');
+	}
+	
 	$.ajax({
 		url: '/action/addlike/',
 		type: 'POST',
 		data: {item_id: item_id},
 	}).done(function(data) {
-		if(data == 'You now like this item') {
-			current_likes = parseInt($('#likes-'+item_id).html()) + 1;
-			$('#likes-'+item_id).html(current_likes);
-			$('#likes-'+item_id).attr('class','');
-			$('#ico-'+item_id).attr('src','/images/ico_curtir.gif');
+		if(data != 'You now like this item') {
+		mudar_likes = document.getElementsByClassName('curtir curtir_item_' + item_id);
+			for(i=0;i<mudar_likes.length;i++){
+			mudar_likes[i].getElementsByTagName('b')[0].innerHTML = parseInt(mudar_likes[i].getElementsByTagName('b')[0].innerHTML) - 1;
+			mudar_likes[i].setAttribute('onclick','likeItem(' + item_id + ')');
+			mudar_likes[i].getElementsByTagName('img')[0].setAttribute('src','/images/ico_curtir_cz.gif');
+			}
+		}
+	});
+}
+
+function unlikeItem(item_id) {
+mudar_likes = document.getElementsByClassName('curtir curtir_item_' + item_id);
+	for(i=0;i<mudar_likes.length;i++){
+	mudar_likes[i].getElementsByTagName('b')[0].innerHTML = parseInt(mudar_likes[i].getElementsByTagName('b')[0].innerHTML) - 1;
+	mudar_likes[i].setAttribute('onclick','likeItem(' + item_id + ')');
+	mudar_likes[i].getElementsByTagName('img')[0].setAttribute('src','/images/ico_curtir_cz.gif');
+	}	
+
+	$.ajax({
+		url: '/action/unlike/',
+		type: 'POST',
+		data: {item_id: item_id},
+	}).done(function(data) {
+		if(data != "Your like has been removed") {
+		mudar_likes = document.getElementsByClassName('curtir curtir_item_' + item_id);
+			for(i=0;i<mudar_likes.length;i++){
+			mudar_likes[i].getElementsByTagName('b')[0].innerHTML = parseInt(mudar_likes[i].getElementsByTagName('b')[0].innerHTML) + 1;
+			mudar_likes[i].setAttribute('onclick','unlikeItem(' + item_id + ')');
+			mudar_likes[i].getElementsByTagName('img')[0].setAttribute('src','/images/ico_curtir.gif');
+			}	
 		}
 	});
 }

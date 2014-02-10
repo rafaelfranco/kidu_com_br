@@ -210,21 +210,33 @@ class core extends simplePHP {
       }
     }
     
+    // public function likeIcon($guid,$likes,$iliked){ // funcionando
+    //   if($likes == 0) {
+    //     $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b class="cinza" id="likes-'.$guid.'" >'.$likes.'</b></span>';
+    //   } else {
+    //     if(!$iliked) {
+    //     $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';  
+    //     } else {
+    //     $html = '<span class="curtir" onclick="unlikeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';
+    //     }
+    //   } 
+    //   return $html;      
+    // }
+
     public function likeIcon($guid,$likes,$iliked){
       if($likes == 0) {
-        $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b class="cinza" id="likes-'.$guid.'" >'.$likes.'</b></span>';
+        $html = '<span class="curtir curtir_item_' . $guid . '" onclick="likeItem('.$guid.');" ><img src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b class="cinza">'.$likes.'</b></span>';
       } else {
         if(!$iliked) {
-        $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';  
+        $html = '<span class="curtir curtir_item_' . $guid . '" onclick="likeItem('.$guid.');" ><img src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b>'.$likes.'</b></span>';  
         } else {
-        $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';
+        $html = '<span class="curtir curtir_item_' . $guid . '" onclick="unlikeItem('.$guid.');" ><img src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b>'.$likes.'</b></span>';
         }
       } 
       return $html;      
     }
 
     public function answerHtml($answer,$onlyApproved=false) {
-      //echo json_encode($answer);
       $likeIcon = $this->likeIcon($answer->guid,$answer->likes,$answer->iliked);
 
       if($answer->MIMEType == 'text/plain') {

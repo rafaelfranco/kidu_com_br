@@ -249,6 +249,13 @@ class action extends simplePHP {
     exit;
   }
 
+  public function _actionUnlike() {
+    $entity_guid = $_POST['item_id'];
+    $res = $this->core->callWs('file.unlike',array('entity_guid'=>$entity_guid));
+    echo ($res->result);
+    exit;
+  }
+
   public function _actionSearchThemes()
   {
     // //receive search
