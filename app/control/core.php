@@ -257,7 +257,7 @@ class core extends simplePHP {
       $answers_html .= '</figcaption></figure>';
         } else {
           if($onlyApproved == false) {
-            $answers_html .= '<figure class="resposta oculto" id="figura_'.$answer->guid.'>
+            $answers_html .= '<figure class="resposta oculto" id="figura_'.$answer->guid.'">
                                 '.$file.'
                                <figcaption>
                                 <strong>Conteúdo oculto</strong>
