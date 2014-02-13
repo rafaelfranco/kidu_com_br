@@ -12,6 +12,9 @@ errors += validateEmpty('username');
 errors += validateEmpty('password');
 
 	if(errors == 0) {
+	$('#sendSignin').html('Aguarde');
+	$('#sendSignin').css('background','silver');
+	$('#sendSignin').css('cursor','auto');
 		$.ajax({
 			url: '/action/signin/',
 			type: 'POST',
