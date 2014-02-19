@@ -134,27 +134,35 @@ class action extends simplePHP {
 
 
   public function _actionPostfile() {
-
     #save file local
     $file = $this->loadModule('file');
+echo "primeiro<br>";
+
     $file_name = $file->uploadFile($_FILES['upload'],APP_PATH.'/public/tmp/');
 
-    #if is a video, save on youtube and get the youtube key
+echo $file_name . "<br>";
+
+    #if it is a video, save on youtube and get the youtube key
     $type = explode('/',$_FILES['upload']['type']);
+echo $_FILES['upload']['type'] . "<br>";
+
     if($type[0] == 'video') {
-      $youtubeCode = $this->core->youtubePost($file_name,$_POST['challenge_id']);
+    $youtubeCode = $this->core->youtubePost($file_name,$_POST['challenge_id']);
     }
-    
+
+echo $youtubeCode;
+var_dump($youtubeCode);
+    echo "<br>";
     $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
     //save file on ELGG
     $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>2,'description'=>$youtubeCode));
-
+echo $res;
     //redirect to profile
-    if($res->status == 0) {
-      $this->redirect('/profile');
-    } else {
-      $this->redirect('/logoff');
-    }
+    // if($res->status == 0) {
+    //   $this->redirect('/profile');
+    // } else {
+    //   $this->redirect('/logoff');
+    // }
   }
 
 

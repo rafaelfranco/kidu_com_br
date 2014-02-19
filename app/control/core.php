@@ -187,12 +187,12 @@ class core extends simplePHP {
       $myVideoEntry->setVideoDeveloperTags(array('userid', $_SESSION['username']));
 
       // set the video's location -- this is also optional
-      $yt->registerPackage('Zend_Gdata_Geo');
-      $yt->registerPackage('Zend_Gdata_Geo_Extension');
-      $where = $yt->newGeoRssWhere();
-      $position = $yt->newGmlPos('37.0 -122.0');
-      $where->point = $yt->newGmlPoint($position);
-      $myVideoEntry->setWhere($where);
+      // $yt->registerPackage('Zend_Gdata_Geo');
+      // $yt->registerPackage('Zend_Gdata_Geo_Extension');
+      // $where = $yt->newGeoRssWhere();
+      // $position = $yt->newGmlPos('37.0 -122.0');
+      // $where->point = $yt->newGmlPoint($position);
+      // $myVideoEntry->setWhere($where);
 
       // upload URI for the currently authenticated user
       $uploadUrl = 'http://uploads.gdata.youtube.com/feeds/api/users/default/uploads';
@@ -208,21 +208,8 @@ class core extends simplePHP {
         return $e->getMessage();
       }
     }
-    
-    // public function likeIcon($guid,$likes,$iliked){ // funcionando
-    //   if($likes == 0) {
-    //     $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b class="cinza" id="likes-'.$guid.'" >'.$likes.'</b></span>';
-    //   } else {
-    //     if(!$iliked) {
-    //     $html = '<span class="curtir" onclick="likeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';  
-    //     } else {
-    //     $html = '<span class="curtir" onclick="unlikeItem('.$guid.');" ><img id="ico-'.$guid.'" src="/images/ico_curtir.gif" class="likeButton" width="36" height="36"><b id="likes-'.$guid.'" >'.$likes.'</b></span>';
-    //     }
-    //   } 
-    //   return $html;      
-    // }
 
-    public function likeIcon($guid,$likes,$iliked){
+    public function likeIcon($guid,$likes,$iliked){//a mudança de funções quando clica acontece via javascript
       if($likes == 0) {
         $html = '<span class="curtir curtir_item_' . $guid . '" onclick="likeItem('.$guid.');" ><img src="/images/ico_curtir_cz.gif" class="likeButton" width="36" height="36"><b class="cinza">'.$likes.'</b></span>';
       } else {
