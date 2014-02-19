@@ -146,13 +146,13 @@ echo $file_name . "<br>";
     $type = explode('/',$_FILES['upload']['type']);
 echo $_FILES['upload']['type'] . "<br>";
 
+$youtubeCode = '';
     if($type[0] == 'video') {
     $youtubeCode = $this->core->youtubePost($file_name,$_POST['challenge_id']);
+    echo $youtubeCode;
     }
 
-echo $youtubeCode;
-var_dump($youtubeCode);
-    echo "<br>";
+echo "<br>";
     $link =  'http://'.$_SERVER['HTTP_HOST'].'/tmp/'.$file_name;
     //save file on ELGG
     $res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>2,'description'=>$youtubeCode));
