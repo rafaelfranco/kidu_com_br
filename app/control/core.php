@@ -180,7 +180,7 @@ class core extends simplePHP {
       // Set keywords. Please note that this must be a comma-separated string
       // and that individual keywords cannot contain whitespace
       $myVideoEntry->SetVideoTags('kidu, desafio');
-      $myVideoEntry->SetVideoPrivate('unlisted');
+      //$myVideoEntry->SetVideoPrivate();
 
       // set some developer tags -- this is optional
       // (see Searching by Developer Tags for more details)
