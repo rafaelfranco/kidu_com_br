@@ -150,7 +150,7 @@ class action extends simplePHP {
     //save file on ELGG
     //$res = $this->core->callWs('file.upload',array('filepath'=>$link,'container_guid'=>$_POST['challenge_id'],'user_guid'=>$_SESSION['guid'],'access'=>2,'description'=>$youtubeCode));
 
-    echo $youtubeCode;
+    var_dump($youtubeCode);
     //redirect to profile
     // if($res->status == 0) {
     //   $this->redirect('/profile');
