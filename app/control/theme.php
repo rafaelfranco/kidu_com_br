@@ -209,13 +209,12 @@ class theme extends simplePHP {
             //get challenge details
             $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
 
-            if($challenge->result->text_enabled == 1) {
+            if($challenge->result->text_enabled == 'yes') {
                 $this->redirect('/theme/challengeText/'.$this->getParameter(3).'/'.$this->getParameter(4));
             }
 
             $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['theme'] = $theme->result->name;
-            //$this->keys['theme'] = var_dump($this);
             $this->keys['challenge'] = $challenge->result->name;   
             $this->keys['description'] = $challenge->result->fields->description->value;
 
