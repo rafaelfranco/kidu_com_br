@@ -50,7 +50,7 @@ class theme extends simplePHP {
         public function _actionStart() {
             return $this->keys;
         }
-
+        
         public function _actionView() {
             //get theme details
             $theme = $this->core->getWs('group.get',array('guid'=>$this->getParameter(3)));
@@ -69,26 +69,75 @@ class theme extends simplePHP {
             $allFiles_html = '';
             $challenge_html = '';
             foreach ($challenges->result as $challenge) {
-            $imagem_primeira_resposta = '/images/sem_resposta.gif';
             $conta_respostas_desafio = 0;
             $answers_html = '';
-            //get answers for this challenge
+            $desafio_texto = false;
+            
             $answers = $this->core->callWs('file.get_files',array('context'=>'group','group_guid'=>$challenge->guid));
-                if($answers->status == -20){header('Location: /logoff');};
-
-                if($answers->status != -1){
-                    foreach ($answers->result as $answer) {
-                    //$answers_html .= $this->core->answerHtml($answer,true); 
-                        if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
-                        $conta_respostas_desafio++;
-                        $conta_respostas_geral++;
-                        
-                            if($imagem_primeira_resposta == '/images/sem_resposta.gif' || (((gettype($answer->tags) == 'array' && in_array('escolhido', $answer->tags)) || (gettype($answer->tags) == 'string' && strpos('escolhido',$answer->tags))))){
-                            $imagem_primeira_resposta = $answer->file_icon;
+                if($answers->status == -20){header('Location: /logoff'); exit;};
+            
+            $imagem_primeira_resposta = false;
+            $imagem_resposta = "<img src='/images/sem_resposta.gif' width='200' height='200' alt='" . $challenge->description . "'>\n";
+            
+                if(isset($answers->result)){
+                    if($challenge->text_enabled == 'no'){//dentro do if estava perdendo a var...                    
+                        foreach ($answers->result as $answer) {
+                            if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
+                            $conta_respostas_desafio++;
+                                if(!$imagem_primeira_resposta || ((gettype($answer->tags) == 'array' && in_array('escolhido', $answer->tags)) || (gettype($answer->tags) == 'string' && strpos('escolhido',$answer->tags)))){
+                                $imagem_resposta = "<img src='" . $answer->file_icon . "' width='200' height='200' alt='" . $challenge->description . "'>\n";
+                                $imagem_primeira_resposta = true;
+                                } else {
+                                $imagem_primeira_resposta = false;
+                                }
                             }
                         }
-                    }
-                }
+                    } else {
+                        foreach ($answers->result as $answer) {
+                            if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
+                            $conta_respostas_desafio++;    
+                                if(!$imagem_primeira_resposta || ((gettype($answer->tags) == 'array' && in_array('escolhido', $answer->tags)) || (gettype($answer->tags) == 'string' && strpos('escolhido',$answer->tags)))){
+                                $imagem_resposta = "<div><p><span>" . strip_tags($answer->description) . "</span></p></div>";
+                                $imagem_primeira_resposta = true;
+                                } else {
+                                $imagem_primeira_resposta = false;
+                                }
+                            }    
+                        }
+                    }       
+                };
+            //get answers for this challenge
+            
+
+                //echo json_encode($answers, true);
+                // if(isset($answers->result)){
+                // var_dump($desafio_texto);
+                // $imagem_primeira_resposta = false;
+                // $imagem_resposta = "<img src='/images/sem_resposta.gif' width='200' height='200' alt='" . $challenge->description . "'>\n";
+                //     foreach ($answers->result as $answer) {
+                //             if((gettype($answer->tags) == 'string' && $answer->tags == 'aprovado') || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
+                //             $conta_respostas_desafio++;
+                //             $conta_respostas_geral++;
+                //                 if($desafio_texto === false){//se o tipo de resposta não for texto
+                //                 echo("imagem");
+                //                     if(!$imagem_primeira_resposta || ((gettype($answer->tags) == 'array' && in_array('escolhido', $answer->tags)) || (gettype($answer->tags) == 'string' && strpos('escolhido',$answer->tags)))){
+                //                     $imagem_resposta = "<img src='" . $answer->file_icon . "' width='200' height='200' alt='" . $challenge->description . "'>\n";
+                //                     $imagem_primeira_resposta = true;
+                //                     } else {
+                //                     $imagem_primeira_resposta = false;
+                //                     }
+                //                 } else {//se o tipo de resposta for texto
+                //                 //echo("texto");
+                //                     if(!$imagem_primeira_resposta || (((gettype($answer->tags) == 'array' && in_array('escolhido', $answer->tags)) || (gettype($answer->tags) == 'string' && strpos('escolhido',$answer->tags))))){
+                //                     $imagem_resposta = "<div><p><span>" . strip_tags($answer->description) . "</span></p></div>";
+                //                     $imagem_primeira_resposta = true;
+                //                     } else {
+                //                     $imagem_primeira_resposta = false;
+                //                     }
+                //                 }
+                //         }
+                //     }
+                // }
 
             $allFiles_html .= $answers_html;
                 
@@ -97,18 +146,19 @@ class theme extends simplePHP {
                 // }
 
                 $challenge_html .= "<li>\n";
+                $challenge_html .= "<a title='" . $challenge->description . "' href='/theme/challenge/" . $this->getParameter(3) . "/" . $challenge->guid . "'>\n";
                 $challenge_html .= "<figure>\n";
-                $challenge_html .= "<img src='" . $imagem_primeira_resposta . "' width='200' height='200' alt='" . $challenge->description . "'>\n";
-                $challenge_html .= "<figcaption>" . $challenge->briefdescription . "\n";
+                $challenge_html .= $imagem_resposta . "\n";
+                $challenge_html .= "<figcaption><strong>" . $challenge->briefdescription . "</strong><br>\n";
                     if ($conta_respostas_desafio == 0){
-                        $challenge_html .= "<a title='" . $challenge->description . "' href='/theme/challenge/" . $this->getParameter(3) . "/" . $challenge->guid . "'>Nenhuma resposta...</a>\n";
+                        $challenge_html .= "<small>Nenhuma resposta...</small>\n";
                     } else if ($conta_respostas_desafio == 1) {
-                        $challenge_html .= "<a title='" . $challenge->description . "' href='/theme/challenge/" . $this->getParameter(3) . "/" . $challenge->guid . "'>" . $conta_respostas_desafio . " resposta</a>\n";
+                        $challenge_html .= "<small>" . $conta_respostas_desafio . " resposta</small>\n";
                     } else {
-                        $challenge_html .= "<a title='" . $challenge->description . "' href='/theme/challenge/" . $this->getParameter(3) . "/" . $challenge->guid . "'>" . $conta_respostas_desafio . " respostas</a>\n";
+                        $challenge_html .= "<small>" . $conta_respostas_desafio . " respostas</small>\n";
                     }
                 $challenge_html .= "</figcaption>\n";
-                $challenge_html .= "</figure>\n";
+                $challenge_html .= "</figure></a>\n";
                 $challenge_html .= "</li>\n";
 
             //     <h3>'.$challenge->briefdescription.'</h3>
@@ -171,9 +221,9 @@ class theme extends simplePHP {
             $challenges = $this->core->getWs('group.get_groups',array('context'=>'sub-groups','guid'=>$this->getParameter(3)));
             foreach ($challenges->result as $challenge) {
                 if(in_array($challenge->guid, $doneChallenges)) {
-                    $challenge_list .= '<li><img src="/images/estrela-cheia.gif" width="33" height="30" alt="estrela"><a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'">'.$challenge->name.'</a></li>';
+                    $challenge_list .= '<li><a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'"><img src="/images/estrela-cheia.gif" width="33" height="30" alt="estrela">'.$challenge->name.'</a></li>';
                 } else {
-                    $challenge_list .= '<li><img src="/images/estrela-vazia.gif" width="33" height="30" alt="estrela"><a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'">'.$challenge->name.'</a></li>';    
+                    $challenge_list .= '<li><a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenge->guid.'"><img src="/images/estrela-vazia.gif" width="33" height="30" alt="estrela">'.$challenge->name.'</a></li>';    
                 }
                 
             }
