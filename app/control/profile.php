@@ -4,8 +4,6 @@
  * Project: KIDU
  * profile class
  * 
- * @copyright RFTI www.rfti.com.br
- * @author Rafael Franco <rafael@rfti.com.br>
  * @package profile
  */
 class profile extends simplePHP {
@@ -61,7 +59,6 @@ class profile extends simplePHP {
         
         $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
             if($answers->status == -20){header('Location: /logoff');};
-
             $this->keys['answers'] = $this->core->pega_todas_respostas($answers,false);
 
             return $this->keys;

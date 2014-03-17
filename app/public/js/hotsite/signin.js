@@ -25,7 +25,7 @@ errors += validateEmpty('password');
 					},
 		        success: function(json) {
 		        	dados = json.split(";");
-		        	//cadastre realizado com sucesso
+		        	//login realizado com sucesso
 		        	if(dados[0] == 'success') {
 		        		window.location = '/profile';
 		        	} else {
