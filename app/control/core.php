@@ -291,6 +291,35 @@ class core extends simplePHP {
     return $respostas;
     }
 
+  public function pega_resposta_escolhida($answers){
+
+  $imagem_primeira_resposta = false;
+  $answer_html = '';
+    foreach($answers->result as $answer){
+    $likeIcon = $this->likeIcon($answer->guid,$answer->likes,$answer->iliked);
+
+      if($answer->MIMEType == 'text/plain') {
+        $file = '<div onclick="showModal('.$answer->guid.')" ><p><span>'.strip_tags($answer->description).'</span></p></div>';
+      } else {
+        $img = $answer->file_icon;
+        $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="285" width="285" alt="Kidu">';
+      }
+
+      if((gettype($answer->tags) == 'string' && strpos('aprovado',$answer->tags) !== false) || (gettype($answer->tags) == 'array' && in_array('aprovado', $answer->tags))) {
+        if(!$imagem_primeira_resposta || ((gettype($answer->tags) == 'array' && in_array('escolhido', $answer->tags)) || (gettype($answer->tags) == 'string' && strpos('escolhido',$answer->tags) !== false))){
+        $imagem_primeira_resposta = true;
+        $answer_html = '<figure class="resposta" id="figura_'.$answer->guid.'">'.$file . "\n";
+        $answer_html .= '<img src="/images/medalha.png" width="38" height="53" alt="Escolhido pelos educadores" id="medalha">' . "\n";
+        $answer_html .= '<figcaption>'.$likeIcon;
+        $answer_html .= '<img src="/images/ico_usuario.gif" width="36" height="36" alt="User"> <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>' . "\n";
+        $answer_html .= '</figcaption></figure>' . "\n";;
+        }
+      } 
+    }
+  return $answer_html;
+     // return json_encode($answers);
+  }
+
   public function search($search){//???
     $html = '';
     $x = 0;

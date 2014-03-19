@@ -265,6 +265,7 @@ class theme extends simplePHP {
 
             $this->keys['challenge_id'] = $this->getParameter(4);
             $this->keys['theme'] = $theme->result->name;
+            $this->keys['icone_tema'] = '<a href="/theme/view/' . $this->getParameter(3) . '" id="icone_tema"><img src=' . $theme->result->avatar_url . ' width="100" height="100"></a>';
             $this->keys['challenge'] = $challenge->result->name;   
             $this->keys['description'] = $challenge->result->fields->description->value;
 
@@ -274,7 +275,7 @@ class theme extends simplePHP {
             if($answers->status == -20){header('Location: /logoff');};
 
             $this->keys['answers'] = $this->core->pega_todas_respostas($answers,true);
-            
+            $this->keys['primeira_resposta'] = $this->core->pega_resposta_escolhida($answers);            
             //ADD USER TO THOSE GROUPS
             #username
             
@@ -296,11 +297,11 @@ class theme extends simplePHP {
             if($current_challenge == 0) {
                 $this->keys['back'] = '';
             } else {
-                $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>';
+                $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><img src="/images/bot_desafio_anterior.gif" height="28" width="10"><span>Desafio<br>anterior</span></a>';
             }
             
             if(isset($challenges_list[$current_challenge+1]) && $challenges_list[$current_challenge+1] != '') {
-                 $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>';
+                 $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><span>Próximo<br>desafio</span><img src="/images/bot_proximo_desafio.gif" height="28" width="10"></a>';
             } else {
                 $this->keys['next'] = '';
             }
@@ -318,7 +319,8 @@ class theme extends simplePHP {
             $challenge = $this->core->getWs('group.get',array('guid'=>$this->getParameter(4)));
             
             $this->keys['challenge_id'] = $this->getParameter(4);
-            $this->keys['theme'] = $theme->result->name;
+            $this->keys['icone_tema'] = '<a href="/theme/view/' . $this->getParameter(3) . '" id="icone_tema"><img src=' . $theme->result->avatar_url . ' width="100" height="100"></a>';
+            $this->keys['theme'] = '<a href="/theme/view/' . $this->getParameter(3) . '">' . $theme->result->name . '</a>';
             $this->keys['challenge'] = $challenge->result->name;   
             $this->keys['description'] = $challenge->result->fields->description->value;
 
@@ -328,6 +330,8 @@ class theme extends simplePHP {
             if($answers->status == -20){header('Location: /logoff');};
 
             $this->keys['answers'] = $this->core->pega_todas_respostas($answers,true);
+
+            $this->keys['primeira_resposta'] = $this->core->pega_resposta_escolhida($answers);
             
             //ADD USER TO THOSE GROUPS
             #username
@@ -351,15 +355,16 @@ class theme extends simplePHP {
             if($current_challenge == 0) {
                 $this->keys['back'] = '';
             } else {
-                $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><span>Desafio<br>anterior</span><img src="/images/bot_desafio_anterior.gif" height="110" width="17"></a>';
+                $this->keys['back'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge-1].'" id="botao_desafio_anterior"><img src="/images/bot_desafio_anterior.gif" height="28" width="10"><span>Desafio<br>anterior</span></a>';
             }
             
+            //get other themes
             if(isset($challenges_list[$current_challenge+1]) && $challenges_list[$current_challenge+1] != '') {
-                 $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><img src="/images/bot_proximo_desafio.gif" height="110" width="17"><span>Próximo<br>desafio</span></a>';
+                 $this->keys['next'] = '<a href="/theme/challenge/'.$this->getParameter(3).'/'.$challenges_list[$current_challenge+1].'" id="botao_proximo_desafio"><span>Próximo<br>desafio</span><img src="/images/bot_proximo_desafio.gif" height="28" width="10"></a>';
             } else {
                 $this->keys['next'] = '';
             }
-            //get other themes
+
             return $this->keys;
         }
 

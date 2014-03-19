@@ -642,7 +642,7 @@ margin: 0;
 
 #tema>ul#respostas li div p span{
 padding: 60px 0 0 0;
-margin-left: 10px;
+margin-left: 70px;
 width: 300px;
 color: #225196;
 font-family: 'Gochi Hand', cursive;
@@ -791,10 +791,17 @@ float: left;
 background-color: white;
 margin: 0 15px 15px 0;
 height: 330px;
+position: relative;
 }
 
 figure.resposta img{
 cursor: pointer;
+}
+
+figure.resposta img#medalha{
+position:absolute;
+top: -8px;
+left: -8px;
 }
 
 figure.resposta figcaption{
@@ -1258,16 +1265,22 @@ padding: 55px 0 0;
 }
 
 #desafio section{
+width: 100%;
+background-color: #F5F5F5;
+padding-bottom: 30px;
+}
+
+#desafio section>div{
 width: 940px;
 margin: 0 auto;
 }
 
 #desafio section h3 {
-padding: 20px 0 0 20px;
+padding: 20px 0 8px 13px;
 float: left;
 color: #9087bc;
-border-bottom: 1px solid #f7f7f7;
-width: 830px;
+border-bottom: 2px solid white;
+width: 715px;
 font-size: 200%;
 }
 
@@ -1275,12 +1288,22 @@ font-size: 200%;
 font-size: 60%;
 }
 
-#desafio h2 {
-padding: 20px;
-border-bottom: 1px solid #f7f7f7;
+#desafio h3 a{
+color: #9087bc;
+}
+
+#desafio #icone_tema {
 float: left;
-width: 810px;
-font-size: 250%;
+margin: 10px 0 0 10px;
+}
+
+#desafio h2 {
+padding: 10px 20px;
+float: left;
+width: 700px;
+font-size: 130%;
+font-weight: normal;
+text-align: center;
 }
 
 #desafio h2 span{
@@ -1291,37 +1314,44 @@ font-size: 60%;
 float: left;
 margin-right: 15px;
 display: block;
+border-radius: 10px;
+border: 2px solid #F5F5F5;
+padding: 2px 4px;
+}
+
+#desafio h2 a#botao_desafio_anterior:hover {
+border: 2px solid white;
 }
 
 #desafio h2 a#botao_desafio_anterior span{
-font-size: 30%;
-margin-top: 80px;
+font-size: 10px;
 display: block;
-float: left;
+float: right;
+color: #9087BC;
+margin: 4px 0 0 5px;
 line-height: 1em;
-color: white;
-}
-
-#desafio h2 a#botao_desafio_anterior:hover span{
-color: gray;
 }
 
 #desafio h2 a#botao_proximo_desafio{
 float: right;
 margin-left: 15px;
+border-radius: 10px;
+border: 2px solid #F5F5F5;
+padding: 2px 4px;
+}
+
+#desafio h2 a#botao_proximo_desafio:hover{
+border: 2px solid white;
 }
 
 #desafio h2 a#botao_proximo_desafio span{
-font-size: 30%;
-margin-top: 80px;
+font-size: 10px;
 display: block;
-float: right;
+float: left;
+color: #9087BC;
+margin: 4px 5px 0 0;
+text-align: right;
 line-height: 1em;
-color: white;
-}
-
-#desafio h2 a#botao_proximo_desafio:hover span{
-color: gray;
 }
 
 #desafio h2 a img{
@@ -1335,55 +1365,50 @@ margin-bottom: 40px;
 #desafio article#explica #disclaimer {
 clear: left;
 width: 380px;
-border: 1px solid #504194;
-border-radius: 10px;
-margin-left: 80px;
-}
-
-#desafio article#explica #socorro {
-float: left;
-height: 131px;
-width: 218px;
-background: transparent url('../images/fundo_socorro.gif') no-repeat 0 0;
-margin: 30px 0 0 80px;
-cursor: pointer;
-}
-
-#desafio article#explica #disclaimer p, #desafio article#explica #socorro p{
-margin: 20px;
-font-size: 135%;
+margin-left: 100px;
 }
 
 #desafio article#explica form {
 float: right;
 width: 380px;
-border: 1px solid gray;
-margin: 0;
+border: 1px solid #504194;
+border-radius: 25px;
+margin: 0 100px 0 0;
+background-color: white;
+padding: 0;
+text-align: center;
 }
 
 #desafio article#explica form fieldset{
-margin: 10px;
-background-color: #F5F5F5;
 border: 0;
-text-align: center;
-padding-bottom: 50px;
+padding: 20px 0;
 }
 
-#desafio article#explica form fieldset p{
-font-size: 160%;
-margin: 40px 0;
+#desafio article#explica form fieldset>p{
+font-size: 120%;
+margin: 20px 0;
 }
 
 #desafio article#explica form fieldset div {
 position: relative;
-width: 250px;
+width: 300px;
 margin: 0 auto;
+}
+
+#desafio article#explica form fieldset#acoes div{
+background-color: #EFEFEF;
+padding: 20px 0;
+position: relative;
+}
+
+#desafio article#explica form fieldset#acoes div p{
+margin: 10px 0 20px;
 }
 
 #desafio article#explica form fieldset div input{
 position: absolute;
-left: 20px;
-top: 0;
+left: 50px;
+bottom: 27px;
 opacity: 0;
 cursor: pointer;
 width: 195px;
@@ -1395,7 +1420,7 @@ background-color: blue;
 #desafio article#explica form fieldset div textarea{
 padding: 10px;
 width: 250px;
-margin: 0 auto 30px;
+margin: 20px auto 30px;
 border-radius: 10px;
 border: 1px solid silver;
 }

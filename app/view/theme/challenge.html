@@ -4,34 +4,33 @@
 	<body id="desafio">
 		[#header#]
 		<section>
-			<a href="/" id="link_wikidu"><img src="/images/wikidu.gif" width="85" height="112" alt="Wikidu"></a>
+			<div>
+			<a href="/" id="link_wikidu"><img src="/images/wikidu_branco.gif" width="85" height="112" alt="Wikidu"></a>
+			[#icone_tema#]
 			<h3><span>Tema</span><br>[#theme#]</h3>
-			<h2>
-			[#back#]
-			[#next#]
-			
-			<span>Desafio</span><br>[#challenge#]
-			</h2>
+			<h2>[#back#][#next#][#challenge#]</h2>
 			<br class="tudo">
 			<article id="explica">
 			<form enctype="multipart/form-data" method="post" id="postFile" action="/action/postfile">
 			<input type="hidden" name="challenge_id" value="[#challenge_id#]" />
-
 			<fieldset id="acoes">
-			<p>Está faltando a resposta<br>mais importante:<br><strong>Sua resposta!</strong></p>
+			<p>[#description#]</p>
 			<div>
+			<p>Responda agora!</p>
+			<p>
 			<span class="botao">Upload de arquivo</span>
 			<input type="file" class="botao" name="upload" id="uploadFile" />
+			</p>
 			</div>
 			</fieldset>
 
 			</form>
 			<div id="disclaimer">
-			<p>[#description#]</p>
+			[#primeira_resposta#]
 			</div>
-			<!--div id="socorro"><p><strong>Socorro!</strong><br>Como responder a este desafio?</p></div-->
 			</article>
 			<br class="tudo">
+		</div>
 		</section>
 		<br class="tudo">
 		<dl id="respostas">
