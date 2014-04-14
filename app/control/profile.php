@@ -31,7 +31,7 @@ class profile extends simplePHP {
             } else {
                 //user data
                 $this->keys['loggeduser'] = $this->keys['name_user']  = $_SESSION['username'];
-                $this->keys['avatar'] = $_SESSION['avatar_url'];
+                $this->keys['avatar'] = str_replace("medium", "small", $_SESSION['avatar_url']);
             }
 
             #if father's user not authorized that use, redirect
@@ -58,8 +58,11 @@ class profile extends simplePHP {
         $conta_respostas_desafio = 0;
         
         $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$_SESSION['username']));
-            if($answers->status == -20){header('Location: /logoff');};
-            $this->keys['answers'] = $this->core->pega_todas_respostas($answers,false);
+
+            if($answers->status == -20){header('Location: /logoff');}
+
+        $this->keys['answers'] = $this->core->pega_todas_respostas($answers,false);
+        $this->keys['avatar_url'] = str_replace("medium", "large", $_SESSION['avatar_url']);
 
             return $this->keys;
         }
@@ -85,5 +88,25 @@ class profile extends simplePHP {
             return $this->keys;
         }
         
+        public function _actionAvatar() {//perfil de outro
+            $username = $this->getParameter(3);
+
+            $this->keys['name_user'] = $username;
+            $user = $this->core->getWs('user.get_profile',array('username'=>$username));
+
+            if($user->status != 0) {
+                $this->keys['answers'] = 'Usuário não encontrado';
+                return $this->keys;   
+            }
+
+            return $this->keys;
+        }
+
+        public function _actionsalvarAvatar() {//perfil de outro
+        //echo $_POST['draw-image-result'];
+        $answers = $this->core->callWs('user.save_avatar',array('draw-image-result'=>$_POST['draw-image-result']));
+        var_dump($answers);
+        }
+
 }
 ?>

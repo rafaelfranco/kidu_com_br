@@ -1,17 +1,26 @@
 <html>
-	<head>
-		[#head#]
-	</head>
-	<body id="conteudo">
-		[#header#]
-		<section>
-			<h3>[#name_user#]</h3>
-			<br class="tudo">
+<head>
+[#head#]
+</head>
+<body id="conteudo">
+[#header#]
+<section>
+<div>
+<img src="[#avatar_url#]" width="200" height="200" alt="Esse sou eu!">
+<h3>[#name_user#]</h3>
+<ul>
+<li><a href="">Editar dados</a></li>
+<li><a href="/profile/avatar">Mudar avatar</a></li>
+<li><a href="/help">Ajuda</a></li>
+<li><a href="/logoff">Sair</a></li>
+</ul>
+<br class="tudo">
+</div>
+</section>
 
-			<dl id="respostas">
-			[#answers#]
-			</dl>
-		</section>
-		[#footer#]
-	</body>
+<dl id="respostas">
+[#answers#]
+</dl>
+[#footer#]
+</body>
 </html>

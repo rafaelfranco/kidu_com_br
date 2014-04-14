@@ -382,52 +382,6 @@ color: black;
 
 /********* Footer ***********/
 
-footer#info {
-height: 80px;
-background-color: blue;
-width: 100%;	
-}
-
-footer#avatar {
-background-color: #c2d4ed;
-position: fixed;
-bottom: 0;
-width: 100%;
-height: 200px;
-z-index: 900;
-background: transparent url('../imagens/fundo_footer.gif') repeat-x 0 100%;
-}
-
-footer#avatar dl {
-margin: 0 20px 0 0;
-padding-bottom: 20px;
-}
-
-footer#avatar dl dt{
-float: right;
-}
-
-footer#avatar dl dd{
-float: right;
-text-align: right;
-margin-right: 20px;
-font-size: 90%;
-color: #504194;
-font-weight: bold;
-line-height: 180%;
-padding-top: 80px;
-}
-
-footer#avatar dl dd img{
-vertical-align: middle;
-}
-
-footer#avatar dl dd h5{
-text-align: right;
-font-size: 130%;
-color: #504194;
-}
-
 footer#logado {
 position: fixed;
 bottom: 0;
@@ -450,18 +404,36 @@ text-align: left;
 width: 200px;
 }
 
-footer#logado>div div span{
+footer#logado>div div div {
 float: right;
+width: 145px;
+text-align: center;
+padding: 0;
 }
 
-footer#logado>div div a{
+footer#logado>div div div span a{
+color: #8C8C8C;
+text-decoration: none;
+}
+
+footer#logado>div div div span a b{
+color: white;
+background-color: #504194;
+padding: 0 2px;
+margin: 0 4px 0 8px;
+}
+
+footer#logado>div div div a{
 color: #504194;
 font-size: 90%;
 text-decoration: underline;
 }
 
-footer#logado>div div strong a{
+footer#logado>div div div strong a{
 text-decoration: none;
+display: table-cell;
+height: 30px;
+vertical-align: middle;
 }
 
 .botao {
@@ -790,12 +762,14 @@ padding: 5px;
 float: left;
 background-color: white;
 margin: 0 15px 15px 0;
-height: 330px;
+height: 280px;
 position: relative;
+width: 245px;
 }
 
-figure.resposta img{
+figure.resposta>img{
 cursor: pointer;
+margin: 20px 18px 0;
 }
 
 figure.resposta img#medalha{
@@ -870,18 +844,19 @@ opacity: .5;
 }
 
 figure.resposta div{
-width: 285px;
-height: 285px;
+width: 200px;
+height: 200px;
 background: #f9c667; /* Old browsers */
 background: linear-gradient(135deg, rgb(251,176,59) 0%,rgb(252,238,33) 100%);
 position: relative;
 overflow: hidden;
 cursor: pointer;
+margin: 20px 0 0 20px;
 }
 
 figure.resposta div p{
-height: 204px;
-width: 222px;
+height: 180px;
+width: 180px;
 position: absolute;
 right: 0;
 bottom: 0;
@@ -1386,7 +1361,7 @@ padding: 20px 0;
 
 #desafio article#explica form fieldset>p{
 font-size: 120%;
-margin: 20px 0;
+margin: 20px;
 }
 
 #desafio article#explica form fieldset div {
@@ -1676,17 +1651,44 @@ padding: 55px 0 0;
 }
 
 #conteudo section{
+background-color: #F5F5F5;
+}
+
+#conteudo section div{
 width: 940px;
 margin: 0 auto;
 }
 
+#conteudo section div img{
+float: left;
+margin: 10px 0 10px 80px;
+}
+
 #conteudo section h3 {
 padding: 20px 0 0;
-float: left;
-color: #9087bc;
-border-bottom: 1px solid #f7f7f7;
-width: 830px;
+float: right;
+color: #9087BC;
+border-bottom: 1px solid white;
+width: 630px;
 font-size: 200%;
+text-align: left;
+}
+
+#conteudo section ul {
+float: right;
+text-align: left;
+width: 620px;
+margin: 80px 0 0 0;
+}
+
+#conteudo section ul li{
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+#conteudo section ul li a{
+color: #9087BC;
 }
 
 #conteudo h3 span{
@@ -1737,7 +1739,7 @@ font-size: 90%;
 
 #conteudo #respostas dd{
 margin: 0;
-padding: 0;
+padding: 0 0 0 50px;
 }
 
 /***** educadores ****/

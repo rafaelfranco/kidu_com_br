@@ -232,7 +232,7 @@ class core extends simplePHP {
         $file = '<div onclick="showModal('.$answer->guid.')" ><p><span>'.strip_tags($answer->description).'</span></p></div>';
       } else {
         $img = $answer->file_icon;
-        $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="285" width="285" alt="Kidu">';
+        $file = '<img onclick="showModal('.$answer->guid.')" src="'.$img.'" height="200" width="200" alt="Kidu">';
       }
 
       $answers_html = '';
@@ -291,7 +291,7 @@ class core extends simplePHP {
     return $respostas;
     }
 
-  public function pega_resposta_escolhida($answers){
+  public function pega_resposta_escolhida($answers){//melhorar essa função pra ela fazer uma busca direta
 
   $imagem_primeira_resposta = false;
   $answer_html = '';
