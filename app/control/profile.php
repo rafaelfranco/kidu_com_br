@@ -81,17 +81,16 @@ class profile extends simplePHP {
 
             //get user answers
             $answers = $this->core->callWs('file.get_files',array('context'=>'user','username'=>$username));
-            if($answers->status == -20){header('Location: /logoff');};
-
+                if($answers->status == -20){header('Location: /logoff');}
+            
+            $this->keys['avatar_url'] = str_replace("medium", "large", $user->result->avatar_url);
             $this->keys['answers'] = $this->core->pega_todas_respostas($answers,true);
 
             return $this->keys;
         }
         
         public function _actionAvatar() {//perfil de outro
-            $username = $this->getParameter(3);
-
-            $this->keys['name_user'] = $username;
+            $this->keys['name_user'] = $_SESSION['username'];
             $user = $this->core->getWs('user.get_profile',array('username'=>$username));
 
             if($user->status != 0) {
@@ -103,9 +102,13 @@ class profile extends simplePHP {
         }
 
         public function _actionsalvarAvatar() {//perfil de outro
-        //echo $_POST['draw-image-result'];
         $answers = $this->core->callWs('user.save_avatar',array('draw-image-result'=>$_POST['draw-image-result']));
-        var_dump($answers);
+        
+            if($res->status == 0) {
+              $this->redirect('/profile');
+            } else {
+              $this->redirect('/logoff');
+            }
         }
 
 }

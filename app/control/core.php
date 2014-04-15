@@ -241,7 +241,7 @@ class core extends simplePHP {
         if($onlyApproved == false){
         $answers_html .= '<strong><time>' . date('d-m-Y',$answer->time_updated) . '</time></strong>';
         } else {
-        $answers_html .= '<img src="/images/ico_usuario.gif" width="36" height="36" alt="User"> <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>';
+        $answers_html .= '<img src="' . str_replace("medium", "small", $answer->owner->avatar_url) . '" width="40" height="40" alt="User"> <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>';
         }
       $answers_html .= '</figcaption></figure>';
         } else {
@@ -292,7 +292,7 @@ class core extends simplePHP {
     }
 
   public function pega_resposta_escolhida($answers){//melhorar essa função pra ela fazer uma busca direta
-
+    if(!isset($answers->result)){return '';}
   $imagem_primeira_resposta = false;
   $answer_html = '';
     foreach($answers->result as $answer){
@@ -311,7 +311,7 @@ class core extends simplePHP {
         $answer_html = '<figure class="resposta" id="figura_'.$answer->guid.'">'.$file . "\n";
         $answer_html .= '<img src="/images/medalha.png" width="38" height="53" alt="Escolhido pelos educadores" id="medalha">' . "\n";
         $answer_html .= '<figcaption>'.$likeIcon;
-        $answer_html .= '<img src="/images/ico_usuario.gif" width="36" height="36" alt="User"> <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>' . "\n";
+        $answer_html .= '<img src="' . str_replace("medium", "small", $answer->owner->avatar_url) . '" width="40" height="40" alt="User"> <strong><a href="/profile/view/'.$answer->owner->name.'">'.$answer->owner->name.'</a></strong>' . "\n";
         $answer_html .= '</figcaption></figure>' . "\n";;
         }
       } 

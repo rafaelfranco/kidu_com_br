@@ -1,98 +1,6 @@
 <html>
 <head>
 [#head#]
-<style type="text/css">
-#canvas {
-display: block;
-width: 500px;
-height: 500px;
-padding: 0;
-border: 0;
-overflow: visible;
-margin: 0 auto;
-}
-
-#canvas svg {
-width: 500px;
-height: 500px;
-display: block;
-border: 1px black solid;
--webkit-user-select: none;
-cursor: crosshair;
-padding: 0;
-margin: 0;
-margin-top: 5px;
-}
-
-#canvaswrapper {
-overflow: visible;
-}
-
-#canvascolours {
-width: 26px;
-display: inline-block;
-vertical-align: top;
-}
-
-#canvascolours [data-colour] {
-width: 18px;
-height: 18px;
-margin-bottom: 10px;
-cursor: pointer;
-border: 1px black solid;
-}
-
-#realcanvas {
-display: none;
-}
-
-#linewidths {
-display: block;
-}
-
-.miniColors-triggerWrap {
-margin-left: 25px;
-}
-
-#save, #reset {
-display: block;
-width: 150px;
-text-align: center;
-padding: 10px 25px;
-margin: 0 auto;
-color: white;
-background-color: blue;
-border: 2px solid black;
-border-radius: 8px;
-}
-
-#colorSelector {
-width: 120px;
-margin: 0 auto;
-}
-
-.draw-sidebar {
-text-align: center;
-}
-
-#colorSelector-sample {
-display: inline-block;
-margin-left: 5px;
-height: 15px;
-width: 15px;
-background-color: #000000;
-vertical-align: middle;
-}
-
-#lineWidth-sample {
-display: inline-block;
-margin-left: 5px;
-}
-
-.elgg-form-draw-file input[name=container_guid] + div {
-display: none;
-}
-</style>
 <script type="text/javascript" src="/js/raphael/raphael-min.js"></script>
 <script type="text/javascript" src="/js/raphael/rgbcolor.js"></script>
 <script type="text/javascript" src="/js/raphael/canvg.js"></script>
@@ -101,12 +9,18 @@ display: none;
 <script type="text/javascript" src="/js/raphael/draw.js"></script>
 </head>
 
-<body id="conteudo">
+<body id="edita_avatar">
 [#header#]
 <section>
+<form method="post" action="/profile/salvarAvatar" id="salva_avatar" enctype="multipart/form-data">
 <h3>[#name_user#]</h3>
 <br class="tudo">
-<form method="post" action="/profile/salvarAvatar" id="salva_avatar" enctype="multipart/form-data">
+<p>Desenhe seu avatar no espaço abaixo. <br>
+Ele vai aparecer ao lado do seu nome sempre que você responder a algum desafio ou que visitarem sua página. Por isso, capriche!
+</p>
+<p>
+Use os ferramentas ao lado para mudar de cor ou trocar a largura do lápis de desenho.
+</p>
 <div id="canvaswrapper">
 <div id="canvas"></div>
 </div>
@@ -115,16 +29,18 @@ display: none;
 <input type="hidden" id="draw-image-result" name="draw-image-result" value="">
 <input type="hidden" name="conteiner_guid" value="elgg_get_page_owner_guid()"><!-- veja o que essa função pega -->
 
-<div class="draw-sidebar">
+<aside class="draw-sidebar">
+<fieldset>
 <b>Cor:</b><span id="colorSelector-sample"></span><br><br>
 <div id="colorSelector"></div>
 <br><br>
 <b>Tamanho do pincel:</b><span id="lineWidth-sample">1</span><br><br>
 <div id="draw-slider"></div>
+</fieldset>
 <br><br>
-<button type="button" id="draw-reset">Limpar tela</button>
-<button type="button" id="salvar_imagem">Salvar</button>
-</div>
+<span class="botao" id="salvar_imagem">Salvar </span><br><br><br><br><br>
+<span id="draw-reset" class="botao2">Limpar tela</span>
+</aside>
 </form>
 </section>
 [#footer#]

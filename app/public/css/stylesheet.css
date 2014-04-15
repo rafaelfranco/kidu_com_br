@@ -1343,6 +1343,11 @@ width: 380px;
 margin-left: 100px;
 }
 
+#desafio article#explica #disclaimer .resposta{
+width: 315px;
+height: 365px;
+}
+
 #desafio article#explica form {
 float: right;
 width: 380px;
@@ -1654,7 +1659,7 @@ padding: 55px 0 0;
 background-color: #F5F5F5;
 }
 
-#conteudo section div{
+#conteudo section>div{
 width: 940px;
 margin: 0 auto;
 }
@@ -1794,6 +1799,127 @@ text-align: left;
 background: #FFF67C url('../images/ico_atencao.gif') 20px 50% no-repeat;
 border: 3px dashed #FFD348;
 }
+
+/* Edita avatar */
+
+#edita_avatar section{
+margin-top: 60px;
+}
+
+#edita_avatar section form {
+margin: 0 auto;
+width: 940px;
+}
+
+#edita_avatar section form p{
+color: gray;
+margin: 15px 440px 15px 50px;
+}
+
+#edita_avatar #canvas {
+display: block;
+width: 500px;
+height: 500px;
+padding: 0;
+border: 0;
+overflow: visible;
+margin: 0 auto;
+}
+
+#edita_avatar #canvas svg {
+width: 500px;
+height: 500px;
+display: block;
+border: 1px solid silver;
+-webkit-user-select: none;
+cursor: crosshair;
+padding: 0;
+margin: 0;
+margin-top: 5px;
+}
+
+#edita_avatar #canvaswrapper {
+overflow: visible;
+width: 550px;
+float: left;
+}
+
+#edita_avatar #canvascolours {
+width: 26px;
+display: inline-block;
+vertical-align: top;
+}
+
+#edita_avatar #canvascolours [data-colour] {
+width: 18px;
+height: 18px;
+margin-bottom: 10px;
+cursor: pointer;
+border: 1px black silver;
+}
+
+#edita_avatar #realcanvas {
+display: none;
+}
+
+#edita_avatar #linewidths {
+display: block;
+}
+
+#edita_avatar .miniColors-triggerWrap {
+margin-left: 25px;
+}
+
+#edita_avatar #save, #edita_avatar  #reset {
+display: block;
+width: 150px;
+text-align: center;
+padding: 10px 25px;
+margin: 0 auto;
+color: white;
+background-color: blue;
+border: 2px solid black;
+border-radius: 8px;
+}
+
+#edita_avatar #colorSelector {
+width: 120px;
+margin: 0 auto;
+}
+
+#edita_avatar aside {
+width: 200px;
+float: left;	
+}
+
+#edita_avatar aside fieldset{
+background-color: #F5F5F5;
+border: 1px solid silver;
+margin-top: 5px;
+}
+
+#edita_avatar .draw-sidebar {
+text-align: center;
+}
+
+#edita_avatar #colorSelector-sample {
+display: inline-block;
+margin-left: 5px;
+height: 15px;
+width: 15px;
+background-color: #000000;
+vertical-align: middle;
+}
+
+#edita_avatar #lineWidth-sample {
+display: inline-block;
+margin-left: 5px;
+}
+
+#edita_avatar .elgg-form-draw-file input[name=container_guid] + div {
+display: none;
+}
+
 
 /* Modal */
 
